@@ -1,0 +1,138 @@
+version: "3.1"
+
+stories:
+  - story: happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_great
+      - action: utter_happy
+
+  - story: sad path 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_happy
+
+  - story: sad path 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: sad path 2
+    steps:
+      - user: "what is the Weather today?"
+      - action: utter_weather
+
+  - story: User asks about medical conditions
+    steps:
+      - user: "What are some common medical issues?"
+      - action: utter_medical_conditions
+
+  - story: User wants to know about doctor specialties
+    steps:
+      - user: "Tell me about medical specialists?"
+      - action: utter_doctor_specialties
+
+  - story: User inquires about emergency procedures
+    steps:
+      - user: "What should I do in medical emergency?"
+      - action: utter_emergency_procedures
+
+  - story: User asks about procedures in the Emergency Department
+    steps:
+      - user: "What procedures will I have in the Emergency Department?"
+      - action: utter_emergency_procedures_info
+
+  - story: User asks about pain medication in the Emergency Department
+    steps:
+      - user: "When will I receive my pain medication?"
+      - action: utter_pain_medication_info
+
+  - story: User asks about staffing in the Emergency Department
+    steps:
+      - user: "How is the Emergency Department staffed?"
+      - action: utter_staffing_info
+
+  - story: User asks about visitors during treatment in the Emergency Department
+    steps:
+      - user: "Will I be allowed to have visitors during my treatment?"
+      - action: utter_visitors_info
+
+  - story: User asks about being admitted from the Emergency Department
+    steps:
+      - user: "What happens if I am admitted?"
+      - action: utter_admission_info
+
+  - story: User asks about the attending doctor in charge
+    steps:
+      - user: "Who's the doctor in charge of me?"
+      - action: utter_attending_doctor_info
+
+  - story: User asks about understanding their medical problem
+    steps:
+      - user: "What's my problem?"
+      - action: utter_medical_problem_info
+
+  - story: User asks about the next steps in their care
+    steps:
+      - user: "What will happen next?"
+      - action: utter_next_steps_info
+
+  - story: User asks about choosing a different treatment plan
+    steps:
+      - user: "I don't like that plan. Can I choose another?"
+      - action: utter_alternate_plan_info
+
+  - story: User asks about refusing tests or doctors
+    steps:
+      - user: "Can I refuse a test or a doctor to see me?"
+      - action: utter_refusal_info
+
+  - story: User asks about discharge from the Emergency Department
+    steps:
+      - user: "When am I going home?"
+      - action: utter_discharge_info
+
+  - story: give name story 1
+    steps:
+      - intent: ask_me_anything
+      - action: utter_ask_shirt_size
+      - intent: give_shirt_size
+        entities:
+          - shirt_size: large
+      - slot_was_set:
+          - shirt_size: large
+      - action: utter_remember
+      - intent: repeat_shirt_size
+      - action: action_say_shirt_size
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: give name story 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: repeat_shirt_size
+      - action: action_say_shirt_size
+      - intent: ask_me_anything
+      - action: utter_ask_shirt_size
+      - intent: give_shirt_size
+        entities:
+          - shirt_size: large
+      - slot_was_set:
+          - shirt_size: large
+      - action: utter_remember
+      - intent: repeat_shirt_size
+      - action: action_say_shirt_size
+      - intent: goodbye
+      - action: utter_goodbye

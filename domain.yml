@@ -1,0 +1,109 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_me_anything
+  - repeat_shirt_size
+  - give_shirt_size
+  - out_of_scope
+
+entities:
+  - shirt_size
+slots:
+  shirt_size:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: shirt_size
+
+responses:
+  utter_greet:
+    - text: "Hey! How are you?"
+
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_happy:
+    - text: "Great, carry on!"
+
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+  utter_weather:
+    - text: "Today is clear weather"
+
+  utter_medical_conditions:
+    - text: "Certainly! Some common medical conditions include diabetes, hypertension, asthma, and arthritis. These conditions are managed through various treatments and medical care."
+
+  utter_doctor_specialties:
+    - text: "We have a range of doctor specialties, such as cardiology, dermatology, gastroenterology, and more. Each specialization focuses on specific areas of medical expertise."
+
+  utter_emergency_procedures:
+    - text: "In a medical emergency, it's important to stay calm. Dial [emergency phone number] for immediate assistance. If needed, administer first aid and wait for medical professionals to arrive."
+
+  utter_emergency_procedures_info:
+    - text: "In the Emergency Department, various treatments and procedures may be conducted to assess your condition. These could involve lab work, radiological studies, such as CAT scans and ultrasounds, EKG for cardiac evaluation, administration of medications, and evaluations by medical physicians."
+
+  utter_pain_medication_info:
+    - text: "Pain medication might not be administered immediately in order to avoid masking important diagnostic clues. It will typically be given after tests are completed and the physician has reviewed the results. However, if you're experiencing pain or not finding relief from prescribed medication, please inform your nurse or physician. Throughout your stay, you'll be asked to rate your pain, and if you're admitted, this will continue on the medical floors."
+
+  utter_staffing_info:
+    - text: "The Emergency Department is staffed with a team of professionals, including emergency medicine physicians, nurses, physician assistants, technicians, CNAs, unit coordinators, and specialists from departments like laboratory, cardiology, respiratory, and radiology."
+
+  utter_visitors_info:
+    - text: "Yes, visitors are usually allowed, but their number is kept minimal in the treatment area to ensure efficient and effective care. Typically, two visitors per patient are allowed in most areas of the department. This maintains a balance between medical care and patient privacy. Efforts are made to keep your loved ones informed and involved in your care."
+
+  utter_admission_info:
+    - text: "If you're admitted, you will stay in the Emergency Department until your inpatient room is ready. Your admitting physician will visit you during their designated patient rounds."
+
+  utter_attending_doctor_info:
+    - text: "You'll be cared for by a team of doctors and nurses in the Emergency Department, rather than your family doctor. The attending physician is your main doctor overseeing your care and making important decisions. They will also handle your discharge from the hospital."
+
+  utter_medical_problem_info:
+    - text: "The attending physician should explain your diagnosis and care plan in a way that you can understand. Don't hesitate to ask them to repeat or clarify explanations. It's also helpful to have a family member present to ensure you catch all the details. If a diagnosis isn't immediate, keep asking for updates."
+
+  utter_next_steps_info:
+    - text: "Staying informed about your care plan reduces feelings of uncertainty. It's a good idea to ask this question daily to understand the progression of your treatment. Keeping a diary can also help you keep track of your care journey."
+
+  utter_alternate_plan_info:
+    - text: "You have the right to explore other options for your treatment plan. Your doctor should discuss alternative options and potential outcomes with you, often involving a family member for additional support. Remember that you have clear rights when it comes to your care."
+
+  utter_refusal_info:
+    - text: "Yes, you have the right to refuse a test, procedure, or even a specific doctor's involvement. If you're unsure about a recommendation, it's beneficial to have a conversation with the attending physician to better understand your options."
+
+  utter_discharge_info:
+    - text: "Once admitted, the attending physician will estimate a discharge date. Having a goal for discharge is important for everyone involved. However, this date can change based on your response to treatment. Your medical team will keep you informed."
+
+  utter_out_of_scope:
+    - text: Sorry, I can't handle that request.
+
+  utter_ask_shirt_size:
+    - text: What is your shirt size?
+  utter_remember:
+    - text: Thanks. I'll remember that.
+
+actions:
+  - action_say_shirt_size
+  - utter_ask_shirt_size
+  - utter_goodbye
+  - utter_greet
+  - utter_happy
+  - utter_remember
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
