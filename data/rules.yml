@@ -15,3 +15,30 @@ rules:
     steps:
       - intent: out_of_scope
       - action: utter_out_of_scope
+
+  - rule: Activate_form_1
+    steps:
+      - action: utter_ask_book_appointment
+      - intent: affirm
+      - action: appointment_booking_form
+      - active_loop: appointment_booking_form
+
+  - rule: Activate_form_2
+    steps:
+      - intent: book_appointment
+      - action: appointment_booking_form
+      - active_loop: appointment_booking_form
+  
+  - rule: Submit form
+    condition:
+    # Condition that form is active.
+    - active_loop: appointment_booking_form
+    steps:
+    # Form is deactivated
+    - action: appointment_booking_form
+    - active_loop: null
+    - slot_was_set:
+      - requested_slot: null
+    # The actions we want to run when the form is submitted.
+    - action: action_submit_appointment_form
+    

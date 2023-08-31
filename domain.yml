@@ -12,9 +12,22 @@ intents:
   - repeat_shirt_size
   - give_shirt_size
   - out_of_scope
+  - kneepain
+  - firstname
+  - lastname
+  - feedback
+  - provide_firstname
+  - provide_lastname
+  - provide_age
+  - provide_phone
+  - book_appointment
 
 entities:
   - shirt_size
+  - firstname
+  - lastname
+  - age
+  - phone
 slots:
   shirt_size:
     type: text
@@ -23,9 +36,57 @@ slots:
       - type: from_entity
         entity: shirt_size
 
+  firstname:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: firstname
+  lastname:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: lastname
+  age:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: age
+  phone:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: phone
+
+forms:
+  appointment_booking_form:
+    required_slots:
+      - firstname
+      - lastname
+      - age
+      - phone
+
 responses:
   utter_greet:
     - text: "Hey! How are you?"
+
+  utter_ask_firstname:
+    - text: "What's your First Name?"
+
+  utter_ask_lastname:
+    - text: "What's your Last Name?"
+
+  utter_ask_age:
+    - text: "How old are you?"
+
+  utter_ask_phone:
+    - text: "What is your phone number?"
+
+  utter_ask_book_appointment:
+    - text: "Would you like to book an appointment?"
 
   utter_cheer_up:
     - text: "Here is something to cheer you up:"
@@ -103,6 +164,7 @@ actions:
   - utter_greet
   - utter_happy
   - utter_remember
+  - action_submit_appointment_form
 
 session_config:
   session_expiration_time: 60

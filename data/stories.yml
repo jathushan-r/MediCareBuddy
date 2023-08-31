@@ -28,6 +28,24 @@ stories:
       - intent: deny
       - action: utter_goodbye
 
+  - story: booking an appointment 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: kneepain
+      - action: utter_ask_book_appointment
+      - intent: deny
+      - action: utter_goodbye
+  #     - intent: affirm
+
+  # - story: booking an appointment 2
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: kneepain
+  #     - action: utter_ask_book_appointment
+  #     - intent: book_appointment
+
   - story: sad path 2
     steps:
       - user: "what is the Weather today?"

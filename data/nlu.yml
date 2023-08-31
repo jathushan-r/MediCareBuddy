@@ -30,6 +30,32 @@ nlu:
       - bye bye
       - see you later
 
+  - intent : kneepain
+    examples: |
+      - I have knee pain.
+      - My knees are hurting.
+      - I'm experiencing pain in my knee.
+      - I've got a painful knee.
+      - There's pain in my knee.
+      - My knee is giving me trouble.
+      - I have aching knees.
+      - Knee's been bothering me.
+      - I've got knee issues.
+      - My knee doesn't feel good.
+
+  - intent : book_appointment
+    examples: |
+      - I'd like to book an appointment.
+      - Can I schedule a consultation?
+      - I need to see a doctor.
+      - How do I make an appointment?
+      - I want to arrange a visit.
+      - Is it possible to book a time with the doctor?
+      - Can you help me set an appointment?
+      - I need to set up a doctor's visit.
+      - Can we arrange a medical consultation?
+      - I'd like to fix a time to meet the doctor.
+
   - intent: affirm
     examples: |
       - yes
@@ -148,6 +174,41 @@ nlu:
       - i want a [large](shirt_size) shirt please
       - i want to give you my shirt
       - [large](shirt_size)
+
+  - intent: provide_firstname
+    examples: |
+      - My first name is [John](firstname).
+      - Call me [Sarah](firstname).
+      - You can address me as [Emily](firstname).
+      - Firstname? It's [Robert](firstname).
+      - [Savindu](firstname)
+
+  - intent: provide_lastname
+    examples: |
+      - My last name is [Smith](lastname).
+      - Surname is [Johnson](lastname).
+      - It's [Doe](lastname).
+      - The last name is [Williams](lastname).
+      - [Rajapaksha](lastname)
+
+  - intent: provide_age
+    examples: |
+      - I am [25](age) years old.
+      - My age is [30](age).
+      - I'm [22](age).
+      - I'll be turning [40](age) next month.
+      - [25](age)
+
+  - intent: provide_phone
+    examples: |
+      - My phone number is [123-456-7890](phone).
+      - Call me at [(123) 456-7890](phone).
+      - You can reach me at [987-654-3210](phone).
+      - My contact is [555-555-5555](phone).
+      - [0987654321](phone)
+      - [098-7654321](phone)
+      - [+94987654321](phone)
+      - [+94 987654321](phone)
 
   - intent: out_of_scope
     examples: |
