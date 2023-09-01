@@ -100,9 +100,6 @@ stories:
     steps:
       - user: "What's my problem?"
       - action: utter_medical_problem_info
-
-  - story: User asks about the next steps in their care
-    steps:
       - user: "What will happen next?"
       - action: utter_next_steps_info
 
@@ -121,36 +118,256 @@ stories:
       - user: "When am I going home?"
       - action: utter_discharge_info
 
-  - story: give name story 1
+  - story: User asks about discharge planning
     steps:
-      - intent: ask_me_anything
-      - action: utter_ask_shirt_size
-      - intent: give_shirt_size
-        entities:
-          - shirt_size: large
-      - slot_was_set:
-          - shirt_size: large
-      - action: utter_remember
-      - intent: repeat_shirt_size
-      - action: action_say_shirt_size
-      - intent: goodbye
-      - action: utter_goodbye
+      - user: "How is discharge planned?"
+      - action: utter_discharge_planning_process
 
-  - story: give name story 2
+  - story: User asks about discharge date
     steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: repeat_shirt_size
-      - action: action_say_shirt_size
-      - intent: ask_me_anything
-      - action: utter_ask_shirt_size
-      - intent: give_shirt_size
-        entities:
-          - shirt_size: large
-      - slot_was_set:
-          - shirt_size: large
-      - action: utter_remember
-      - intent: repeat_shirt_size
-      - action: action_say_shirt_size
-      - intent: goodbye
-      - action: utter_goodbye
+      - user: "I am under medication When am I going home?"
+      - action: utter_discharge_date
+
+  - story: User asks about changes in medications
+    steps:
+      - user: "What changes in medications do I have to know about?"
+      - action: utter_medication_changes
+
+  - story: User asks about hospitalization costs
+    steps:
+      - user: "What is my out-of-pocket cost for being in the hospital?"
+      - action: utter_hospitalization_costs
+
+  - story: User asks about observation vs. admission
+    steps:
+      - user: "Am I being observed or admitted?"
+      - action: utter_observation_vs_admission
+
+  - story: User asks about post-discharge instructions
+    steps:
+      - user: "What must I look out for after being discharged?"
+      - action: utter_post_discharge_instructions
+
+  - story: User complains about busy phone line
+    steps:
+      - user: "The phone line is busy, is there something I can do about it?"
+      - action: utter_busy_phone_line
+
+  - story: User asks about sending files
+    steps:
+      - user: "My doctor asked me to send a photo/file/attachment, where should I send them to?"
+      - action: utter_send_files_instructions
+
+  - story: User complains about broken online booking
+    steps:
+      - user: "My online booking platform is broken / doesn’t work. What is happening?"
+      - action: utter_broken_online_booking
+
+  - story: User asks about short appointments
+    steps:
+      - user: "Why do my appointments feel so short?"
+      - action: utter_short_appointments
+
+  - story: User asks about delayed lab reports
+    steps:
+      - user: "It's been over 2 months and I still haven't received my lab reports back. What should I do?"
+      - action: utter_delayed_lab_reports
+
+  - story: User asks about clinic policy
+    steps:
+      - user: "What is your clinic policy?"
+      - action: utter_clinic_policy
+
+  - story: User asks about identity verification
+    steps:
+      - user: "Why do the members of my treatment team keep asking my name, date of birth, and/or to see my wristband?"
+      - action: utter_identity_verification
+
+  - story: User asks about bathroom frequency questions
+    steps:
+      - user: "Why does the nursing staff ask if I have to use the bathroom so often?"
+      - action: utter_bathroom_frequency
+
+  - story: User asks about avoiding falls
+    steps:
+      - user: "How can I best avoid falling?"
+      - action: utter_avoiding_falls
+
+  - story: User asks about tracking medications
+    steps:
+      - user: "How can I keep track of my medications?"
+      - action: utter_track_medications
+
+  - story: User asks about infection prevention
+    steps:
+      - user: "How can I avoid infections?"
+      - action: utter_infection_prevention
+
+  - story: User asks about computer use by treatment team
+    steps:
+      - user: "Why are members of my treatment team looking at the computer so often?"
+      - action: utter_computer_use
+
+  - story: User asks about isolated patients
+    steps:
+      - user: "Why are some patients in isolation?"
+      - action: utter_isolated_patients
+
+  - story: User asks about required personal information
+    steps:
+      - user: "What personal information do I need to bring with me to the hospital?"
+      - action: utter_required_personal_info
+
+  - story: User asks about surgical safeguards
+    steps:
+      - user: "What safeguards are in place to perform the right surgical procedure?"
+      - action: utter_surgical_safeguards
+
+  - story: User asks about verifying right medications
+    steps:
+      - user: "How can I know I am getting the right medications?"
+      - action: utter_verify_right_medications
+
+  - story: User asks about advocating for loved ones
+    steps:
+      - user: "How do I advocate for my loved one?"
+      - action: utter_advocate_for_loved_one
+
+  - story: User asks about information for treatment team
+    steps:
+      - user: "What do I need to tell the members of my treatment team?"
+      - action: utter_info_for_treatment_team
+
+  - story: User asks about items to bring when admitted
+    steps:
+      - user: "What should I bring with me when I am admitted to Alpha?"
+      - action: utter_items_to_bring
+
+  - story: User asks about laundry services
+    steps:
+      - user: "What laundry services are available?"
+      - action: utter_laundry_services
+
+  - story: User asks about keeping own medications
+    steps:
+      - user: "Should I keep my own medications with me?"
+      - action: utter_keep_own_medications
+
+  - story: User asks about personal physician during stay
+    steps:
+      - user: "Will my personal physician care for me during my stay at Alpha?"
+      - action: utter_personal_physician_care
+
+  - story: User asks about mail delivery frequency
+    steps:
+      - user: "How often is mail delivered?"
+      - action: utter_mail_delivery_frequency
+
+  - story: User asks about room type
+    steps:
+      - user: "Will I have my own room?"
+      - action: utter_room_type
+
+  - story: User asks about telephone in room
+    steps:
+      - user: "Will there be a telephone in my room?"
+      - action: utter_telephone_in_room
+
+  - story: User asks about television in room
+    steps:
+      - user: "Will there be a television in my room?"
+      - action: utter_television_in_room
+
+  - story: User asks about chapel or religious services
+    steps:
+      - user: "Is there a chapel or religious services?"
+      - action: utter_chapel_religious_services
+
+  - story: User asks about going home for visit
+    steps:
+      - user: "Can I go home for a visit?"
+      - action: utter_home_visit
+
+  - story: User asks about discharge planning
+    steps:
+      - user: "What does discharge planning mean?"
+      - action: utter_discharge_planning
+
+  - story: User asks about communication with team
+    steps:
+      - user: "What kind of communication will my family and I have with my team?"
+      - action: utter_communication_with_team
+
+  - story: User asks about what happens after admission
+    steps:
+      - user: "What happens once I am admitted?"
+      - action: utter_after_admission
+
+  - story: User asks about customized rehabilitation programs
+    steps:
+      - user: "Do all patients undergo the same rehabilitation program?"
+      - action: utter_customized_rehab_program
+
+  - story: User asks about medical aid coverage
+    steps:
+      - user: "Will medical aid pay for the treatment?"
+      - action: utter_medical_aid_coverage
+
+  - story: User asks about clothing to bring
+    steps:
+      - user: "What clothing should I bring?"
+      - action: utter_clothing_to_bring
+
+  - story: User asks about valuables
+    steps:
+      - user: "Am I allowed to keep my valuables with me?"
+      - action: utter_keep_valuables
+
+  - story: User asks about family and friends visiting
+    steps:
+      - user: "Are my family and friends allowed to visit me?"
+      - action: utter_family_friends_visiting
+
+  - story: User asks about discharge planning
+    steps:
+      - user: "How is discharge planned?"
+      - action: utter_discharge_planning_process
+
+  - story: User asks about patient satisfaction
+    steps:
+      - user: "How do you ensure patient satisfaction?"
+      - action: utter_patient_satisfaction
+
+  # - story: give name story 1
+  #   steps:
+  #     - intent: ask_me_anything
+  #     - action: utter_ask_shirt_size
+  #     - intent: give_shirt_size
+  #       entities:
+  #         - shirt_size: large
+  #     - slot_was_set:
+  #         - shirt_size: large
+  #     - action: utter_remember
+  #     - intent: repeat_shirt_size
+  #     - action: action_say_shirt_size
+  #     - intent: goodbye
+  #     - action: utter_goodbye
+
+  # - story: give name story 2
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: repeat_shirt_size
+  #     - action: action_say_shirt_size
+  #     - intent: ask_me_anything
+  #     - action: utter_ask_shirt_size
+  #     - intent: give_shirt_size
+  #       entities:
+  #         - shirt_size: large
+  #     - slot_was_set:
+  #         - shirt_size: large
+  #     - action: utter_remember
+  #     - intent: repeat_shirt_size
+  #     - action: action_say_shirt_size
+  #     - intent: goodbye
+  #     - action: utter_goodbye
