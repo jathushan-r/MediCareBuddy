@@ -154,8 +154,21 @@ responses:
 
   utter_ask_shirt_size:
     - text: What is your shirt size?
+
   utter_remember:
     - text: Thanks. I'll remember that.
+
+  utter_list_doctors:
+    - text: Here are the list of doctors available for your knee pain treatment
+      buttons:
+        - title: Dr. John
+          payload: '/inform{{"doctor_name": "Dr. John"}}'
+        - title: Dr. Smith
+          payload: '/inform{{"doctor_name": "Dr. Smith"}}'
+        - title: Dr. David
+          payload: '/inform{{"doctor_name": "Dr. David"}}' 
+  
+  
 
 actions:
   - action_say_shirt_size

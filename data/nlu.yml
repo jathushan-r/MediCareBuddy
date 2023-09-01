@@ -198,6 +198,10 @@ nlu:
       - I'm [22](age).
       - I'll be turning [40](age) next month.
       - [25](age)
+      - [23](age)
+      - [50](age)
+      - [30](age)
+      - [40](age)
 
   - intent: provide_phone
     examples: |
