@@ -30,7 +30,7 @@ nlu:
       - bye bye
       - see you later
 
-  - intent : kneepain
+  - intent: kneepain
     examples: |
       - I have knee pain.
       - My knees are hurting.
@@ -43,7 +43,7 @@ nlu:
       - I've got knee issues.
       - My knee doesn't feel good.
 
-  - intent : book_appointment
+  - intent: book_appointment
     examples: |
       - I'd like to book an appointment.
       - Can I schedule a consultation?

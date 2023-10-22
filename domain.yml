@@ -102,10 +102,10 @@ responses:
     - text: "Bye"
 
   utter_iamabot:
-    - text: "I am a bot, powered by Rasa."
+    - text: "I am a healthcarebot"
 
   utter_weather:
-    - text: "Today is clear weather"
+    - text: "I don't know"
 
   utter_medical_conditions:
     - text: "Certainly! Some common medical conditions include diabetes, hypertension, asthma, and arthritis. These conditions are managed through various treatments and medical care."
@@ -285,7 +285,7 @@ responses:
     - text: "To be a strong advocate, understand your loved one's needs and communicate on their behalf. Address questions and concerns with the treatment team, and consider legal responsibilities outlined in a healthcare power of attorney document. Your advocacy is important to us."
 
   utter_out_of_scope:
-    - text: Sorry, I can't handle that request.
+    - text: Sorry, I don't know.
 
 actions:
   - utter_goodbye
