@@ -1,0 +1,58 @@
+{
+  "firstname": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5,
+    "confused_with": {}
+  },
+  "shirt_size": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 9,
+    "confused_with": {}
+  },
+  "lastname": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5,
+    "confused_with": {}
+  },
+  "phone": {
+    "precision": 0.9090909090909091,
+    "recall": 1.0,
+    "f1-score": 0.9523809523809523,
+    "support": 10,
+    "confused_with": {}
+  },
+  "age": {
+    "precision": 1.0,
+    "recall": 0.8,
+    "f1-score": 0.888888888888889,
+    "support": 5,
+    "confused_with": {
+      "phone": 1
+    }
+  },
+  "micro avg": {
+    "precision": 0.9705882352941176,
+    "recall": 0.9705882352941176,
+    "f1-score": 0.9705882352941176,
+    "support": 34
+  },
+  "macro avg": {
+    "precision": 0.9818181818181818,
+    "recall": 0.96,
+    "f1-score": 0.9682539682539684,
+    "support": 34
+  },
+  "weighted avg": {
+    "precision": 0.9732620320855616,
+    "recall": 0.9705882352941176,
+    "f1-score": 0.9696545284780579,
+    "support": 34
+  },
+  "accuracy": 0.9987834549878345
+}

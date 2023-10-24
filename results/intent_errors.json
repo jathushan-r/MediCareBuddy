@@ -1,0 +1,10 @@
+[
+  {
+    "text": "25",
+    "intent": "provide_age",
+    "intent_prediction": {
+      "name": "provide_phone",
+      "confidence": 0.6026945114135742
+    }
+  }
+]
