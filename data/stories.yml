@@ -371,3 +371,28 @@ stories:
   #     - action: action_say_shirt_size
   #     - intent: goodbye
   #     - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: nlu_fallback
+  - intent: ask_for_doctor_availability
+    entities:
+    - doctor_name: linda garcia
+  - action: action_default_fallback
+  - intent: provide_lastname
+  - intent: ask_for_doctor_availability
+    entities:
+    - doctor_name: Linda Garcia
+  - action: action_default_fallback
+  - intent: provide_lastname
+  - intent: ask_for_doctor_availability
+    entities:
+    - doctor_name: Linda Garcia
+  - action: doctor_availability_form
+  - active_loop: doctor_availability_form
+  - slot_was_set:
+    - doctor_name: Linda Garcia
+  - slot_was_set:
+    - requested_slot: day

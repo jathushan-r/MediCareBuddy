@@ -1,313 +1,261 @@
-version: "3.1"
-
+version: '3.1'
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - ask_me_anything
-  - repeat_shirt_size
-  - give_shirt_size
-  - out_of_scope
-  - kneepain
-  - firstname
-  - lastname
-  - feedback
-  - provide_firstname
-  - provide_lastname
-  - provide_age
-  - provide_phone
-  - book_appointment
-
+- affirm
+- ask_for_doctor_availability
+- ask_me_anything
+- book_appointment
+- bot_challenge
+- deny
+- feedback
+- firstname
+- give_shirt_size
+- goodbye
+- greet
+- kneepain
+- lastname
+- mood_great
+- mood_unhappy
+- out_of_scope
+- provide_age
+- provide_firstname
+- provide_lastname
+- provide_phone
+- repeat_shirt_size
 entities:
-  - shirt_size
-  - firstname
-  - lastname
-  - age
-  - phone
+- doctor_name
+- shirt_size
+- firstname
+- lastname
+- age
+- phone
+- day
 slots:
-  shirt_size:
-    type: text
-    influence_conversation: true
-    mappings:
-      - type: from_entity
-        entity: shirt_size
-
   firstname:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_entity
-        entity: firstname
+    - type: from_entity
+      entity: firstname
   lastname:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_entity
-        entity: lastname
+    - type: from_entity
+      entity: lastname
   age:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_entity
-        entity: age
+    - type: from_entity
+      entity: age
   phone:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_entity
-        entity: phone
-
+    - type: from_entity
+      entity: phone
+  doctor_name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: doctor_name
+  day:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: day
 forms:
   appointment_booking_form:
     required_slots:
-      - firstname
-      - lastname
-      - age
-      - phone
-
+    - firstname
+    - lastname
+    - age
+    - phone
+  doctor_availability_form:
+    required_slots:
+    - doctor_name
+    - day
 responses:
   utter_greet:
-    - text: "Hey! How are you?"
-
+  - text: Hey! How can I help you today?
   utter_ask_firstname:
-    - text: "What's your First Name?"
-
+  - text: What's your First Name?
   utter_ask_lastname:
-    - text: "What's your Last Name?"
-
+  - text: What's your Last Name?
   utter_ask_age:
-    - text: "How old are you?"
-
+  - text: How old are you?
   utter_ask_phone:
-    - text: "What is your phone number?"
-
+  - text: What is your phone number?
   utter_ask_book_appointment:
-    - text: "Would you like to book an appointment?"
-
+  - text: Would you like to book an appointment?
+  utter_ask_to_book_another_day:
+  - text: Would you like to book an appointment for another day?
   utter_cheer_up:
-    - text: "Here is something to cheer you up:"
-      image: "https://i.imgur.com/nGF1K8f.jpg"
-
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
   utter_did_that_help:
-    - text: "Did that help you?"
-
+  - text: Did that help you?
   utter_happy:
-    - text: "Great, carry on!"
-
+  - text: Great, carry on!
   utter_goodbye:
-    - text: "Bye"
-
+  - text: Bye
   utter_iamabot:
-    - text: "I am a bot, powered by Rasa."
-
+  - text: I am a bot, powered by Rasa.
   utter_weather:
-    - text: "Today is clear weather"
-
+  - text: Today is clear weather
   utter_medical_conditions:
-    - text: "Certainly! Some common medical conditions include diabetes, hypertension, asthma, and arthritis. These conditions are managed through various treatments and medical care."
-
+  - text: Certainly! Some common medical conditions include diabetes, hypertension, asthma, and arthritis. These conditions are managed through various treatments and medical care.
   utter_doctor_specialties:
-    - text: "We have a range of doctor specialties, such as cardiology, dermatology, gastroenterology, and more. Each specialization focuses on specific areas of medical expertise."
-
+  - text: We have a range of doctor specialties, such as cardiology, dermatology, gastroenterology, and more. Each specialization focuses on specific areas of medical expertise.
   utter_emergency_procedures:
-    - text: "In a medical emergency, it's important to stay calm. Dial [emergency phone number] for immediate assistance. If needed, administer first aid and wait for medical professionals to arrive."
-
+  - text: In a medical emergency, it's important to stay calm. Dial [emergency phone number] for immediate assistance. If needed, administer first aid and wait for medical professionals to arrive.
   utter_emergency_procedures_info:
-    - text: "In the Emergency Department, various treatments and procedures may be conducted to assess your condition. These could involve lab work, radiological studies, such as CAT scans and ultrasounds, EKG for cardiac evaluation, administration of medications, and evaluations by medical physicians."
-
+  - text: In the Emergency Department, various treatments and procedures may be conducted to assess your condition. These could involve lab work, radiological studies, such as CAT scans and ultrasounds, EKG for cardiac evaluation, administration of medications, and evaluations by medical physicians.
   utter_pain_medication_info:
-    - text: "Pain medication might not be administered immediately in order to avoid masking important diagnostic clues. It will typically be given after tests are completed and the physician has reviewed the results. However, if you're experiencing pain or not finding relief from prescribed medication, please inform your nurse or physician. Throughout your stay, you'll be asked to rate your pain, and if you're admitted, this will continue on the medical floors."
-
+  - text: Pain medication might not be administered immediately in order to avoid masking important diagnostic clues. It will typically be given after tests are completed and the physician has reviewed the results. However, if you're experiencing pain or not finding relief from prescribed medication, please inform your nurse or physician. Throughout your stay, you'll be asked to rate your pain, and if you're admitted, this will continue on the medical floors.
   utter_staffing_info:
-    - text: "The Emergency Department is staffed with a team of professionals, including emergency medicine physicians, nurses, physician assistants, technicians, CNAs, unit coordinators, and specialists from departments like laboratory, cardiology, respiratory, and radiology."
-
+  - text: The Emergency Department is staffed with a team of professionals, including emergency medicine physicians, nurses, physician assistants, technicians, CNAs, unit coordinators, and specialists from departments like laboratory, cardiology, respiratory, and radiology.
   utter_visitors_info:
-    - text: "Yes, visitors are usually allowed, but their number is kept minimal in the treatment area to ensure efficient and effective care. Typically, two visitors per patient are allowed in most areas of the department. This maintains a balance between medical care and patient privacy. Efforts are made to keep your loved ones informed and involved in your care."
-
+  - text: Yes, visitors are usually allowed, but their number is kept minimal in the treatment area to ensure efficient and effective care. Typically, two visitors per patient are allowed in most areas of the department. This maintains a balance between medical care and patient privacy. Efforts are made to keep your loved ones informed and involved in your care.
   utter_admission_info:
-    - text: "If you're admitted, you will stay in the Emergency Department until your inpatient room is ready. Your admitting physician will visit you during their designated patient rounds."
-
+  - text: If you're admitted, you will stay in the Emergency Department until your inpatient room is ready. Your admitting physician will visit you during their designated patient rounds.
   utter_attending_doctor_info:
-    - text: "You'll be cared for by a team of doctors and nurses in the Emergency Department, rather than your family doctor. The attending physician is your main doctor overseeing your care and making important decisions. They will also handle your discharge from the hospital."
-
+  - text: You'll be cared for by a team of doctors and nurses in the Emergency Department, rather than your family doctor. The attending physician is your main doctor overseeing your care and making important decisions. They will also handle your discharge from the hospital.
   utter_medical_problem_info:
-    - text: "The attending physician should explain your diagnosis and care plan in a way that you can understand. Don't hesitate to ask them to repeat or clarify explanations. It's also helpful to have a family member present to ensure you catch all the details. If a diagnosis isn't immediate, keep asking for updates."
-
+  - text: The attending physician should explain your diagnosis and care plan in a way that you can understand. Don't hesitate to ask them to repeat or clarify explanations. It's also helpful to have a family member present to ensure you catch all the details. If a diagnosis isn't immediate, keep asking for updates.
   utter_next_steps_info:
-    - text: "Staying informed about your care plan reduces feelings of uncertainty. It's a good idea to ask this question daily to understand the progression of your treatment. Keeping a diary can also help you keep track of your care journey."
-
+  - text: Staying informed about your care plan reduces feelings of uncertainty. It's a good idea to ask this question daily to understand the progression of your treatment. Keeping a diary can also help you keep track of your care journey.
   utter_alternate_plan_info:
-    - text: "You have the right to explore other options for your treatment plan. Your doctor should discuss alternative options and potential outcomes with you, often involving a family member for additional support. Remember that you have clear rights when it comes to your care."
-
+  - text: You have the right to explore other options for your treatment plan. Your doctor should discuss alternative options and potential outcomes with you, often involving a family member for additional support. Remember that you have clear rights when it comes to your care.
   utter_refusal_info:
-    - text: "Yes, you have the right to refuse a test, procedure, or even a specific doctor's involvement. If you're unsure about a recommendation, it's beneficial to have a conversation with the attending physician to better understand your options."
-
+  - text: Yes, you have the right to refuse a test, procedure, or even a specific doctor's involvement. If you're unsure about a recommendation, it's beneficial to have a conversation with the attending physician to better understand your options.
   utter_discharge_info:
-    - text: "Once admitted, the attending physician will estimate a discharge date. Having a goal for discharge is important for everyone involved. However, this date can change based on your response to treatment. Your medical team will keep you informed."
-
+  - text: Once admitted, the attending physician will estimate a discharge date. Having a goal for discharge is important for everyone involved. However, this date can change based on your response to treatment. Your medical team will keep you informed.
   utter_choose_another_plan:
-    - text: "Your doctor has an ethical and legal duty to explain the other options and potential results. It might be helpful to include a family member and keep notes during these discussions to better understand what's been said. Remember, all patients have clear rights when it comes to their care."
-
+  - text: Your doctor has an ethical and legal duty to explain the other options and potential results. It might be helpful to include a family member and keep notes during these discussions to better understand what's been said. Remember, all patients have clear rights when it comes to their care.
   utter_refuse_test_or_doctor:
-    - text: "Yes, you can refuse a test, operation, or a doctor's recommendation. Sometimes patients decline certain procedures due to unclear information. Engaging in a conversation with the attending physician can be very helpful in such cases, and it's important to know that you still retain the right to decline."
-
+  - text: Yes, you can refuse a test, operation, or a doctor's recommendation. Sometimes patients decline certain procedures due to unclear information. Engaging in a conversation with the attending physician can be very helpful in such cases, and it's important to know that you still retain the right to decline.
   utter_discharge_date:
-    - text: "Once you're admitted, the attending physician usually estimates your discharge date. Setting a goal for discharge is important for everyone involved. However, please note that the discharge date can be adjusted based on how you respond to the treatment you receive."
-
+  - text: Once you're admitted, the attending physician usually estimates your discharge date. Setting a goal for discharge is important for everyone involved. However, please note that the discharge date can be adjusted based on how you respond to the treatment you receive.
   utter_medication_changes:
-    - text: "Medication changes often cause confusion, so keeping a diary is helpful. It's important to understand your medication choices. Doses will be provided in writing upon discharge and shared with your primary doctor and those involved in your post-hospital care."
-
+  - text: Medication changes often cause confusion, so keeping a diary is helpful. It's important to understand your medication choices. Doses will be provided in writing upon discharge and shared with your primary doctor and those involved in your post-hospital care.
   utter_hospitalization_costs:
-    - text: "Your doctor may not have this information, but your insurance company can provide details as the cost varies based on your insurance. Contact your insurance plan or ask a family member to do so. Doctors are often sensitive to this issue and can help find cost-saving solutions."
-
+  - text: Your doctor may not have this information, but your insurance company can provide details as the cost varies based on your insurance. Contact your insurance plan or ask a family member to do so. Doctors are often sensitive to this issue and can help find cost-saving solutions.
   utter_observation_vs_admission:
-    - text: '"Observation status" means expected discharge within 24 hours. If unexpectedly hospitalized for more than 24 hours, you''re usually changed to full admission status because observation status may cost more.'
-
+  - text: "\"Observation status\" means expected discharge within 24 hours. If unexpectedly hospitalized for more than 24 hours, you're usually changed to full admission status because observation status may cost more."
   utter_post_discharge_instructions:
-    - text: "You'll receive specific instructions on symptoms warranting a call to your doctor or ER, along with details shared with your primary-care doctor for handling concerns. After discharge, your primary-care doctor becomes the team leader."
-
+  - text: You'll receive specific instructions on symptoms warranting a call to your doctor or ER, along with details shared with your primary-care doctor for handling concerns. After discharge, your primary-care doctor becomes the team leader.
   utter_busy_phone_line:
-    - text: "We strive to offer the best service, but lines can get busy. Please try again later or explore alternative solutions."
-
+  - text: We strive to offer the best service, but lines can get busy. Please try again later or explore alternative solutions.
   utter_send_files_instructions:
-    - text: "Please send all documents/files/photos/attachments through your Pomelo account."
-
+  - text: Please send all documents/files/photos/attachments through your Pomelo account.
   utter_broken_online_booking:
-    - text: "Ensure you're registered on the platform. If online booking doesn't work, appointments might be full. Call our office to book an appointment."
-
+  - text: Ensure you're registered on the platform. If online booking doesn't work, appointments might be full. Call our office to book an appointment.
   utter_short_appointments:
-    - text: "MSP limits appointment time. Our doctors care deeply but are constrained by time. You can book appointments frequently for ongoing care."
-
+  - text: MSP limits appointment time. Our doctors care deeply but are constrained by time. You can book appointments frequently for ongoing care.
   utter_delayed_lab_reports:
-    - text: "Our clinic policy states that after completing lab or imaging, it's your responsibility to book an appointment to review results. While we strive to ensure all results are reviewed properly, errors are possible. Calling for results prevents any oversight. Bloodwork usually takes 1 week, imaging or biopsy reports may take 2-4 weeks."
-
+  - text: Our clinic policy states that after completing lab or imaging, it's your responsibility to book an appointment to review results. While we strive to ensure all results are reviewed properly, errors are possible. Calling for results prevents any oversight. Bloodwork usually takes 1 week, imaging or biopsy reports may take 2-4 weeks.
   utter_clinic_policy:
-    - text: "You can refer to our clinic policy. Patients should have received and signed a copy upon becoming patients at FCM. Patients without a policy on file might be asked to sign a new one."
-
+  - text: You can refer to our clinic policy. Patients should have received and signed a copy upon becoming patients at FCM. Patients without a policy on file might be asked to sign a new one.
   utter_identity_verification:
-    - text: "Confirming your identity is a safety measure. Verifying your identity helps prevent errors in medical care. Confirming your name, date of birth, and wristband reduces the risk of mistakes and ensures your safety."
-
+  - text: Confirming your identity is a safety measure. Verifying your identity helps prevent errors in medical care. Confirming your name, date of birth, and wristband reduces the risk of mistakes and ensures your safety.
   utter_bathroom_frequency:
-    - text: "Nurses ask about bathroom use to prevent falls. They assist in preventing falls by accompanying you to the bathroom. Certain medications and post-procedure conditions can affect your stability."
-
+  - text: Nurses ask about bathroom use to prevent falls. They assist in preventing falls by accompanying you to the bathroom. Certain medications and post-procedure conditions can affect your stability.
   utter_avoiding_falls:
-    - text: "To avoid falls, request assistance from your treatment team when getting out of bed or moving around. Wear sensible shoes or non-slip socks. These precautions help prevent falls, both in the hospital and beyond."
-
+  - text: To avoid falls, request assistance from your treatment team when getting out of bed or moving around. Wear sensible shoes or non-slip socks. These precautions help prevent falls, both in the hospital and beyond.
   utter_track_medications:
-    - text: "Maintain an updated list of prescriptions with dosages, frequencies, side effects, and reasons for taking them. Carry this list, especially when visiting a doctor or medical provider."
-
+  - text: Maintain an updated list of prescriptions with dosages, frequencies, side effects, and reasons for taking them. Carry this list, especially when visiting a doctor or medical provider.
   utter_infection_prevention:
-    - text: "Practice good personal hygiene while at Alpha Health. Frequent handwashing and dressing changes are crucial. Keep urinary catheter bags below hip level. Discourage sick visitors. Speak up if you notice hygiene issues."
-
+  - text: Practice good personal hygiene while at Alpha Health. Frequent handwashing and dressing changes are crucial. Keep urinary catheter bags below hip level. Discourage sick visitors. Speak up if you notice hygiene issues.
   utter_computer_use:
-    - text: "Alpha Health uses an electronic health record system called Epic. This system supports care by providing and recording treatment plans, order sets, and medications. It helps ensure accurate and safe care for you."
-
+  - text: Alpha Health uses an electronic health record system called Epic. This system supports care by providing and recording treatment plans, order sets, and medications. It helps ensure accurate and safe care for you.
   utter_isolated_patients:
-    - text: "Isolation prevents disease spread. Isolated patients are often highly contagious, infected with treatment-resistant organisms, or immunosuppressed. Medical staff follow strict protocols when treating isolated patients."
-
+  - text: Isolation prevents disease spread. Isolated patients are often highly contagious, infected with treatment-resistant organisms, or immunosuppressed. Medical staff follow strict protocols when treating isolated patients.
   utter_required_personal_info:
-    - text: "Please bring medical insurance card, Medicare/Medicaid card, insured’s name and Social Security Number, physician referrals (if required), Worker’s Compensation info, ID, copayments or deductibles, preadmission form (if required), healthcare power of attorney, and advance directive forms."
-
+  - text: Please bring medical insurance card, Medicare/Medicaid card, insured’s name and Social Security Number, physician referrals (if required), Worker’s Compensation info, ID, copayments or deductibles, preadmission form (if required), healthcare power of attorney, and advance directive forms.
   utter_surgical_safeguards:
-    - text: "Alpha Health follows WHO’s “Surgical Safety Checklist” before anesthesia, incision, and leaving the OR. Safeguards include confirming identity, marking surgical sites, verifying tools and meds, addressing allergies, counting tools, and post-surgery needs."
-
+  - text: Alpha Health follows WHO’s “Surgical Safety Checklist” before anesthesia, incision, and leaving the OR. Safeguards include confirming identity, marking surgical sites, verifying tools and meds, addressing allergies, counting tools, and post-surgery needs.
   utter_verify_right_medications:
-    - text: "Always ask your treatment team members if you have questions or concerns about your medications. Provide an accurate list of your medications and dosages to ensure safe medication protocol. Give feedback on how new medications make you feel, as adjustments may be necessary for the best results."
-
+  - text: Always ask your treatment team members if you have questions or concerns about your medications. Provide an accurate list of your medications and dosages to ensure safe medication protocol. Give feedback on how new medications make you feel, as adjustments may be necessary for the best results.
   utter_info_for_treatment_team:
-    - text: "Share anything relevant to your care with your treatment team. Keep them informed about your feelings, medical history, family history, prescriptions, allergies, medication reactions, and concerns. Your voice is crucial in your care."
-
+  - text: Share anything relevant to your care with your treatment team. Keep them informed about your feelings, medical history, family history, prescriptions, allergies, medication reactions, and concerns. Your voice is crucial in your care.
   utter_items_to_bring:
-    - text: "In order to participate fully in your therapies, we encourage you to dress in comfortable, casual clothing labeled with your name. Also, bring any items used regularly prior to your illness like eyeglasses, hearing aids, dentures, and appropriate containers. Sturdy shoes, loose socks, loose-fitting pants, shirts, undergarments, bathrobe, pajamas, seasonal coat, laundry bag, toiletries, and electric razor."
-
+  - text: In order to participate fully in your therapies, we encourage you to dress in comfortable, casual clothing labeled with your name. Also, bring any items used regularly prior to your illness like eyeglasses, hearing aids, dentures, and appropriate containers. Sturdy shoes, loose socks, loose-fitting pants, shirts, undergarments, bathrobe, pajamas, seasonal coat, laundry bag, toiletries, and electric razor.
   utter_laundry_services:
-    - text: "Laundry services are available at the hospital, although family members are encouraged to launder patients' clothing. There are washers and dryers on the units for you and your family members to use."
-
+  - text: Laundry services are available at the hospital, although family members are encouraged to launder patients' clothing. There are washers and dryers on the units for you and your family members to use.
   utter_keep_own_medications:
-    - text: "All medications ordered by your physician are provided by Alpha and distributed by your nurse. Please speak with your nurse if you have any questions."
-
+  - text: All medications ordered by your physician are provided by Alpha and distributed by your nurse. Please speak with your nurse if you have any questions.
   utter_personal_physician_care:
-    - text: "You will be cared for by a physician employed by Hospital for Special Care who will coordinate your care with your Special Care Team. Reports on your condition will be shared with your personal physician for continued care following discharge."
-
+  - text: You will be cared for by a physician employed by Hospital for Special Care who will coordinate your care with your Special Care Team. Reports on your condition will be shared with your personal physician for continued care following discharge.
   utter_mail_delivery_frequency:
-    - text: "Mail is distributed daily, except Sunday. Email availability may be arranged through your team."
-
+  - text: Mail is distributed daily, except Sunday. Email availability may be arranged through your team.
   utter_room_type:
-    - text: "Most rooms are semi-private. Limited private rooms are available based on medical needs. We strive to honor preferences for private rooms, but cannot guarantee for the entire stay."
-
+  - text: Most rooms are semi-private. Limited private rooms are available based on medical needs. We strive to honor preferences for private rooms, but cannot guarantee for the entire stay.
   utter_telephone_in_room:
-    - text: "Telephones are provided in all patient rooms except certain units. Only local calls can be made. Special telephones for the hearing impaired are available, and other needs can be discussed with your case manager."
-
+  - text: Telephones are provided in all patient rooms except certain units. Only local calls can be made. Special telephones for the hearing impaired are available, and other needs can be discussed with your case manager.
   utter_television_in_room:
-    - text: "Televisions are provided free-of-charge in all patient rooms except in certain units."
-
+  - text: Televisions are provided free-of-charge in all patient rooms except in certain units.
   utter_chapel_religious_services:
-    - text: "The Interdenominational Chapel is open 24/7. Religious services are held on Sundays, holidays, and as appropriate. A Spiritual Care program with chaplains is available."
-
+  - text: The Interdenominational Chapel is open 24/7. Religious services are held on Sundays, holidays, and as appropriate. A Spiritual Care program with chaplains is available.
   utter_home_visit:
-    - text: "A home visit may be planned before discharge to ensure a safe return home. A day pass might be possible, but it depends on insurance. Your team will guide you through the process."
-
+  - text: A home visit may be planned before discharge to ensure a safe return home. A day pass might be possible, but it depends on insurance. Your team will guide you through the process.
   utter_discharge_planning:
-    - text: "A discharge plan is developed for every patient. It varies based on needs. Most patients are discharged with home care, to a day rehabilitation program, or outpatient services. Your treatment will ensure a well-coordinated discharge plan."
-
+  - text: A discharge plan is developed for every patient. It varies based on needs. Most patients are discharged with home care, to a day rehabilitation program, or outpatient services. Your treatment will ensure a well-coordinated discharge plan.
   utter_communication_with_team:
-    - text: "Rehabilitation patients have ongoing communication through case managers and team meetings. Long-term patients can communicate through primary care coordinators and social workers."
-
+  - text: Rehabilitation patients have ongoing communication through case managers and team meetings. Long-term patients can communicate through primary care coordinators and social workers.
   utter_after_admission:
-    - text: "After admission, the interdisciplinary team assesses you, establishes medical issues, and plans intervention intensity for the best outcome. Your rehabilitation program includes therapy sessions, activities of daily living, education, equipment assessment, and more."
-
+  - text: After admission, the interdisciplinary team assesses you, establishes medical issues, and plans intervention intensity for the best outcome. Your rehabilitation program includes therapy sessions, activities of daily living, education, equipment assessment, and more.
   utter_customized_rehab_program:
-    - text: "No, your rehabilitation focuses on your challenges. Each patient's program is tailored based on diagnosis and abilities. You play a crucial role in practicing techniques learned during therapy sessions."
-
+  - text: No, your rehabilitation focuses on your challenges. Each patient's program is tailored based on diagnosis and abilities. You play a crucial role in practicing techniques learned during therapy sessions.
   utter_medical_aid_coverage:
-    - text: "Most medical aids cover acute rehabilitation for functional improvement. Alpha Health offers a fee tariff covering hospital, doctor, and therapist costs to preserve medical savings."
-
+  - text: Most medical aids cover acute rehabilitation for functional improvement. Alpha Health offers a fee tariff covering hospital, doctor, and therapist costs to preserve medical savings.
   utter_clothing_to_bring:
-    - text: "Wear your own clothing, not pyjamas. You can bring tracksuits, T-shirts, pants, underwear, socks, closed heel shoes, pyjamas, toiletries, and personal items for a comfortable stay."
-
+  - text: Wear your own clothing, not pyjamas. You can bring tracksuits, T-shirts, pants, underwear, socks, closed heel shoes, pyjamas, toiletries, and personal items for a comfortable stay.
   utter_keep_valuables:
-    - text: "While we try to ensure safety, valuables are kept at your own risk. You can inquire with the nursing unit manager about safe lock-up options."
-
+  - text: While we try to ensure safety, valuables are kept at your own risk. You can inquire with the nursing unit manager about safe lock-up options.
   utter_family_friends_visiting:
-    - text: "Yes, family and friends are encouraged to visit during rehabilitation. Visits during therapy may be distracting, so strictly adhere to the rules regarding visiting hours and the number of visitors."
-
+  - text: Yes, family and friends are encouraged to visit during rehabilitation. Visits during therapy may be distracting, so strictly adhere to the rules regarding visiting hours and the number of visitors.
   utter_discharge_planning_process:
-    - text: "Discharge planning is crucial and begins upon admission to ensure a safe and successful discharge. Your social worker oversees this process and maintains close contact with you throughout your stay. You can schedule an appointment to discuss this with your social worker.\n\nA few points about discharge:\n- Discharge timing may be influenced by your medical aid's decisions.\n- You'll receive a detailed progress report at discharge.\n- You're expected to leave by 12pm on your discharge day.\n\nIf you have concerns about payment, authorization, or benefits, contact the rehabilitation admissions consultant."
+  - text: |-
+      Discharge planning is crucial and begins upon admission to ensure a safe and successful discharge. Your social worker oversees this process and maintains close contact with you throughout your stay. You can schedule an appointment to discuss this with your social worker.
 
+      A few points about discharge:
+      - Discharge timing may be influenced by your medical aid's decisions.
+      - You'll receive a detailed progress report at discharge.
+      - You're expected to leave by 12pm on your discharge day.
+
+      If you have concerns about payment, authorization, or benefits, contact the rehabilitation admissions consultant.
   utter_patient_satisfaction:
-    - text: "Life Rehabilitation is committed to providing quality service that exceeds patient expectations. Constructive feedback from you and your family helps us achieve this.\n\nAt various times during your stay and at discharge, you'll be asked for feedback. You can provide feedback through:\n- Customer comment cards available at the unit\n- Ad hoc meetings with staff\n- Patient survey on discharge (email or SMS)\n\nAll feedback is confidential and used to improve our service for future patients."
+  - text: |-
+      Life Rehabilitation is committed to providing quality service that exceeds patient expectations. Constructive feedback from you and your family helps us achieve this.
 
+      At various times during your stay and at discharge, you'll be asked for feedback. You can provide feedback through:
+      - Customer comment cards available at the unit
+      - Ad hoc meetings with staff
+      - Patient survey on discharge (email or SMS)
+
+      All feedback is confidential and used to improve our service for future patients.
   utter_advocate_for_loved_one:
-    - text: "To be a strong advocate, understand your loved one's needs and communicate on their behalf. Address questions and concerns with the treatment team, and consider legal responsibilities outlined in a healthcare power of attorney document. Your advocacy is important to us."
-
+  - text: To be a strong advocate, understand your loved one's needs and communicate on their behalf. Address questions and concerns with the treatment team, and consider legal responsibilities outlined in a healthcare power of attorney document. Your advocacy is important to us.
   utter_out_of_scope:
-    - text: Sorry, I can't handle that request.
-
-
-
+  - text: Sorry, I can't handle that request.
   utter_list_doctors:
-    - text: Here are the list of doctors available for your knee pain treatment
-      buttons:
-        - title: Dr. John
-          payload: '/inform{{"doctor_name": "Dr. John"}}'
-        - title: Dr. Smith
-          payload: '/inform{{"doctor_name": "Dr. Smith"}}'
-        - title: Dr. David
-          payload: '/inform{{"doctor_name": "Dr. David"}}' 
-  
-  
-
+  - text: Here are the list of doctors available for your knee pain treatment
+    buttons:
+    - title: Dr. John
+      payload: '/inform{{"doctor_name": "Dr. John"}}'
+    - title: Dr. Smith
+      payload: '/inform{{"doctor_name": "Dr. Smith"}}'
+    - title: Dr. David
+      payload: '/inform{{"doctor_name": "Dr. David"}}'
 actions:
-  - utter_goodbye
-  - utter_greet
-  - utter_happy
-  - utter_remember
-  - action_submit_appointment_form
-
+- utter_greet
+- utter_goodbye
+- utter_happy
+- action_submit_appointment_form
+- action_fetch_doctor_availability_data
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
