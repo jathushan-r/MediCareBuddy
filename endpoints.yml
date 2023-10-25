@@ -31,8 +31,13 @@ action_endpoint:
 #    username: <username used for authentication>
 #    password: <password used for authentication>
 
-# Event broker which all conversation events should be streamed to.
-# https://rasa.com/docs/rasa/event-brokers
+tracker_store:
+  type: SQL
+  dialect: "mysql+pymysql" # the dialect used to interact with the db
+  url: "" # (optional) host of the sql db, e.g. "localhost"
+  db: "rasachats" # path to your db
+  username: "root" # username used for authentication
+  password: "abcd1234" # password used for authentication
 
 #event_broker:
 #  url: localhost
