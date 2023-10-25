@@ -1,5 +1,4 @@
 version: "3.1"
-
 nlu:
   - intent: greet
     examples: |
@@ -15,8 +14,9 @@ nlu:
       - hey dude
       - goodmorning
       - goodevening
+      - goodmorning
+      - goodevening
       - good afternoon
-
   - intent: goodbye
     examples: |
       - cu
@@ -29,7 +29,6 @@ nlu:
       - see you around
       - bye bye
       - see you later
-
   - intent: kneepain
     examples: |
       - I have knee pain.
@@ -42,7 +41,6 @@ nlu:
       - Knee's been bothering me.
       - I've got knee issues.
       - My knee doesn't feel good.
-
   - intent: book_appointment
     examples: |
       - I'd like to book an appointment.
@@ -55,7 +53,6 @@ nlu:
       - I need to set up a doctor's visit.
       - Can we arrange a medical consultation?
       - I'd like to fix a time to meet the doctor.
-
   - intent: affirm
     examples: |
       - yes
@@ -65,7 +62,156 @@ nlu:
       - that sounds good
       - correct
       - fine
+  - intent: ask_for_doctor_availability
+    examples: >
+      - Is Dr. [John](doctor_name) available?
 
+      - Is Dr. [Smith](doctor_name) free?
+
+      - Is Dr. [Williams](doctor_name) available?
+
+      - Is Dr. [Johnson](doctor_name) free?
+
+      - Is Dr. [Brown](doctor_name) available?
+
+      - Is Dr. [Jones](doctor_name) free?
+
+      - Is Dr. [Miller](doctor_name) available?
+
+      - Is Dr. [Davis](doctor_name) free?
+
+      - Is Dr. [Garcia](doctor_name) available?
+
+      - Is Dr. [Rodriguez](doctor_name) free?
+
+      - Is Dr. [Wilson](doctor_name) available?
+
+      - Dr. [John](doctor_name) availability
+
+      - Dr. [Smith](doctor_name) availability
+
+      - Dr. [Williams](doctor_name) availability
+
+      - Dr. [Johnson](doctor_name) availability
+
+      - Dr. [Brown](doctor_name) availability
+
+      - Dr. [Jones](doctor_name) availability
+
+      - Dr. [Miller](doctor_name) available?
+
+      - Dr. [Davis](doctor_name) available?
+
+      - Dr. [Garcia](doctor_name) available?
+
+      - Dr. [Rodriguez](doctor_name) available?
+
+      - Dr. [Wilson](doctor_name) available?
+
+      - Is Dr. [John](doctor_name) available on [Monday](day)?
+
+      - Is Dr. [Smith](doctor_name) free on [Tuesday](day)?
+
+      - Is Dr. [Williams](doctor_name) available on [Wednesday](day)?
+
+      - Is Dr. [Johnson](doctor_name) free on [Thursday](day)?
+
+      - Is Dr. [Brown](doctor_name) available on [Friday](day)?
+
+      - Is Dr. [Jones](doctor_name) free on [Saturday](day)?
+
+      - Is Dr. [Miller](doctor_name) available on [Sunday](day)?
+
+      - Is Dr. [Davis](doctor_name) free on [Monday](day)?
+
+      - Is Dr. [Garcia](doctor_name) available on [Tuesday](day)?
+
+      - Is Dr. [Rodriguez](doctor_name) free on [Wednesday](day)?
+
+      - Is Dr. [Wilson](doctor_name) available on [Thursday](day)?
+
+      - Is Dr. [John](doctor_name) available on [Friday](day)?
+
+      - Is Dr. [Smith](doctor_name) free on [Saturday](day)?
+
+      - Is Dr. [Williams](doctor_name) available on [Sunday](day)?
+
+      - What are the available times for Dr. [Williams](doctor_name) on
+      [Sunday](day)?
+
+      - What are the available times for Dr. [Johnson](doctor_name) on
+      [Monday](day)?
+
+      - What are the available times for Dr. [Brown](doctor_name) on
+      [Tuesday](day)?
+
+      - What are the available times for Dr. [Jones](doctor_name) on
+      [Wednesday](day)?   
+
+      - Is Dr. [John Doe](doctor_name) available?
+
+      - Is Dr. Emily Smith free today?
+
+      - Can I book an appointment with Dr. [Michael Williams](doctor_name)?
+
+      - What's Dr. [Sarah Johnson](doctor_name)'s availability this week?
+
+      - Does Dr. [Robert Brown](doctor_name) have any free slots on
+      [Thursday](Day)?
+
+      - Can you tell me when Dr. [Linda Jones](doctor_name) is available?
+
+      - Is Dr. [James Miller](doctor_name) working on [Friday](Day)?
+
+      - What times is Dr. [Patricia Davis](doctor_name) free on [Monday](Day)?
+
+      - Can I see Dr. [Jennifer Garcia](doctor_name) on [Wednesday](Day)?
+
+      - When is the next available appointment with Dr. [William
+      Rodriguez](doctor_name)?
+
+      - Are there any openings with Dr. [Elizabeth Wilson](doctor_name) on
+      [Tuesday](Day)?
+
+      - Can I get an appointment with Dr. [David Brown](doctor_name) this
+      [Friday](Day)?
+
+      - What's the availability of Dr. [Susan Jones](doctor_name) next
+      [Monday](Day)?
+
+      - Is Dr. [Christopher Miller](doctor_name) available for a check-up on
+      [Thursday](Day)?
+
+      - Can I schedule a visit with Dr. [Mary Davis](doctor_name) on
+      [Saturday](Day)?
+
+      - What are Dr. [Brian Garcia](doctor_name)'s available hours on
+      [Sunday](Day)?
+
+      - Can I book a consultation with Dr. [Laura Rodriguez](doctor_name) this
+      week?
+
+      - What are the available times for Dr. [Steven Wilson](doctor_name) on
+      [Wednesday](Day)?
+
+      - Is Dr. [Karen Brown](doctor_name) free for an appointment on
+      [Tuesday](Day)?
+
+      - Can you check Dr. [Nancy Johnson](doctor_name)'s schedule for
+      [Friday](Day)?
+  - intent: doctor_name
+    examples: |
+      - John
+      - Smith
+      - Williams
+      - Johnson
+      - Brown
+      - Jones
+      - Miller
+      - Davis
+      - Garcia
+      - Rodriguez
+      - Wilson
   - intent: deny
     examples: |
       - no
@@ -75,7 +221,6 @@ nlu:
       - don't like that
       - no way
       - not really
-
   - intent: mood_great
     examples: |
       - perfect
@@ -92,7 +237,6 @@ nlu:
       - so so perfect
       - so good
       - so perfect
-
   - intent: mood_unhappy
     examples: |
       - my day was horrible
@@ -109,28 +253,24 @@ nlu:
       - extremly sad
       - so saad
       - so sad
-
   - intent: bot_challenge
     examples: |
       - are you a bot?
       - are you a human?
       - am I talking to a bot?
       - am I talking to a human?
-
   - intent: firstname
     examples: |
       - ajith
       - ruwan
       - nizar
       - john
-
   - intent: lastname
     examples: |
       - silva
       - rajapakshe
       - raveendra
       - kumarasamy
-
   - intent: feedback
     examples: |
       - Great response!
@@ -140,41 +280,18 @@ nlu:
       - You nailed it!
       - You can do better.
       - Overall, I'm not impressed.
-
   - intent: request_deatils
     examples: |
       - I want to fill the feedbackform
       - fill the feedbackform
       - how to fill the feedback form
       - what procedure to give feedback?
-
   - intent: ask_me_anything
     examples: |
       - ask me anything
       - would you like to ask me something
       - feel free to ask me about things
       - want to ask me something?
-  - intent: repeat_shirt_size
-    examples: |
-      - what is my shirt size
-      - tell me my shirt size
-      - do you know my shirt size
-      - repeat my shirt size
-  - intent: give_shirt_size
-    examples: |
-      - i want a [large](shirt_size) shirt
-      - [medium](shirt_size) size
-      - give me a [small](shirt_size) tshirt
-      - [small](shirt_size)
-      - [medium](shirt_size)
-      - [large](shirt_size)
-      - i'd prefer [medium](shirt_size) size
-      - gimme gimme gimme [small](shirt_size) tshirt
-      - give shirt size
-      - i want a [large](shirt_size) shirt please
-      - i want to give you my shirt
-      - [large](shirt_size)
-
   - intent: provide_firstname
     examples: |
       - My first name is [John](firstname).
@@ -182,7 +299,6 @@ nlu:
       - You can address me as [Emily](firstname).
       - Firstname? It's [Robert](firstname).
       - [Savindu](firstname)
-
   - intent: provide_lastname
     examples: |
       - My last name is [Smith](lastname).
@@ -190,7 +306,11 @@ nlu:
       - It's [Doe](lastname).
       - The last name is [Williams](lastname).
       - [Rajapaksha](lastname)
-
+  - regex: age
+    examples: |
+      - \d{2}
+      - \d{1}
+      - \d{3}
   - intent: provide_age
     examples: |
       - I am [25](age) years old.
@@ -198,7 +318,17 @@ nlu:
       - I'm [22](age).
       - I'll be turning [40](age) next month.
       - [25](age)
-
+      - [23](age)
+      - [50](age)
+      - [30](age)
+      - [40](age)
+  - regex: phone
+    examples: |
+      - \d{10-12}
+      - \d{3}[-]\d{3}[-]\d{4}
+      - [+]\d{11-12}
+      - [+]\d{2}\s\d{9}
+      - [(]\d{3}[)]\s\d{3}[-]\d{4}
   - intent: provide_phone
     examples: |
       - My phone number is [123-456-7890](phone).
@@ -209,39 +339,83 @@ nlu:
       - [098-7654321](phone)
       - [+94987654321](phone)
       - [+94 987654321](phone)
-
   - intent: out_of_scope
-    examples: |
+    examples: >
       - I want to order food
+
       - What is 2 + 2?
+
       - Who's the USA President?
-      - What is the difference between procedural and object-oriented programming?
+
+      - What is the difference between procedural and object-oriented
+      programming?
+
       - Can you explain the concept of recursion in programming?
+
       - How do programming languages like C++ and Java differ from each other?
+
       - What are design patterns, and how do they improve software development?
+
       - How can I optimize the performance of my code?
-      - Can you explain the principles of version control and its importance in programming?
+
+      - Can you explain the principles of version control and its importance in
+      programming?
+
       - What is an API (Application Programming Interface) and how is it used?
+
       - How do you ensure the security of a web application during programming?
-      - What are the advantages and disadvantages of using interpreted languages vs. compiled languages?
-      - How does multithreading work, and what are the benefits of using it in programming?
+
+      - What are the advantages and disadvantages of using interpreted languages
+      vs. compiled languages?
+
+      - How does multithreading work, and what are the benefits of using it in
+      programming?
+
       - What are the differences between Python 2 and Python 3?
+
       - How do I install external libraries using pip in Python?
+
       - Can you explain the concept of object-oriented programming in Python?
+
       - What's the purpose of virtual environments in Python development?
+
       - How can I handle exceptions and errors in Python code?
+
       - What's the difference between a list and a tuple in Python?
+
       - How do I read and write files in Python?
+
       - Can you provide an overview of the basic syntax of a for loop in Python?
+
       - What is a lambda function in Python, and how is it used?
+
       - How can I create and use a class in Python to model real-world entities?
+
       - What are the benefits of yoga for mental health?
+
       - How do I bake a chocolate cake from scratch?
+
       - Can you recommend a good book to read?
+
       - What's the history of the Eiffel Tower?
+
       - How can I improve my golf swing?
+
       - What are the symptoms of the common cold?
+
       - Can you explain the theory of relativity?
+
       - How do I knit a scarf?
+
       - What's the process of photosynthesis in plants?
+
       - Can you suggest tips for time management and productivity?
+  - lookup: day
+    examples: |
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+      - Sunday
