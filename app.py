@@ -13,7 +13,7 @@ message = ""
 translator = Translator()
 translation = translator.translate("hello").text
 
-r = requests.post('http://localhost:5002/webhooks/rest/webhook', json={"message": "Hello"})
+r = requests.post('http://localhost:5002/webhooks/rest/webhook', json={"message": "Hello","sender_id":"user_1"})
 
 print("Bot says, ", end=' ')
 for i in r.json():
