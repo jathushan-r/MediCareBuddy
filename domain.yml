@@ -20,15 +20,15 @@ intents:
 - provide_firstname
 - provide_lastname
 - provide_phone
-- repeat_shirt_size
+
 entities:
-- doctor_name
-- shirt_size
-- firstname
-- lastname
 - age
 - phone
+- lastname
+- doctor_name
+- firstname
 - day
+- specialty
 slots:
   firstname:
     type: text
@@ -66,6 +66,12 @@ slots:
     mappings:
     - type: from_entity
       entity: day
+  specialty:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: specialty
 forms:
   appointment_booking_form:
     required_slots:
@@ -88,10 +94,52 @@ responses:
   - text: How old are you?
   utter_ask_phone:
   - text: What is your phone number?
+  utter_ask_doctor_name:
+  - text: Which doctor would you like to book an appointment with?
+  utter_ask_day:
+  - text: Which day would you like to book an appointment?
+    buttons:
+    - title: Monday
+      payload: '/inform{{"day": "Monday"}}'
+    - title: Tuesday
+      payload: '/inform{{"day": "Tuesday"}}'
+    - title: Wednesday
+      payload: '/inform{{"day": "Wednesday"}}'
+    - title: Thursday
+      payload: '/inform{{"day": "Thursday"}}'
+    - title: Friday
+      payload: '/inform{{"day": "Friday"}}'
+    - title: Saturday
+      payload: '/inform{{"day": "Saturday"}}'
+    - title: Sunday
+      payload: '/inform{{"day": "Sunday"}}'
+  utter_ask_specialty:
+  - text: Which kind of consultant are you looking for?
+    buttons:
+    - title: Orthopedist
+      payload: '/inform{{"specialty": "Orthopedist"}}'
+    - title: Pediatrician
+      payload: '/inform{{"specialty": "Pediatrician"}}'
+    - title: General Physician
+      payload: '/inform{{"specialty": "General Physician"}}'
+    - title: Dermatologist
+      payload: '/inform{{"specialty": "Dermatologist"}}'
+    - title: ENT Specialist
+      payload: '/inform{{"specialty": "ENT Specialist"}}'
+    - title: Gastroenterologist
+      payload: '/inform{{"specialty": "Gastroenterologist"}}'
+    - title: Cardiologist
+      payload: '/inform{{"specialty": "Cardiologist"}}'
+    - title: Neurologist
+      payload: '/inform{{"specialty": "Neurologist"}}'
+    - title: Ophthalmologist
+      payload: '/inform{{"specialty": "Ophthalmologist"}}'
   utter_ask_book_appointment:
   - text: Would you like to book an appointment?
   utter_ask_to_book_another_day:
   - text: Would you like to book an appointment for another day?
+  utter_ask_any_other_help:
+  - text: Would you like any other help?
   utter_cheer_up:
   - text: 'Here is something to cheer you up:'
     image: https://i.imgur.com/nGF1K8f.jpg
@@ -251,11 +299,12 @@ responses:
     - title: Dr. David
       payload: '/inform{{"doctor_name": "Dr. David"}}'
 actions:
+- utter_ask_book_appointment
 - utter_greet
-- utter_goodbye
-- utter_happy
 - action_submit_appointment_form
 - action_fetch_doctor_availability_data
+- utter_goodbye
+- utter_happy
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
