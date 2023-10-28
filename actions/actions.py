@@ -4,7 +4,8 @@ from rasa_sdk.events import SlotSet,FollowupAction
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from datetime import datetime, timedelta
-from database.database_connectivity import get_doctor_availability, search_doctors_by_name 
+from database.database_connectivity import get_doctor_availability, search_doctors_by_name ,add_new_patient, add_new_appointment
+
 
 class ActionFetchDoctorAvailability(Action):
 
@@ -73,7 +74,8 @@ class ActionConfirmAppointment(Action):
         return "action_submit_appointment_form"
 
     def run(self, dispatcher, tracker, domain):
-
+        
+        # ----------------- Remove this ------------------
         two_days_from_now = datetime.now() + timedelta(days=2)
         appointment_date = two_days_from_now.strftime("%Y-%m-%d")
         appointment_time = "15:00" 
@@ -83,7 +85,9 @@ class ActionConfirmAppointment(Action):
         last_name = tracker.get_slot("lastname")
         age = tracker.get_slot("age")
         phone = tracker.get_slot("phone")
-
+        doctor_name = tracker.get_slot("doctor_name")
+        patientID = add_new_patient(first_name, last_name, age, phone)
+        add_new_appointment(patientID, doctor_name, appointment_time,appointment_date)
         # Create the summary message
         summary = f"Here is the information you've provided:\n"
         summary += f"- First Name: {first_name}\n"
@@ -97,3 +101,48 @@ class ActionConfirmAppointment(Action):
 
         # Send the summary message
         dispatcher.utter_message(text=summary)
+
+
+
+
+# class ActionAddNewPatient(Action):
+
+#     def name(self) -> Text:
+#         return "action_add_new_patient"
+
+#     def run(self, dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: Dict[Text, Any]) -> List[Dict]:
+
+#         # Fetch slot values
+#         first_name = tracker.get_slot('firstname')
+#         last_name = tracker.get_slot('lastname')
+#         age = tracker.get_slot('age')
+#         phone_number = tracker.get_slot('phone')
+
+#         new_patient_added = add_new_patient(first_name, last_name, age, phone_number)
+        
+#         if new_patient_added:
+#             dispatcher.utter_message(text="New patient has been added successfully.")
+#         else:
+#             dispatcher.utter_message(text="Failed to add new patient.")
+#         return []
+
+# class ActionAddNewAppointment(Action):
+
+#     def name(self) -> Text:
+#         return "action_add_new_appointment"
+
+#     def run(self, dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: Dict[Text, Any]) -> List[Dict]:
+
+#         # Fetch slot values
+#         patient_phone_number = tracker.get_slot('phone')
+#         doctor_id = tracker.get_slot('doctor_id')
+#         appointment_time = tracker.get_slot('time')
+
+#         add_new_appointment(patient_phone_number, doctor_id, appointment_time)
+
+#         dispatcher.utter_message(text="Your appointment has been booked successfully.")
+#         return []

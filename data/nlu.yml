@@ -123,6 +123,7 @@ nlu:
     - Is Dr. [Karen Brown](doctor_name) free for an appointment on [Tuesday](Day)?
     - Can you check Dr. [Nancy Johnson](doctor_name)'s schedule for [Friday](Day)?
     - Is dr. [Linda Garcia](doctor_name) available today?
+    - Is dr. [george jackson](doctor_name) available?
 - intent: doctor_name
   examples: |
     - John
@@ -243,8 +244,8 @@ nlu:
     - [50](age)
     - [30](age)
     - [40](age)
-    - [23](age)
     - [0712845669](age)
+    - [23](age)
 - intent: provide_phone
   examples: |
     - My phone number is [123-456-7890](phone).
@@ -260,6 +261,8 @@ nlu:
     - [+94987654321](phone)
     - [+94 987654321](phone)
     - my phone number is [071-284-5669](phone)
+    - my phone number is [0712845669](phone)
+    - [0712845669](phone)
 - intent: out_of_scope
   examples: |
     - I want to order food
