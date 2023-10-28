@@ -29,6 +29,7 @@ entities:
 - firstname
 - day
 - specialty
+
 slots:
   firstname:
     type: text
@@ -305,6 +306,7 @@ actions:
 - action_fetch_doctor_availability_data
 - utter_goodbye
 - utter_happy
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

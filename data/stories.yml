@@ -185,7 +185,7 @@ stories:
 
   - story: User asks about delayed lab reports
     steps:
-      - user: "It's been over 2 months and I still haven't received my lab reports back. What should I do?"
+      - user: "It's been over two months and I still haven't received my lab reports back. What should I do?"
       - action: utter_delayed_lab_reports
 
   - story: User asks about clinic policy
@@ -389,6 +389,7 @@ stories:
 
   - story: interactive_story_1
     steps:
+
     - intent: greet
     - action: utter_greet
     - intent: ask_for_doctor_availability
