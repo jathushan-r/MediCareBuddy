@@ -3,6 +3,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk.events import SlotSet,FollowupAction
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import AllSlotsReset
 from datetime import datetime, timedelta
 from database.database_connectivity import get_doctor_availability, search_doctors_by_name ,add_new_patient, add_new_appointment
 
@@ -101,21 +102,23 @@ class ActionConfirmAppointment(Action):
         age = tracker.get_slot("age")
         phone = tracker.get_slot("phone")
         doctor_name = tracker.get_slot("doctor_name")
-        patientID = add_new_patient(first_name, last_name, age, phone)
-        add_new_appointment(patientID, doctor_name, appointment_time,appointment_date)
+        #-------------- Uncomment below two line ----------------------------
+        # patientID = add_new_patient(first_name, last_name, age, phone)
+        # add_new_appointment(patientID, doctor_name, appointment_time,appointment_date)
         # Create the summary message
-        summary = f"Here is the information you've provided:\n"
-        summary += f"- First Name: {first_name}\n"
-        summary += f"- Last Name: {last_name}\n"
-        summary += f"- Age: {age}\n"
-        summary += f"- Phone: {phone}\n"
-        summary += f"- Appointment Date: {appointment_date}\n"
-        summary += f"- Appointment Time: {appointment_time}\n"
+        summary = f"Here is the information you've provided:"
+        summary += f"- First Name: {first_name}"
+        summary += f"- Last Name: {last_name}"
+        summary += f"- Age: {age}"
+        summary += f"- Phone: {phone}"
+        summary += f"- Appointment Date: {appointment_date}"
+        summary += f"- Appointment Time: {appointment_time}"
         
         summary += "\nYour appointment has been successfully booked."
 
         # Send the summary message
         dispatcher.utter_message(text=summary)
+        return [AllSlotsReset()]
 
 
 

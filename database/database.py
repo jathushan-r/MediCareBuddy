@@ -10,14 +10,14 @@ def create_mysql_connection():
     )
     return connection
 
-def insert_user(username, name, password):
+def insert_user(username, firstname,lastname,age,phone, password):
     try:
         connection = create_mysql_connection()
         cursor = connection.cursor()
 
         # Insert user data into the user table
-        query = "INSERT INTO user (username, name, password) VALUES (%s, %s, %s)"
-        values = (username, name, password)
+        query = "INSERT INTO user (username, firstname,lastname,age,phone, password) VALUES (%s, %s, %s,%s, %s,%s)"
+        values = (username, firstname,lastname,age,phone, password)
         cursor.execute(query, values)
 
         # Commit the changes to the database
@@ -45,8 +45,11 @@ def fetch_all_users():
         for row in cursor.fetchall():
             user = {
                 "username": row[0],
-                "name": row[1],
-                "password": row[2]
+                "firstname": row[1],
+                "lastname": row[2],
+                "age": row[3],
+                "phone": row[4],
+                "password": row[5]
             }
             users.append(user)
 
@@ -75,8 +78,11 @@ def get_user(username):
         for row in cursor.fetchall():
             user = {
                 "username": row[0],
-                "name": row[1],
-                "password": row[2]
+                "firstname": row[1],
+                "lastname": row[2],
+                "age": row[3],
+                "phone": row[4],
+                "password": row[5]
             }
             break  # Assuming username is unique
 

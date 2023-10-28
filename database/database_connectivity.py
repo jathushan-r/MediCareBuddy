@@ -5,7 +5,7 @@ from sqlalchemy.orm import relationship
 from sqlalchemy import func
 
 Base = declarative_base()
-ENGINE = create_engine("mysql+pymysql://root:abcd1234@localhost:3306/chatbot")
+ENGINE = create_engine("mysql+pymysql://root:abcd1234@localhost:3306/hospitaldb")
 
 class Doctor(Base):
     __tablename__ = 'doctors'

@@ -447,7 +447,7 @@ nlu:
     - It's [Doe](lastname).
     - The last name is [Williams](lastname).
     - [Rajapaksha](lastname)
-    - [Jathushan](doctor_name)
+    - [Jathushan](lastname)
     - [Rajapaksha](lastname)
 - intent: provide_age
   examples: |
