@@ -21,24 +21,38 @@ rules:
   - rule: Activate_form_2
     steps:
       - intent: book_appointment
+      - action: doctor_availability_form
+      - active_loop: doctor_availability_form
+      - action: action_listen
       - action: appointment_booking_form
       - active_loop: appointment_booking_form
+
+  
   - rule: Submit doctor availability form
+    condition:
+    # Condition that form is active.
+    - active_loop: doctor_availability_form
+    steps:
+    # Form is deactivated
+    - action: doctor_availability_form
+    - active_loop: null
+    - slot_was_set:
+      - requested_slot: null
+    # The actions we want to run when the form is submitted.
+    - action: action_fetch_doctor_availability_data
+    - action: utter_ask_book_appointment
+    
+  - rule: Submit appointment booking form
     condition:
       - active_loop: doctor_availability_form
     steps:
-      - action: doctor_availability_form
-      - active_loop: null
-      - slot_was_set:
-          - requested_slot: null
-      - action: action_fetch_doctor_availability_data
-      - action: utter_ask_book_appointment
-  - rule: Submit appointment booking form
-    condition:
-      - active_loop: appointment_booking_form
-    steps:
-      - action: appointment_booking_form
-      - active_loop: null
-      - slot_was_set:
-          - requested_slot: null
-      - action: action_submit_appointment_form
+    # Form is deactivated
+    - action: appointment_booking_form
+    - active_loop: null
+    - slot_was_set:
+      - requested_slot: null
+    # The actions we want to run when the form is submitted.
+    - action: action_submit_appointment_form
+    
+    
+

@@ -1,6 +1,6 @@
 from typing import Any, Text, Dict, List
 
-from rasa_sdk.events import SlotSet
+from rasa_sdk.events import SlotSet,FollowupAction
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from datetime import datetime, timedelta
@@ -28,17 +28,17 @@ class ActionFetchDoctorAvailability(Action):
             # If the user provided only one name
             doctors = search_doctors_by_name(doctor_name)
             if len(doctors) > 1:
-                message = "I found multiple doctors with that name. Can you specify which one you mean?\n"
+                message = "I found multiple doctors with that name.\n"
                 for doctor, specialty in doctors:
                     message += f"- {doctor.first_name} {doctor.last_name} ({specialty.name})\n"
                 dispatcher.utter_message(text=message)
+                return[SlotSet("doctor_name", None),FollowupAction(name = 'doctor_avaialability_form')]
             elif len(doctors) == 1:
                 doctor, specialty = doctors[0]
                 availability = get_doctor_availability(doctor.first_name, doctor.last_name, appointment_day)
                 self._respond_with_availability(dispatcher, availability)
             else:
                 dispatcher.utter_message(text="I couldn't find any doctors with that name.")
-
         return []
 
     def _respond_with_availability(self, dispatcher, availability):
@@ -47,9 +47,9 @@ class ActionFetchDoctorAvailability(Action):
             for slot in availability:
                 message += f"- {slot.start_time.strftime('%H:%M')} to {slot.end_time.strftime('%H:%M')} ({slot.specialty.name})\n"
         else:
-            message = "No availability found."
-        dispatcher.utter_message(text=message)
-
+            message = "No availability found.Do you want to book an appointment for another day?"
+            dispatcher.utter_message(text=message)
+            return[SlotSet("day", None),FollowupAction(name ='doctor_avaialability_form')]
         return []
 
 class ActionSayShirtSize(Action):
