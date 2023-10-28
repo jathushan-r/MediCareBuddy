@@ -1,3 +1,5 @@
+# rasa run -m models --endpoints endpoints.yml --port 5002 --credentials credentials.yml
+
 import streamlit as st 
 from streamlit_chat import message
 from googletrans import Translator
@@ -55,12 +57,11 @@ def main(name):
     initialize_chat_history()
     display_chat_messages()
 
-    if prompt := st.chat_input("Please Enter Your Medical Inquiry or Question"):
-        send_user_message(prompt, name)
-        
-        if 'translator' not in st.session_state:
+    if 'translator' not in st.session_state:
             st.session_state.translator = Translator()
 
+    if prompt := st.chat_input("Please Enter Your Medical Inquiry or Question"):
+        send_user_message(prompt, name)
 
         # Translate user input
         translated_prompt = st.session_state.translator.translate(prompt, dest='en').text
@@ -71,8 +72,6 @@ def main(name):
         bot_message = ""
         for i in r.json():
             bot_message += i['text']
-            if 'translator' not in st.session_state:
-                st.session_state.translator = Translator()
             bot_message = st.session_state.translator.translate(bot_message, dest=st.session_state.selected_language).text
             
         send_assistant_message(bot_message)
@@ -100,6 +99,10 @@ if __name__ == "__main__":
 
     c1, c2,c3 = st.columns((2, 0.1,3))
     if 'authentication_status' not in st.session_state:
+
+        if 'translator' not in st.session_state:
+            st.session_state.translator = Translator()
+
         st.session_state.authentication_status = None
     with c1:
         st.markdown('\n\n')
