@@ -57,18 +57,24 @@ def main(name):
 
     if prompt := st.chat_input("Please Enter Your Medical Inquiry or Question"):
         send_user_message(prompt, name)
+        
+        if 'translator' not in st.session_state:
+            st.session_state.translator = Translator()
+
 
         # Translate user input
         translated_prompt = st.session_state.translator.translate(prompt, dest='en').text
 
         # Make a request to the assistant
-        r = requests.post('http://localhost:5002/webhooks/rest/webhook', json={"message": translated_prompt, "sender": name})
-
+        r = requests.post('http://localhost:5002/webhooks/rest/webhook', json={"message": translated_prompt, "sender": username})
+        print(r.json(), r.status_code)
         bot_message = ""
         for i in r.json():
-            bot_message = i['text']
+            bot_message += i['text']
+            if 'translator' not in st.session_state:
+                st.session_state.translator = Translator()
             bot_message = st.session_state.translator.translate(bot_message, dest=st.session_state.selected_language).text
-
+            
         send_assistant_message(bot_message)
 
 
@@ -79,7 +85,7 @@ if __name__ == "__main__":
     users = db.fetch_all_users()
 
     usernames = [entry['username'] for entry in users]
-    names = [entry['firstname'] + entry['lastname'] for entry in users]
+    names = [str(entry['firstname']) + ' ' + str(entry['lastname']) for entry in users]
     hashed_passwords = [entry['password'] for entry in users]
 
 

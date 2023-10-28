@@ -3,7 +3,7 @@ import streamlit_authenticator as stauth
 import database as db
 
 
-usernames = ["saman87", "chathura22", "hasini56", "dasun33", "tharindu99",  "lakshmi74", "rajesh62", "saranya09", "vijay55", "anitha33"]
+usernames = ['saman', 'chathura', 'hasini', 'dasun', 'tharindu', 'lakshmi', 'rajesh', 'saranya', 'vijay', 'anitha']
 firstnames = ["Saman", "Chathura", "Hasini", "Dasun", "Tharindu",  "Lakshmi", "Rajesh", "Saranya", "Vijay", "Anitha"]
 lastnames =  ["Fernando", "Perera", "Silva", "Ratnayake", "Samarawickrama", "Sivasubramanian", "Venkatesh", "Balasubramanian", "Murali", "Shankar"]
 ages = [30, 28, 35, 27, 40, 33, 45, 32, 28, 35]
