@@ -16,6 +16,14 @@ action_endpoint:
 # By default the conversations are stored in memory.
 # https://rasa.com/docs/rasa/tracker-stores
 
+tracker_store:
+  type: SQL
+  dialect: "mysql+pymysql"
+  url: "mysql+pymysql://root:abcd1234@localhost:3306/chatbot"
+  db: "chatbot"
+  username: "root"
+  password: "abcd1234"
+  
 #tracker_store:
 #    type: redis
 #    url: <host of the redis instance, e.g. localhost>

@@ -12,4 +12,6 @@ venv
 
 .rasa
 models
-./chatbot-UI
+chatbot-UI
+
+
