@@ -14,8 +14,6 @@ nlu:
       - hey dude
       - goodmorning
       - goodevening
-      - goodmorning
-      - goodevening
       - good afternoon
   - intent: goodbye
     examples: |
@@ -63,142 +61,69 @@ nlu:
       - correct
       - fine
   - intent: ask_for_doctor_availability
-    examples: >
+    examples: |
       - Is Dr. [John](doctor_name) available?
-
       - Is Dr. [Smith](doctor_name) free?
-
       - Is Dr. [Williams](doctor_name) available?
-
       - Is Dr. [Johnson](doctor_name) free?
-
       - Is Dr. [Brown](doctor_name) available?
-
       - Is Dr. [Jones](doctor_name) free?
-
       - Is Dr. [Miller](doctor_name) available?
-
       - Is Dr. [Davis](doctor_name) free?
-
       - Is Dr. [Garcia](doctor_name) available?
-
       - Is Dr. [Rodriguez](doctor_name) free?
-
       - Is Dr. [Wilson](doctor_name) available?
-
       - Dr. [John](doctor_name) availability
-
       - Dr. [Smith](doctor_name) availability
-
       - Dr. [Williams](doctor_name) availability
-
       - Dr. [Johnson](doctor_name) availability
-
       - Dr. [Brown](doctor_name) availability
-
       - Dr. [Jones](doctor_name) availability
-
       - Dr. [Miller](doctor_name) available?
-
       - Dr. [Davis](doctor_name) available?
-
       - Dr. [Garcia](doctor_name) available?
-
       - Dr. [Rodriguez](doctor_name) available?
-
       - Dr. [Wilson](doctor_name) available?
-
       - Is Dr. [John](doctor_name) available on [Monday](day)?
-
       - Is Dr. [Smith](doctor_name) free on [Tuesday](day)?
-
       - Is Dr. [Williams](doctor_name) available on [Wednesday](day)?
-
       - Is Dr. [Johnson](doctor_name) free on [Thursday](day)?
-
       - Is Dr. [Brown](doctor_name) available on [Friday](day)?
-
       - Is Dr. [Jones](doctor_name) free on [Saturday](day)?
-
       - Is Dr. [Miller](doctor_name) available on [Sunday](day)?
-
       - Is Dr. [Davis](doctor_name) free on [Monday](day)?
-
       - Is Dr. [Garcia](doctor_name) available on [Tuesday](day)?
-
       - Is Dr. [Rodriguez](doctor_name) free on [Wednesday](day)?
-
       - Is Dr. [Wilson](doctor_name) available on [Thursday](day)?
-
       - Is Dr. [John](doctor_name) available on [Friday](day)?
-
       - Is Dr. [Smith](doctor_name) free on [Saturday](day)?
-
       - Is Dr. [Williams](doctor_name) available on [Sunday](day)?
-
-      - What are the available times for Dr. [Williams](doctor_name) on
-      [Sunday](day)?
-
-      - What are the available times for Dr. [Johnson](doctor_name) on
-      [Monday](day)?
-
-      - What are the available times for Dr. [Brown](doctor_name) on
-      [Tuesday](day)?
-
-      - What are the available times for Dr. [Jones](doctor_name) on
-      [Wednesday](day)?   
-
+      - What are the available times for Dr. [Williams](doctor_name) on [Sunday](day)?
+      - What are the available times for Dr. [Johnson](doctor_name) on [Monday](day)?
+      - What are the available times for Dr. [Brown](doctor_name) on [Tuesday](day)?
+      - What are the available times for Dr. [Jones](doctor_name) on [Wednesday](day)?
       - Is Dr. [John Doe](doctor_name) available?
-
       - Is Dr. Emily Smith free today?
-
       - Can I book an appointment with Dr. [Michael Williams](doctor_name)?
-
       - What's Dr. [Sarah Johnson](doctor_name)'s availability this week?
-
-      - Does Dr. [Robert Brown](doctor_name) have any free slots on
-      [Thursday](Day)?
-
+      - Does Dr. [Robert Brown](doctor_name) have any free slots on [Thursday](Day)?
       - Can you tell me when Dr. [Linda Jones](doctor_name) is available?
-
       - Is Dr. [James Miller](doctor_name) working on [Friday](Day)?
-
       - What times is Dr. [Patricia Davis](doctor_name) free on [Monday](Day)?
-
       - Can I see Dr. [Jennifer Garcia](doctor_name) on [Wednesday](Day)?
-
-      - When is the next available appointment with Dr. [William
-      Rodriguez](doctor_name)?
-
-      - Are there any openings with Dr. [Elizabeth Wilson](doctor_name) on
-      [Tuesday](Day)?
-
-      - Can I get an appointment with Dr. [David Brown](doctor_name) this
-      [Friday](Day)?
-
-      - What's the availability of Dr. [Susan Jones](doctor_name) next
-      [Monday](Day)?
-
-      - Is Dr. [Christopher Miller](doctor_name) available for a check-up on
-      [Thursday](Day)?
-
-      - Can I schedule a visit with Dr. [Mary Davis](doctor_name) on
-      [Saturday](Day)?
-
-      - What are Dr. [Brian Garcia](doctor_name)'s available hours on
-      [Sunday](Day)?
-
-      - Can I book a consultation with Dr. [Laura Rodriguez](doctor_name) this
-      week?
-
-      - What are the available times for Dr. [Steven Wilson](doctor_name) on
-      [Wednesday](Day)?
-
-      - Is Dr. [Karen Brown](doctor_name) free for an appointment on
-      [Tuesday](Day)?
-
-      - Can you check Dr. [Nancy Johnson](doctor_name)'s schedule for
-      [Friday](Day)?
+      - When is the next available appointment with Dr. [William Rodriguez](doctor_name)?
+      - Are there any openings with Dr. [Elizabeth Wilson](doctor_name) on [Tuesday](Day)?
+      - Can I get an appointment with Dr. [David Brown](doctor_name) this [Friday](Day)?
+      - What's the availability of Dr. [Susan Jones](doctor_name) next [Monday](Day)?
+      - Is Dr. [Christopher Miller](doctor_name) available for a check-up on [Thursday](Day)?
+      - Can I schedule a visit with Dr. [Mary Davis](doctor_name) on [Saturday](Day)?
+      - What are Dr. [Brian Garcia](doctor_name)'s available hours on [Sunday](Day)?
+      - Can I book a consultation with Dr. [Laura Rodriguez](doctor_name) this week?
+      - What are the available times for Dr. [Steven Wilson](doctor_name) on [Wednesday](Day)?
+      - Is Dr. [Karen Brown](doctor_name) free for an appointment on [Tuesday](Day)?
+      - Can you check Dr. [Nancy Johnson](doctor_name)'s schedule for [Friday](Day)?
+      - Is dr. [Linda Garcia](doctor_name) available today?
+      - Is dr. [george jackson](doctor_name) available?
   - intent: doctor_name
     examples: |
       - John
@@ -299,6 +224,7 @@ nlu:
       - You can address me as [Emily](firstname).
       - Firstname? It's [Robert](firstname).
       - [Savindu](firstname)
+      - [Savindu](firstname)
   - intent: provide_lastname
     examples: |
       - My last name is [Smith](lastname).
@@ -306,11 +232,7 @@ nlu:
       - It's [Doe](lastname).
       - The last name is [Williams](lastname).
       - [Rajapaksha](lastname)
-  - regex: age
-    examples: |
-      - \d{2}
-      - \d{1}
-      - \d{3}
+      - [Rajapaksha](lastname)
   - intent: provide_age
     examples: |
       - I am [25](age) years old.
@@ -322,13 +244,8 @@ nlu:
       - [50](age)
       - [30](age)
       - [40](age)
-  - regex: phone
-    examples: |
-      - \d{10-12}
-      - \d{3}[-]\d{3}[-]\d{4}
-      - [+]\d{11-12}
-      - [+]\d{2}\s\d{9}
-      - [(]\d{3}[)]\s\d{3}[-]\d{4}
+      - [0712845669](age)
+      - [23](age)
   - intent: provide_phone
     examples: |
       - My phone number is [123-456-7890](phone).
@@ -336,80 +253,63 @@ nlu:
       - You can reach me at [987-654-3210](phone).
       - My contact is [555-555-5555](phone).
       - [0987654321](phone)
+      - [0712845669](phone)
+      - [071-284-5669](phone)
+      - [071 284 5669](phone)
+      - [0778967543](phone)
       - [098-7654321](phone)
       - [+94987654321](phone)
       - [+94 987654321](phone)
+      - my phone number is [071-284-5669](phone)
+      - my phone number is [0712845669](phone)
+      - [0712845669](phone)
   - intent: out_of_scope
-    examples: >
+    examples: |
       - I want to order food
-
       - What is 2 + 2?
-
       - Who's the USA President?
-
-      - What is the difference between procedural and object-oriented
-      programming?
-
+      - What is the difference between procedural and object-oriented programming?
       - Can you explain the concept of recursion in programming?
-
       - How do programming languages like C++ and Java differ from each other?
-
       - What are design patterns, and how do they improve software development?
-
       - How can I optimize the performance of my code?
-
-      - Can you explain the principles of version control and its importance in
-      programming?
-
+      - Can you explain the principles of version control and its importance in programming?
       - What is an API (Application Programming Interface) and how is it used?
-
       - How do you ensure the security of a web application during programming?
-
-      - What are the advantages and disadvantages of using interpreted languages
-      vs. compiled languages?
-
-      - How does multithreading work, and what are the benefits of using it in
-      programming?
-
+      - What are the advantages and disadvantages of using interpreted languages vs. compiled languages?
+      - How does multithreading work, and what are the benefits of using it in programming?
       - What are the differences between Python 2 and Python 3?
-
       - How do I install external libraries using pip in Python?
-
       - Can you explain the concept of object-oriented programming in Python?
-
       - What's the purpose of virtual environments in Python development?
-
       - How can I handle exceptions and errors in Python code?
-
       - What's the difference between a list and a tuple in Python?
-
       - How do I read and write files in Python?
-
       - Can you provide an overview of the basic syntax of a for loop in Python?
-
       - What is a lambda function in Python, and how is it used?
-
       - How can I create and use a class in Python to model real-world entities?
-
       - What are the benefits of yoga for mental health?
-
       - How do I bake a chocolate cake from scratch?
-
       - Can you recommend a good book to read?
-
       - What's the history of the Eiffel Tower?
-
       - How can I improve my golf swing?
-
       - What are the symptoms of the common cold?
-
       - Can you explain the theory of relativity?
-
       - How do I knit a scarf?
-
       - What's the process of photosynthesis in plants?
-
       - Can you suggest tips for time management and productivity?
+  - regex: age
+    examples: |
+      - \d{1}
+      - \d{2}
+      - \d{3}
+  - regex: phone
+    examples: |
+      - [(]\d{3}[)]\s\d{3}[-]\d{4}
+      - [+]\d{11-12}
+      - [+]\d{2}\s\d{9}
+      - \d{10-12}
+      - \d{3}[-]\d{3}[-]\d{4}
   - lookup: day
     examples: |
       - Monday
@@ -419,3 +319,15 @@ nlu:
       - Friday
       - Saturday
       - Sunday
+  - lookup: specialty
+    examples: |
+      - Psychiatrist
+      - Orthopedist
+      - Pediatrician
+      - General Physician
+      - Dermatologist
+      - ENT Specialist
+      - Gastroenterologist
+      - Cardiologist
+      - Neurologist
+      - Ophthalmologist

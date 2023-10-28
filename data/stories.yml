@@ -46,6 +46,21 @@ stories:
   #     - action: utter_ask_book_appointment
   #     - intent: book_appointment
 
+  - story: booking an appointment with a doctor
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_for_doctor_availability
+      - action: doctor_availability_form
+      - active_loop: doctor_availability_form
+
+  - story: appointment booking done with the doctor
+    steps: 
+      - action: action_submit_appointment_form
+      - action: utter_ask_any_other_help
+      - intent: deny
+      - action: utter_goodbye
+
   - story: sad path 2
     steps:
       - user: "what is the Weather today?"
@@ -374,25 +389,155 @@ stories:
 
   - story: interactive_story_1
     steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: nlu_fallback
-      - intent: ask_for_doctor_availability
-        entities:
-          - doctor_name: linda garcia
-      - action: action_default_fallback
-      - intent: provide_lastname
-      - intent: ask_for_doctor_availability
-        entities:
-          - doctor_name: Linda Garcia
-      - action: action_default_fallback
-      - intent: provide_lastname
-      - intent: ask_for_doctor_availability
-        entities:
-          - doctor_name: Linda Garcia
-      - action: doctor_availability_form
-      - active_loop: doctor_availability_form
-      - slot_was_set:
-          - doctor_name: Linda Garcia
-      - slot_was_set:
-          - requested_slot: day
+
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_for_doctor_availability
+      entities:
+      - doctor_name: Linda Garcia
+    - slot_was_set:
+      - doctor_name: Linda Garcia
+    - action: doctor_availability_form
+    - active_loop: doctor_availability_form
+    - slot_was_set:
+      - doctor_name: Linda Garcia
+    - slot_was_set:
+      - requested_slot: day
+    - intent: ask_for_doctor_availability
+      entities:
+      - day: Wednesday
+    - slot_was_set:
+      - day: Wednesday
+    - action: doctor_availability_form
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_fetch_doctor_availability_data
+    - action: utter_ask_book_appointment
+    - intent: affirm
+    - action: appointment_booking_form
+    - active_loop: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: firstname
+    - intent: provide_firstname
+      entities:
+      - firstname: Savindu
+    - slot_was_set:
+      - firstname: Savindu
+    - action: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: lastname
+    - intent: provide_lastname
+      entities:
+      - lastname: Rajapaksha
+    - slot_was_set:
+      - lastname: Rajapaksha
+    - action: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: age
+    - intent: provide_age
+      entities:
+      - age: '23'
+    - slot_was_set:
+      - age: '23'
+    - action: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: phone
+    - intent: provide_phone
+      entities:
+      - phone: '0712845669'
+    - action: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: phone
+    - intent: provide_phone
+      entities:
+      - phone: '0712845669'
+    - action: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: phone
+    - intent: provide_phone
+      entities:
+      - phone: 071-284-5669
+    - slot_was_set:
+      - phone: 071-284-5669
+    - action: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_submit_appointment_form
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_for_doctor_availability
+  - intent: ask_for_doctor_availability
+    entities:
+    - doctor_name: george jackson
+  - action: doctor_availability_form
+  - active_loop: doctor_availability_form
+  - slot_was_set:
+    - doctor_name: george jackson
+  - slot_was_set:
+    - requested_slot: day
+  - intent: ask_for_doctor_availability
+    entities:
+    - day: Monday
+  - slot_was_set:
+    - day: Monday
+  - action: doctor_availability_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_fetch_doctor_availability_data
+  - action: utter_ask_book_appointment
+  - intent: affirm
+  - action: appointment_booking_form
+  - active_loop: appointment_booking_form
+  - slot_was_set:
+    - requested_slot: firstname
+  - intent: provide_firstname
+    entities:
+    - firstname: Savindu
+  - slot_was_set:
+    - firstname: Savindu
+  - action: appointment_booking_form
+  - slot_was_set:
+    - requested_slot: lastname
+  - intent: provide_lastname
+    entities:
+    - lastname: Rajapaksha
+  - slot_was_set:
+    - lastname: Rajapaksha
+  - action: appointment_booking_form
+  - slot_was_set:
+    - requested_slot: age
+  - intent: provide_age
+    entities:
+    - age: '23'
+  - slot_was_set:
+    - age: '23'
+  - action: appointment_booking_form
+  - slot_was_set:
+    - requested_slot: phone
+  - intent: provide_phone
+    entities:
+    - age: '0712845669'
+  - slot_was_set:
+    - age: '0712845669'
+  - intent: provide_phone
+    entities:
+    - phone: '0712845669'
+  - action: appointment_booking_form
+  - slot_was_set:
+    - requested_slot: phone
+  - intent: provide_phone
+    entities:
+    - phone: '0712845669'
+  - slot_was_set:
+    - phone: '0712845669'
+  - action: appointment_booking_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit_appointment_form

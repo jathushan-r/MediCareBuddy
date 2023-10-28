@@ -1,0 +1,108 @@
+sender_id,type_name,date,time,intent_name,data
+5, user, 2023-09-26, 10:30:00, greet, Hello
+5, bot, 2023-09-26, 10:30:00, , Hi there! How can I assist you today?
+5, user, 2023-09-26, 10:32:00, out_of_scope, What are the hospital's cafeteria hours?
+5, bot, 2023-09-26, 10:32:00, , The hospital's cafeteria is open from 6:30 AM to 8:00 PM. They offer a variety of meal options. Is there anything else you'd like to know?
+5, user, 2023-09-26, 10:35:00, appointment, I need to schedule an MRI appointment.
+5, bot, 2023-09-26, 10:35:00, , Of course, I can help with that. Can you please provide your preferred date and time for the MRI appointment?
+5, user, 2023-09-26, 10:37:00, appointment_date, I'd like to schedule it for October 5th at 2:00 PM.
+5, bot, 2023-09-26, 10:37:00, , Your MRI appointment is booked for October 5th at 2:00 PM. You'll receive confirmation details soon.
+5, user, 2023-09-26, 10:40:00, affirm, Perfect, thanks!
+5, bot, 2023-09-26, 10:40:00, , You're welcome! If you have any more questions or need assistance, feel free to ask.
+5, user, 2023-09-26, 10:42:00, out_of_scope, Can you tell me about the hospital's parking options?
+5, bot, 2023-09-26, 10:42:00, , The hospital offers both covered and open parking lots for visitors. You can pay for parking at the parking kiosks on-site. Is there anything else you'd like to know?
+5, user, 2023-09-26, 10:45:00, personalized_support, Can you remind me of my upcoming cardiology consultation on October 10th?
+5, bot, 2023-09-26, 10:45:00, , Certainly, I can help with that. Could you please provide your name and date of birth for verification?
+5, user, 2023-09-26, 10:45:00, user_info, My name is John Smith, and my date of birth is June 12, 1978.
+5, bot, 2023-09-26, 10:45:00, , Thank you, John. Your cardiology consultation is scheduled for October 10th at 11:30 AM. We'll send you a reminder closer to the date.
+5, user, 2023-09-26, 10:47:00, deny, Actually, can I reschedule it to October 15th?
+5, bot, 2023-09-26, 10:47:00, , Certainly, I've rescheduled your cardiology consultation to October 15th at 11:30 AM. You'll receive a confirmation soon.
+5, user, 2023-09-26, 10:50:00, out_of_scope, Can you provide information on local hotels for out-of-town visitors?
+5, bot, 2023-09-26, 10:50:00, , Sure, we have a list of recommended local hotels that cater to out-of-town visitors. They offer special rates for hospital guests. Would you like me to provide you with the hotel information?
+7, user, 2023-09-29, 19:30:00, greet, Hi, I need to schedule an appointment.
+7, bot, 2023-09-29, 19:30:00, , Of course, I can help with that. Please let me know which department or specialist you'd like to see.
+7, user, 2023-09-29, 19:32:00, appointment_type, I'd like to schedule a follow-up appointment with Dr. Johnson.
+7, bot, 2023-09-29, 19:32:00, , Great choice! Can you provide your preferred date and time for the appointment?
+7, user, 2023-09-29, 19:35:00, appointment_date, I'm available on October 10th. Can we do it at 3:00 PM?
+7, bot, 2023-09-29, 19:35:00, , Your follow-up appointment with Dr. Johnson is booked for October 10th at 3:00 PM. You'll receive a confirmation shortly.
+7, user, 2023-09-29, 19:38:00, affirm, Thank you. That works for me.
+7, bot, 2023-09-29, 19:38:00, , You're welcome! If you have any more questions or need assistance, feel free to ask.
+7, user, 2023-09-29, 19:40:00, out_of_scope, Can you tell me about parking options near the hospital?
+7, bot, 2023-09-29, 19:40:00, , Certainly! The hospital offers both covered and open parking lots for visitors. You can pay for parking at the parking kiosks on-site. Is there anything else you'd like to know?
+7, user, 2023-09-29, 19:42:00, appointment_type, I need to schedule an appointment for a mammogram.
+7, bot, 2023-09-29, 19:42:00, , Sure, I can assist with that. When would you like to schedule your mammogram?
+7, user, 2023-09-29, 19:45:00, appointment_date, Is there an available slot on October 5th at 10:30 AM?
+7, bot, 2023-09-29, 19:45:00, , Your mammogram appointment is confirmed for October 5th at 10:30 AM. You'll receive confirmation details shortly.
+7, user, 2023-09-29, 19:48:00, deny, Actually, I need to change the time to 2:00 PM on the same day.
+7, bot, 2023-09-29, 19:48:00, , No problem, I've updated your mammogram appointment to October 5th at 2:00 PM. You'll receive a confirmation soon.
+7, user, 2023-09-29, 19:50:00, appointment_type, I'd like to schedule a consultation with a nutritionist.
+7, bot, 2023-09-29, 19:50:00, , Certainly! When are you available for the consultation, and do you have a preferred nutritionist in mind?
+7, user, 2023-09-29, 19:52:00, appointment_date, I'm available on October 15th, and I'd prefer to see Nutritionist Lisa.
+7, bot, 2023-09-29, 19:52:00, , Your nutritionist consultation with Lisa is scheduled for October 15th. Let me check the available times.
+7, user, 2023-09-29, 19:55:00, appointment_time, Can we do it at 4:30 PM?
+7, bot, 2023-09-29, 19:55:00, , Your nutritionist consultation with Lisa is booked for October 15th at 4:30 PM. You'll receive a confirmation soon.
+7, user, 2023-09-29, 19:58:00, affirm, Thank you for your help!
+7, bot, 2023-09-29, 19:58:00, , You're welcome! If you have any more questions or need further assistance, don't hesitate to ask.
+7, user, 2023-09-29, 20:00:00, out_of_scope, Can you provide directions to the hospital?
+7, bot, 2023-09-29, 20:00:00, , Certainly, I can provide you with directions. Please let me know your current location.
+7, user, 2023-09-29, 20:03:00, user_info, I'm currently at 123 Main Street, Anytown.
+7, bot, 2023-09-29, 20:03:00, , Great! Here are the directions to the hospital from your location: [Directions provided].
+7, user, 2023-09-29, 20:05:00, goodbye, Thank you for your assistance!
+7, bot, 2023-09-29, 20:05:00, , You're welcome! If you ever need help in the future, don't hesitate to reach out. Have a great day!
+11, user, 2023-10-01, 08:01:00, greet, Good morning! Can you tell me about the hospital's medical staff?
+11, bot, 2023-10-01, 08:01:00, , Good morning! Certainly, our medical staff includes specialists in various fields, including cardiology, neurology, pediatrics, and more. Is there a specific department or doctor you'd like to know about?
+11, user, 2023-10-01, 08:03:00, staff_info, I'm interested in knowing more about Dr. Sarah Mitchell, the cardiologist.
+11, bot, 2023-10-01, 08:03:00, , Dr. Sarah Mitchell is an experienced cardiologist at our hospital. She specializes in treating heart conditions and has received several awards for her work. Would you like to schedule an appointment with her?
+11, user, 2023-10-01, 08:05:00, affirm, Yes, please schedule a cardiology appointment with Dr. Mitchell.
+11, bot, 2023-10-01, 08:05:00, , Great! When would you like to schedule the appointment, and do you have a preferred date and time?
+11, user, 2023-10-01, 08:07:00, appointment_date, I'm available on October 15th. Can we do it in the afternoon?
+11, bot, 2023-10-01, 08:07:00, , Your cardiology appointment with Dr. Mitchell is scheduled for October 15th in the afternoon. Let me check available times.
+11, user, 2023-10-01, 08:09:00, appointment_time, How about 3:30 PM?
+11, bot, 2023-10-01, 08:09:00, , Your cardiology appointment with Dr. Mitchell is confirmed for October 15th at 3:30 PM. You'll receive a confirmation soon.
+11, user, 2023-10-01, 08:11:00, out_of_scope, Can you provide directions to the hospital from downtown?
+11, bot, 2023-10-01, 08:11:00, , Of course! To reach the hospital from downtown, you can take Main Street and then turn left onto Elm Avenue. Follow Elm Avenue until you see the hospital signs on your right.
+11, user, 2023-10-01, 08:13:00, staff_info, Can you tell me more about the nurses in the pediatric department?
+11, bot, 2023-10-01, 08:13:00, , Our pediatric department has a team of dedicated nurses who specialize in caring for children. They are experienced in pediatric care and prioritize the well-being of young patients.
+11, user, 2023-10-01, 08:15:00, staff_info, Can you provide me with the name of the head nurse in pediatrics?
+11, bot, 2023-10-01, 08:15:00, , The head nurse in the pediatric department is Lisa Anderson. She's responsible for overseeing the nursing staff and ensuring the best care for our young patients.
+11, user, 2023-10-01, 08:17:00, appointment, I'd like to schedule a pediatric checkup for my child. Is Lisa Anderson available for guidance?
+11, bot, 2023-10-01, 08:17:00, , Certainly, I can assist with that. What date and time are you looking for the pediatric checkup?
+11, user, 2023-10-01, 08:19:00, appointment_date, How about October 8th in the morning?
+11, bot, 2023-10-01, 08:19:00, , Your child's pediatric checkup with Lisa Anderson is scheduled for October 8th in the morning. Let me check available times.
+11, user, 2023-10-01, 08:21:00, appointment_time, Is 10:00 AM available?
+11, bot, 2023-10-01, 08:21:00, , Your child's pediatric checkup with Lisa Anderson is confirmed for October 8th at 10:00 AM. You'll receive a confirmation shortly.
+11, user, 2023-10-01, 08:23:00, affirm, Thank you for your assistance!
+11, bot, 2023-10-01, 08:23:00, , You're welcome! If you have any more questions or need further assistance, feel free to ask.
+11, user, 2023-10-01, 08:25:00, out_of_scope, That's all for now. Goodbye!
+11, bot, 2023-10-01, 08:25:00, , Goodbye! If you ever need help in the future, don't hesitate to reach out. Have a great day!
+6, user, 2023-10-03, 18:17:00, greet, Hi, I'm a bit lost in the hospital. Can you guide me through the procedures?
+6, bot, 2023-10-03, 18:17:00, , Of course, I can help with that. Let's start by determining your current location in the hospital. Where are you right now?
+6, user, 2023-10-03, 18:19:00, user_info, I'm in the main lobby, near the entrance.
+6, bot, 2023-10-03, 18:19:00, , Great! From the main lobby, you can follow the signs to the reception desk. There, you can check in or inquire about your appointment.
+6, user, 2023-10-03, 18:21:00, procedure, I have a scheduled appointment. What should I do next?
+6, bot, 2023-10-03, 18:21:00, , If you have a scheduled appointment, go to the reception desk. They will guide you further and help you with the registration process. Make sure to have your ID and any necessary documents ready.
+6, user, 2023-10-03, 18:23:00, procedure, What's the next step after registration?
+6, bot, 2023-10-03, 18:23:00, , After registration, you'll be directed to the waiting area for your appointment. The staff will call your name when it's your turn to see the doctor.
+6, user, 2023-10-03, 18:25:00, procedure, How can I find the waiting area for my department?
+6, bot, 2023-10-03, 18:25:00, , Each department has its own waiting area. You can follow the department signs or ask the receptionist for directions to your specific department's waiting area.
+6, user, 2023-10-03, 18:27:00, procedure, What should I do if I have questions about my procedure or treatment?
+6, bot, 2023-10-03, 18:27:00, , If you have questions about your procedure or treatment, don't hesitate to ask the hospital staff or the nurse in your department. They are here to provide you with the information and support you need. Is there anything else I can assist you with today?
+6, user, 2023-10-03, 18:29:00, greet, Goodbye
+6, bot, 2023-10-03, 18:29:02, , You're welcome! If you have any more questions or need further assistance in the future, feel free to ask. Have a great day!
+4, user, 2023-10-05, 07:47:00, greet, Hello! I'm a returning patient. Can you access my medical history?
+4, bot, 2023-10-05, 07:47:02, , Hello! Welcome back. Yes, I can access your medical history. Please provide your full name and date of birth for verification.
+4, user, 2023-10-05, 07:50:00, user_info, My name is Emily Davis, and my date of birth is April 15, 1980.
+4, bot, 2023-10-05, 07:50:02, , Thank you, Emily. I've verified your identity. You have an upcoming appointment on October 10th. Is there anything specific you'd like to know or discuss regarding your medical history?
+4, user, 2023-10-05, 07:53:00, medical_history, I'd like to review my past test results and medications.
+4, bot, 2023-10-05, 07:53:02, , Sure, I can help with that. Let me retrieve your medical history.
+4, user, 2023-10-05, 07:56:00, medical_history, I'm particularly interested in my last blood test results.
+4, bot, 2023-10-05, 07:56:02, , I've found your last blood test results from March 2023. Your cholesterol levels were within the recommended range, and there were no significant abnormalities. Is there anything else you'd like to know?
+4, user, 2023-10-05, 07:59:00, medical_history, Can you remind me of my current medications?
+4, bot, 2023-10-05, 07:59:02, , You are currently prescribed Medication A (10mg daily in the morning), Medication B (20mg daily in the evening), and Medication C (5mg as needed for pain).
+4, user, 2023-10-05, 08:02:00, affirm, Thank you for the information.
+4, bot, 2023-10-05, 08:02:02, , You're welcome, Emily! If you have any more questions or need further assistance in the future, feel free to ask. Have a great day!
+2, user, 2023-10-05, 09:07:00, greet, Hello, I'd like to schedule an appointment.
+2, bot, 2023-10-05, 09:07:03, , Hello! I can assist with that. Please let me know which department or specialist you need to see.
+2, user, 2023-10-05, 09:10:00, appointment_type, I need to schedule a dermatology appointment.
+2, bot, 2023-10-05, 09:10:02, , Sure, I can help with that. What date and time are you looking for the dermatology appointment?
+2, user, 2023-10-05, 09:13:00, goodby, I've decided to call the hospital directly. Thank you for your assistance.

@@ -1,8 +1,7 @@
-import yaml
+
 import streamlit_authenticator as stauth
 import streamlit as st  # pip install streamlit
-import pickle
-from pathlib import Path
+
 import database as db
 
 

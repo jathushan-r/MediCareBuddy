@@ -3,73 +3,162 @@ from streamlit_chat import message
 from googletrans import Translator
 import requests
 import os
+import streamlit_authenticator as stauth
+import database.database as db
+import time
 
+st.set_page_config(page_title="Hospital Chatbot", page_icon=":hospital:")
 
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        header {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
 
+if 'translator' not in st.session_state:
+    st.session_state.translator = Translator()
 
-@st.cache_resource(show_spinner=False)
-def translator():
-    return Translator()
-    
+if 'user' not in st.session_state:
+    st.session_state.user = None
 
-def process_answer(query):
-    pass
+if 'selected_language' not in st.session_state:
+    st.session_state.selected_language = "en"
 
-# Display conversation history using Streamlit messages
-def display_conversation(history):
-    for i in range(len(history["generated"])):
-        message(history["past"][i], is_user=True, key=str(i) + "_user")
-        message(history["generated"][i],key=str(i))
+if 'start' not in st.session_state:
+    st.session_state.start = False
 
-def main():
-    
-    st.title("🏥 HealthBot 🤖")
-    translator = Translator()
-
-    selected_language = st.sidebar.selectbox(
-        "Select the preferred language",
-        ["English", "Tamil", "Sinhala"],
-        key="selected_language",
-    )
-    if selected_language == "Tamil":
-        lang = "ta"
-    elif selected_language == "Sinhala":
-        lang = "si"
-    else:
-        lang = "en"
-
-    # Initialize chat history
+def initialize_chat_history():
     if "messages" not in st.session_state:
         st.session_state.messages = []
 
-    # Display chat messages from history on app rerun
+def display_chat_messages():
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
-    # React to user input
+def send_user_message(prompt, name):
+    st.chat_message("user").markdown(prompt)
+    st.session_state.messages.append({"role": "user", "content": prompt})
+
+def send_assistant_message(response):
+    with st.chat_message("assistant"):
+        st.markdown(response)
+    st.session_state.messages.append({"role": "assistant", "content": response})
+
+def clear_chat():
+    st.session_state.messages = []  # Clear the chat history
+
+def main(name):
+    initialize_chat_history()
+    display_chat_messages()
+
     if prompt := st.chat_input("Please Enter Your Medical Inquiry or Question"):
-        # Display user message in chat message container
-        st.chat_message("user").markdown(prompt)
-        # Add user message to chat history
-        st.session_state.messages.append({"role": "user", "content": prompt})
+        send_user_message(prompt, name)
 
-        r = requests.post('http://localhost:5002/webhooks/rest/webhook', json={"message": translator.translate(prompt,dest='en').text, "sender": "jathushan"})
+        # Translate user input
+        translated_prompt = st.session_state.translator.translate(prompt, dest='en').text
 
+        # Make a request to the assistant
+        r = requests.post('http://localhost:5002/webhooks/rest/webhook', json={"message": translated_prompt, "sender": name})
 
-        
+        bot_message = ""
+        for i in r.json():
+            bot_message = i['text']
+            bot_message = st.session_state.translator.translate(bot_message, dest=st.session_state.selected_language).text
 
-        with st.spinner('please wait...'):
-            for i in r.json():
-                bot_message = i['text']
-                bot_message = translator.translate(bot_message,dest='en').text
+        send_assistant_message(bot_message)
 
-            response = bot_message
-        # Display assistant response in chat message container
-        with st.chat_message("assistant"):
-            st.markdown(response)
-        # Add assistant response to chat history
-        st.session_state.messages.append({"role": "assistant", "content": response})
 
 if __name__ == "__main__":
-    main()
+    # --- USER AUTHENTICATION ---
+    # st.session_state   
+    
+    users = db.fetch_all_users()
+
+    usernames = [entry['username'] for entry in users]
+    names = [entry['firstname'] + entry['lastname'] for entry in users]
+    hashed_passwords = [entry['password'] for entry in users]
+
+
+    authenticator = stauth.Authenticate(
+        names,
+        usernames,
+        hashed_passwords,
+        "rasa_login",
+        "random_signature_key",
+        30
+    )
+
+    c1, c2,c3 = st.columns((2, 0.1,3))
+    if 'authentication_status' not in st.session_state:
+        st.session_state.authentication_status = None
+    with c1:
+        st.markdown('\n\n')
+
+        if not st.session_state.authentication_status:
+            st.markdown("<h1 style='text-align: center; font-size:30px;'> </h1>", unsafe_allow_html=True)
+            st.markdown("<h1 style='text-align: center; font-size:50px;'> </h1>", unsafe_allow_html=True)
+            st.markdown("<h1 style='text-align: center; font-size:30px;'>🏥 HealthBot 🤖</h1>", unsafe_allow_html=True)
+    with c3:
+        name, authentication_status, username = authenticator.login("Login", "main")
+
+    if not st.session_state.get('authentication_status', False):
+        st.session_state.pop('messages', None)
+
+    st.session_state.user = name
+
+    if authentication_status:      
+
+        with st.sidebar:
+            st.markdown("<h1 style='text-align: center; font-size:30px;'>🏥 HealthBot 🤖</h1>", unsafe_allow_html=True)            
+            
+            st.markdown("***")
+           
+            selected_language = st.sidebar.selectbox(
+                    '$$ \\sf { {Select\ the\ Preferred\ Language}}$$ \n $$ \\sf { {කැමති\ භාෂාව\ තෝරන්න}}$$ \n $$ \\sf { \small{மொழியைத்\ தேர்ந்தெடுக்கவும்}}$$', 
+                    ["English", "தமிழ்", "සිංහල"],
+                    placeholder="Select contact method...",
+                )
+            if selected_language == "தமிழ்":
+                lang = "ta"
+            elif selected_language == "සිංහල":
+                lang = "si"
+            else:
+                lang = "en"
+            st.session_state.selected_language = lang
+
+
+        with st.sidebar:
+            st.markdown('***')       
+
+            col11, col21, col31 = st.sidebar.columns((1, 3, 1))
+            with col21:
+                if st.button('notifications'):
+                    st.toast('find the egg',icon='🥚')
+                    time.sleep(.5)
+                    st.toast('fry it', icon='🍳')
+                    time.sleep(.5)
+                    st.toast('ENJOY THE MEAL!', icon='😋')
+
+
+                if st.button("Clear Chat"):
+                    clear_chat()  # Clear chat history when the "Clear Chat" button is clicked
+                authenticator.logout("🔒 logout")
+        
+        main(name)
+
+    if authentication_status == False:
+        st.error("Username/password is incorrect ❌")
+
+    if authentication_status == None:
+        c1,c3, c2 = st.columns((2,0.2, 3))
+        with c2:
+            st.info("Please enter your username and password 🔐")
+
+
+     
+
+    
