@@ -54,7 +54,7 @@ def main():
         # Add user message to chat history
         st.session_state.messages.append({"role": "user", "content": prompt})
 
-        r = requests.post('http://localhost:5002/webhooks/rest/webhook', json={"message": translator.translate(prompt,dest=lang).text})
+        r = requests.post('http://localhost:5002/webhooks/rest/webhook', json={"message": translator.translate(prompt,dest='en').text, "sender": "jathushan"})
 
 
         

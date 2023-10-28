@@ -4,7 +4,6 @@ from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, Time
 from sqlalchemy.orm import relationship
 from sqlalchemy import func
 
-
 Base = declarative_base()
 ENGINE = create_engine("mysql+pymysql://root:abcd1234@localhost:3306/chatbot")
 
