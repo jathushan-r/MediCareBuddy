@@ -39,13 +39,13 @@ tracker_store:
 #    username: <username used for authentication>
 #    password: <password used for authentication>
 
-tracker_store:
-  type: SQL
-  dialect: "mysql+pymysql" # the dialect used to interact with the db
-  url: "" # (optional) host of the sql db, e.g. "localhost"
-  db: "rasachats" # path to your db
-  username: "root" # username used for authentication
-  password: "abcd1234" # password used for authentication
+# tracker_store:
+#   type: SQL
+#   dialect: "mysql+pymysql" # the dialect used to interact with the db
+#   url: "" # (optional) host of the sql db, e.g. "localhost"
+#   db: "rasachats" # path to your db
+#   username: "root" # username used for authentication
+#   password: "abcd1234" # password used for authentication
 
 #event_broker:
 #  url: localhost

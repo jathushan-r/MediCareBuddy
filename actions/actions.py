@@ -39,19 +39,34 @@ class ActionFetchDoctorAvailability(Action):
                 availability = get_doctor_availability(doctor.first_name, doctor.last_name, appointment_day)
                 self._respond_with_availability(dispatcher, availability)
             else:
-                dispatcher.utter_message(text="I couldn't find any doctors with that name.")
-        return []
+                message = "I couldn't find any doctors with that name in this hospital.Do you still want book an appointment with another doctor?"
+                # message +="Psychiatrist\n"
+                # message +="Orthopedist\n"
+                # message +="Pediatrician\n"
+                # message +="General Physician\n"
+                # message +="Dermatologist\n"
+                # message +="ENT Specialist\n"
+                # message +="Gastroenterologist\n"
+                # message +="Cardiologist\n"
+                # message +="Neurologist\n"
+                # message +="Ophthalmologist"
+
+                dispatcher.utter_message(text=message)
+                return [SlotSet("day",None),FollowupAction(name= 'action_listen')]
+            return[]
 
     def _respond_with_availability(self, dispatcher, availability):
         if availability:
             message = "Here are the available time slots:\n"
             for slot in availability:
-                message += f"- {slot.start_time.strftime('%H:%M')} to {slot.end_time.strftime('%H:%M')} ({slot.specialty.name})\n"
+                specialty = slot.Doctor.Specialty.name
+                message += f"- {slot.Start_Time.strftime('%H:%M')} to {slot.End_time.strftime('%H:%M')} \n"
+                dispatcher.utter_message(text=message)
         else:
             message = "No availability found.Do you want to book an appointment for another day?"
             dispatcher.utter_message(text=message)
             return[SlotSet("day", None),FollowupAction(name ='doctor_avaialability_form')]
-        return []
+        return [SlotSet("specialty",specialty),FollowupAction(name = 'utter_ask_book_appointment')]
 
 class ActionSayShirtSize(Action):
 

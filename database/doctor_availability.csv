@@ -1,84 +1,46 @@
-First Name,Last Name,Specialty,Day,Start Time,End Time 
-George,Jackson,Psychiatrist,Monday,16:00:00,20:00:00
-George,Jackson,Psychiatrist,Thursday,11:00:00,15:00:00
-George,Jackson,Psychiatrist,Saturday,21:00:00,21:00:00
-George,Jackson,Psychiatrist,Sunday,19:00:00,21:00:00
-Linda,Garcia,Orthopedist,Monday,21:00:00,21:00:00
-Linda,Garcia,Orthopedist,Tuesday,21:00:00,21:00:00
-Linda,Garcia,Orthopedist,Thursday,17:00:00,21:00:00
-Linda,Garcia,Orthopedist,Friday,20:00:00,21:00:00
-Linda,Garcia,Orthopedist,Saturday,18:00:00,21:00:00
-Linda,Garcia,Orthopedist,Sunday,21:00:00,21:00:00
-Nancy,Anderson,Pediatrician,Wednesday,17:00:00,21:00:00
-Nancy,Anderson,Pediatrician,Thursday,15:00:00,19:00:00
-Nancy,Anderson,Pediatrician,Friday,12:00:00,16:00:00
-Nancy,Anderson,Pediatrician,Saturday,14:00:00,18:00:00
-Nancy,Anderson,Pediatrician,Sunday,17:00:00,21:00:00
-Laura,Jones,General Physician,Monday,16:00:00,20:00:00
-Laura,Jones,General Physician,Thursday,21:00:00,21:00:00
-Laura,Jones,General Physician,Friday,11:00:00,15:00:00
-Laura,Jones,General Physician,Sunday,15:00:00,19:00:00
-James,Martinez,General Physician,Tuesday,20:00:00,21:00:00
-James,Martinez,General Physician,Wednesday,16:00:00,20:00:00
-James,Martinez,General Physician,Thursday,09:00:00,13:00:00
-James,Martinez,General Physician,Friday,12:00:00,16:00:00
-James,Martinez,General Physician,Saturday,15:00:00,19:00:00
-George,Martinez,Orthopedist,Monday,17:00:00,21:00:00
-George,Martinez,Orthopedist,Tuesday,13:00:00,17:00:00
-George,Martinez,Orthopedist,Wednesday,13:00:00,17:00:00
-George,Martinez,Orthopedist,Thursday,17:00:00,21:00:00
-George,Martinez,Orthopedist,Friday,11:00:00,15:00:00
-George,Martinez,Orthopedist,Saturday,12:00:00,16:00:00
-George,Martinez,Orthopedist,Sunday,15:00:00,19:00:00
-Linda,Miller,Psychiatrist,Monday,12:00:00,16:00:00
-Linda,Miller,Psychiatrist,Tuesday,18:00:00,21:00:00
-Linda,Miller,Psychiatrist,Wednesday,15:00:00,19:00:00
-Linda,Miller,Psychiatrist,Friday,12:00:00,16:00:00
-Linda,Miller,Psychiatrist,Saturday,16:00:00,20:00:00
-Linda,Miller,Psychiatrist,Sunday,15:00:00,19:00:00
+First Name,Last Name,Specialty,Day,Start Time,End Time
+Barbara,Taylor,Psychiatrist,Monday,13:00:00,17:00:00
+Barbara,Taylor,Psychiatrist,Thursday,15:00:00,19:00:00
+Barbara,Taylor,Psychiatrist,Saturday,19:00:00,21:00:00
+Barbara,Harris,Neurologist,Monday,15:00:00,19:00:00
+Barbara,Harris,Neurologist,Tuesday,18:00:00,21:00:00
+Barbara,Harris,Neurologist,Wednesday,17:00:00,21:00:00
+Barbara,Harris,Neurologist,Friday,19:00:00,21:00:00
+Barbara,Thompson,Neurologist,Monday,13:00:00,17:00:00
+Barbara,Thompson,Neurologist,Tuesday,12:00:00,16:00:00
+Barbara,Thompson,Neurologist,Thursday,14:00:00,18:00:00
+Barbara,Thompson,Neurologist,Friday,12:00:00,16:00:00
+Barbara,Thompson,Neurologist,Sunday,15:00:00,19:00:00
+Barbara,Robinson,Pediatrician,Thursday,12:00:00,16:00:00
+Barbara,Robinson,Pediatrician,Friday,11:00:00,15:00:00
+Barbara,Robinson,Pediatrician,Saturday,12:00:00,16:00:00
+Barbara,Martin,Dermatologist,Thursday,19:00:00,21:00:00
+Barbara,Martin,Dermatologist,Friday,16:00:00,20:00:00
+Barbara,Martin,Dermatologist,Saturday,18:00:00,21:00:00
 Christopher,Harris,Dermatologist,Monday,15:00:00,19:00:00
 Christopher,Harris,Dermatologist,Wednesday,09:00:00,13:00:00
 Christopher,Harris,Dermatologist,Thursday,16:00:00,20:00:00
 Christopher,Harris,Dermatologist,Friday,18:00:00,21:00:00
 Christopher,Harris,Dermatologist,Sunday,11:00:00,15:00:00
-Laura,Wilson,Dermatologist,Monday,19:00:00,21:00:00
-Laura,Wilson,Dermatologist,Tuesday,12:00:00,16:00:00
-Laura,Wilson,Dermatologist,Wednesday,12:00:00,16:00:00
-Laura,Wilson,Dermatologist,Thursday,14:00:00,18:00:00
-Laura,Wilson,Dermatologist,Friday,18:00:00,21:00:00
-Laura,Wilson,Dermatologist,Saturday,20:00:00,21:00:00
-Paul,Martinez,ENT Specialist,Wednesday,12:00:00,16:00:00
-Paul,Martinez,ENT Specialist,Friday,12:00:00,16:00:00
-Paul,Martinez,ENT Specialist,Sunday,19:00:00,21:00:00
-Emily,Anderson,General Physician,Monday,09:00:00,13:00:00
-Emily,Anderson,General Physician,Tuesday,14:00:00,18:00:00
-Emily,Anderson,General Physician,Wednesday,11:00:00,15:00:00
-Emily,Anderson,General Physician,Thursday,11:00:00,15:00:00
-Emily,Anderson,General Physician,Friday,15:00:00,19:00:00
-Emily,Anderson,General Physician,Saturday,21:00:00,21:00:00
-Emily,Anderson,General Physician,Sunday,12:00:00,16:00:00
-Thomas,Anderson,Orthopedist,Monday,11:00:00,15:00:00
-Thomas,Anderson,Orthopedist,Tuesday,10:00:00,14:00:00
-Thomas,Anderson,Orthopedist,Wednesday,09:00:00,13:00:00
-Thomas,Anderson,Orthopedist,Thursday,20:00:00,21:00:00
-Thomas,Anderson,Orthopedist,Saturday,20:00:00,21:00:00
-Thomas,Anderson,Orthopedist,Sunday,13:00:00,17:00:00
-James,Thompson,Gastroenterologist,Monday,15:00:00,19:00:00
-James,Thompson,Gastroenterologist,Wednesday,11:00:00,15:00:00
-James,Thompson,Gastroenterologist,Saturday,18:00:00,21:00:00
-James,Thompson,Gastroenterologist,Sunday,09:00:00,13:00:00
-Robert,Taylor,Orthopedist,Monday,15:00:00,19:00:00
-Robert,Taylor,Orthopedist,Tuesday,20:00:00,21:00:00
-Robert,Taylor,Orthopedist,Thursday,21:00:00,21:00:00
-Robert,Taylor,Orthopedist,Friday,12:00:00,16:00:00
-Robert,Taylor,Orthopedist,Saturday,11:00:00,15:00:00
-Robert,Taylor,Orthopedist,Sunday,15:00:00,19:00:00
-Michael,Jackson,Cardiologist,Monday,14:00:00,18:00:00
-Michael,Jackson,Cardiologist,Wednesday,10:00:00,14:00:00
-Michael,Jackson,Cardiologist,Thursday,14:00:00,18:00:00
-Michael,Jackson,Cardiologist,Friday,21:00:00,21:00:00
-Michael,Jackson,Cardiologist,Saturday,21:00:00,21:00:00
-Michael,Jackson,Cardiologist,Sunday,12:00:00,16:00:00
+Christopher,Martinez,Pediatrician,Monday,12:00:00,16:00:00
+Christopher,Martinez,Pediatrician,Tuesday,13:00:00,17:00:00
+Christopher,Martinez,Pediatrician,Wednesday,11:00:00,15:00:00
+Christopher,Martinez,Pediatrician,Friday,17:00:00,21:00:00
+Christopher,Martinez,Pediatrician,Saturday,14:00:00,18:00:00
+Christopher,Thomas,Ophthalmologist,Monday,11:00:00,15:00:00
+Christopher,Thomas,Ophthalmologist,Tuesday,14:00:00,18:00:00
+Christopher,Thomas,Ophthalmologist,Wednesday,09:00:00,13:00:00
+Christopher,Thomas,Ophthalmologist,Thursday,12:00:00,16:00:00
+Christopher,Thomas,Ophthalmologist,Friday,19:00:00,21:00:00
+Christopher,Thomas,Ophthalmologist,Saturday,18:00:00,21:00:00
+Christopher,Thomas,Ophthalmologist,Sunday,12:00:00,16:00:00
+Christopher,Robinson,Neurologist,Monday,12:00:00,16:00:00
+Christopher,Wilson,ENT Specialist,Monday,18:00:00,21:00:00
+Christopher,Wilson,ENT Specialist,Tuesday,14:00:00,18:00:00
+Christopher,Wilson,ENT Specialist,Wednesday,13:00:00,17:00:00
+Christopher,Wilson,ENT Specialist,Thursday,11:00:00,15:00:00
+Christopher,Wilson,ENT Specialist,Saturday,16:00:00,20:00:00
+Christopher,Wilson,ENT Specialist,Sunday,21:00:00,21:00:00
 Daniel,Brown,Gastroenterologist,Monday,11:00:00,15:00:00
 Daniel,Brown,Gastroenterologist,Tuesday,18:00:00,21:00:00
 Daniel,Brown,Gastroenterologist,Wednesday,17:00:00,21:00:00
@@ -86,6 +48,180 @@ Daniel,Brown,Gastroenterologist,Thursday,13:00:00,17:00:00
 Daniel,Brown,Gastroenterologist,Friday,09:00:00,13:00:00
 Daniel,Brown,Gastroenterologist,Saturday,13:00:00,17:00:00
 Daniel,Brown,Gastroenterologist,Sunday,20:00:00,21:00:00
+Daniel,Robinson,Dermatologist,Monday,14:00:00,18:00:00
+Daniel,Robinson,Dermatologist,Thursday,10:00:00,14:00:00
+Daniel,Robinson,Dermatologist,Friday,12:00:00,16:00:00
+Daniel,Robinson,Dermatologist,Saturday,21:00:00,21:00:00
+Daniel,Wilson,Gastroenterologist,Monday,17:00:00,21:00:00
+Daniel,Wilson,Gastroenterologist,Friday,13:00:00,17:00:00
+Daniel,Wilson,Gastroenterologist,Saturday,13:00:00,17:00:00
+Daniel,Wilson,Gastroenterologist,Sunday,19:00:00,21:00:00
+Daniel,Taylor,Dermatologist,Monday,18:00:00,21:00:00
+Daniel,Taylor,Dermatologist,Tuesday,13:00:00,17:00:00
+Daniel,Taylor,Dermatologist,Wednesday,17:00:00,21:00:00
+Daniel,Taylor,Dermatologist,Thursday,21:00:00,21:00:00
+Daniel,Taylor,Dermatologist,Friday,16:00:00,20:00:00
+Daniel,Taylor,Dermatologist,Saturday,11:00:00,15:00:00
+Daniel,Taylor,Dermatologist,Sunday,09:00:00,13:00:00
+Daniel,Williams,Pediatrician,Monday,20:00:00,21:00:00
+Daniel,Williams,Pediatrician,Tuesday,20:00:00,21:00:00
+Daniel,Williams,Pediatrician,Wednesday,10:00:00,14:00:00
+Daniel,Williams,Pediatrician,Thursday,12:00:00,16:00:00
+Daniel,Williams,Pediatrician,Friday,12:00:00,16:00:00
+Daniel,Williams,Pediatrician,Saturday,20:00:00,21:00:00
+Daniel,Thomas,Pediatrician,Monday,09:00:00,13:00:00
+Daniel,Thomas,Pediatrician,Tuesday,15:00:00,19:00:00
+Daniel,Thomas,Pediatrician,Wednesday,10:00:00,14:00:00
+Daniel,Thomas,Pediatrician,Thursday,10:00:00,14:00:00
+Daniel,Thomas,Pediatrician,Saturday,19:00:00,21:00:00
+Daniel,Thomas,Pediatrician,Sunday,09:00:00,13:00:00
+Daniel,Miller,Gastroenterologist,Monday,21:00:00,21:00:00
+Daniel,Miller,Gastroenterologist,Tuesday,18:00:00,21:00:00
+Daniel,Miller,Gastroenterologist,Wednesday,17:00:00,21:00:00
+Daniel,Miller,Gastroenterologist,Thursday,13:00:00,17:00:00
+Daniel,Miller,Gastroenterologist,Friday,13:00:00,17:00:00
+Daniel,Miller,Gastroenterologist,Saturday,12:00:00,16:00:00
+Daniel,Miller,Gastroenterologist,Sunday,09:00:00,13:00:00
+Daniel,Garcia,General Physician,Monday,13:00:00,17:00:00
+Daniel,Garcia,General Physician,Wednesday,10:00:00,14:00:00
+Daniel,Garcia,General Physician,Friday,09:00:00,13:00:00
+Daniel,Garcia,General Physician,Sunday,17:00:00,21:00:00
+David,Garcia,Ophthalmologist,Monday,17:00:00,21:00:00
+David,Garcia,Ophthalmologist,Tuesday,19:00:00,21:00:00
+David,Garcia,Ophthalmologist,Friday,14:00:00,18:00:00
+David,Robinson,Orthopedist,Monday,10:00:00,14:00:00
+David,Robinson,Orthopedist,Tuesday,20:00:00,21:00:00
+David,Robinson,Orthopedist,Thursday,19:00:00,21:00:00
+David,Robinson,Orthopedist,Friday,14:00:00,18:00:00
+David,Robinson,Orthopedist,Sunday,17:00:00,21:00:00
+David,Jones,Gastroenterologist,Monday,16:00:00,20:00:00
+David,Jones,Gastroenterologist,Wednesday,18:00:00,21:00:00
+David,Jones,Gastroenterologist,Friday,21:00:00,21:00:00
+David,Davis,Gastroenterologist,Monday,16:00:00,20:00:00
+David,Davis,Gastroenterologist,Tuesday,09:00:00,13:00:00
+David,Davis,Gastroenterologist,Thursday,11:00:00,15:00:00
+David,Davis,Gastroenterologist,Friday,09:00:00,13:00:00
+David,Brown,Pediatrician,Monday,17:00:00,21:00:00
+David,Brown,Pediatrician,Wednesday,11:00:00,15:00:00
+David,Brown,Pediatrician,Thursday,20:00:00,21:00:00
+David,Brown,Pediatrician,Friday,18:00:00,21:00:00
+David,Brown,Pediatrician,Saturday,13:00:00,17:00:00
+David,Brown,Pediatrician,Sunday,11:00:00,15:00:00
+Emily,Anderson,General Physician,Monday,09:00:00,13:00:00
+Emily,Anderson,General Physician,Tuesday,14:00:00,18:00:00
+Emily,Anderson,General Physician,Wednesday,11:00:00,15:00:00
+Emily,Anderson,General Physician,Thursday,11:00:00,15:00:00
+Emily,Anderson,General Physician,Friday,15:00:00,19:00:00
+Emily,Anderson,General Physician,Saturday,21:00:00,21:00:00
+Emily,Anderson,General Physician,Sunday,12:00:00,16:00:00
+Emily,Brown,Psychiatrist,Monday,11:00:00,15:00:00
+Emily,Brown,Psychiatrist,Tuesday,10:00:00,14:00:00
+Emily,Brown,Psychiatrist,Thursday,16:00:00,20:00:00
+Emily,Brown,Psychiatrist,Friday,10:00:00,14:00:00
+Emily,Brown,Psychiatrist,Saturday,12:00:00,16:00:00
+Emily,Brown,Psychiatrist,Sunday,16:00:00,20:00:00
+Emily,Smith,General Physician,Monday,09:00:00,13:00:00
+Emily,Smith,General Physician,Tuesday,21:00:00,21:00:00
+Emily,Smith,General Physician,Wednesday,15:00:00,19:00:00
+Emily,Smith,General Physician,Friday,09:00:00,13:00:00
+Emily,Thompson,Ophthalmologist,Monday,13:00:00,17:00:00
+Emily,Thompson,Ophthalmologist,Tuesday,10:00:00,14:00:00
+Emily,Thompson,Ophthalmologist,Wednesday,18:00:00,21:00:00
+Emily,Thompson,Ophthalmologist,Friday,19:00:00,21:00:00
+Emily,Thompson,Ophthalmologist,Saturday,20:00:00,21:00:00
+Emily,Thompson,Ophthalmologist,Sunday,13:00:00,17:00:00
+Emily,Robinson,General Physician,Monday,16:00:00,20:00:00
+Emily,Robinson,General Physician,Tuesday,19:00:00,21:00:00
+Emily,Robinson,General Physician,Friday,15:00:00,19:00:00
+Emily,Robinson,General Physician,Saturday,12:00:00,16:00:00
+Emily,Robinson,General Physician,Sunday,15:00:00,19:00:00
+George,Jackson,Psychiatrist,Monday,16:00:00,20:00:00
+George,Jackson,Psychiatrist,Thursday,11:00:00,15:00:00
+George,Jackson,Psychiatrist,Saturday,21:00:00,21:00:00
+George,Jackson,Psychiatrist,Sunday,19:00:00,21:00:00
+George,Martinez,Orthopedist,Monday,17:00:00,21:00:00
+George,Martinez,Orthopedist,Tuesday,13:00:00,17:00:00
+George,Martinez,Orthopedist,Wednesday,13:00:00,17:00:00
+George,Martinez,Orthopedist,Thursday,17:00:00,21:00:00
+George,Martinez,Orthopedist,Friday,11:00:00,15:00:00
+George,Martinez,Orthopedist,Saturday,12:00:00,16:00:00
+George,Martinez,Orthopedist,Sunday,15:00:00,19:00:00
+George,Jones,Cardiologist,Monday,13:00:00,17:00:00
+George,Jones,Cardiologist,Wednesday,13:00:00,17:00:00
+George,Jones,Cardiologist,Thursday,18:00:00,21:00:00
+George,Jones,Cardiologist,Friday,20:00:00,21:00:00
+George,Jones,Cardiologist,Saturday,13:00:00,17:00:00
+George,Thompson,Orthopedist,Monday,09:00:00,13:00:00
+George,Thompson,Orthopedist,Tuesday,15:00:00,19:00:00
+George,Thompson,Orthopedist,Wednesday,12:00:00,16:00:00
+George,Thompson,Orthopedist,Thursday,15:00:00,19:00:00
+George,Thompson,Orthopedist,Friday,17:00:00,21:00:00
+George,Thompson,Orthopedist,Sunday,15:00:00,19:00:00
+George,Smith,Pediatrician,Monday,17:00:00,21:00:00
+George,Smith,Pediatrician,Tuesday,09:00:00,13:00:00
+George,Smith,Pediatrician,Thursday,09:00:00,13:00:00
+George,Smith,Pediatrician,Sunday,20:00:00,21:00:00
+George,White,Ophthalmologist,Monday,16:00:00,20:00:00
+George,White,Ophthalmologist,Tuesday,21:00:00,21:00:00
+George,White,Ophthalmologist,Wednesday,20:00:00,21:00:00
+George,White,Ophthalmologist,Thursday,20:00:00,21:00:00
+George,White,Ophthalmologist,Friday,09:00:00,13:00:00
+George,White,Ophthalmologist,Sunday,20:00:00,21:00:00
+James,Martinez,General Physician,Tuesday,20:00:00,21:00:00
+James,Martinez,General Physician,Wednesday,16:00:00,20:00:00
+James,Martinez,General Physician,Thursday,09:00:00,13:00:00
+James,Martinez,General Physician,Friday,12:00:00,16:00:00
+James,Martinez,General Physician,Saturday,15:00:00,19:00:00
+James,Thompson,Gastroenterologist,Monday,15:00:00,19:00:00
+James,Thompson,Gastroenterologist,Wednesday,11:00:00,15:00:00
+James,Thompson,Gastroenterologist,Saturday,18:00:00,21:00:00
+James,Thompson,Gastroenterologist,Sunday,09:00:00,13:00:00
+James,Wilson,Dermatologist,Tuesday,16:00:00,20:00:00
+James,Wilson,Dermatologist,Wednesday,20:00:00,21:00:00
+James,Wilson,Dermatologist,Thursday,20:00:00,21:00:00
+James,Wilson,Dermatologist,Friday,13:00:00,17:00:00
+James,Wilson,Dermatologist,Saturday,20:00:00,21:00:00
+Jennifer,Johnson,General Physician,Monday,11:00:00,15:00:00
+Jennifer,Johnson,General Physician,Tuesday,19:00:00,21:00:00
+Jennifer,Johnson,General Physician,Wednesday,13:00:00,17:00:00
+Jennifer,Johnson,General Physician,Thursday,18:00:00,21:00:00
+Jennifer,Johnson,General Physician,Saturday,16:00:00,20:00:00
+Jennifer,Johnson,General Physician,Sunday,18:00:00,21:00:00
+Jennifer,Taylor,Dermatologist,Monday,10:00:00,14:00:00
+Jennifer,Taylor,Dermatologist,Wednesday,13:00:00,17:00:00
+Jennifer,Taylor,Dermatologist,Thursday,09:00:00,13:00:00
+Jennifer,Taylor,Dermatologist,Friday,09:00:00,13:00:00
+Jennifer,Taylor,Dermatologist,Saturday,09:00:00,13:00:00
+Jennifer,Taylor,Dermatologist,Sunday,18:00:00,21:00:00
+Jennifer,Brown,Ophthalmologist,Monday,12:00:00,16:00:00
+Jennifer,Brown,Ophthalmologist,Tuesday,16:00:00,20:00:00
+Jennifer,Brown,Ophthalmologist,Wednesday,13:00:00,17:00:00
+Jennifer,Brown,Ophthalmologist,Friday,11:00:00,15:00:00
+Jennifer,Brown,Ophthalmologist,Saturday,21:00:00,21:00:00
+Jennifer,Brown,Ophthalmologist,Sunday,11:00:00,15:00:00
+John,Robinson,Neurologist,Tuesday,19:00:00,21:00:00
+John,Robinson,Neurologist,Thursday,12:00:00,16:00:00
+John,Robinson,Neurologist,Friday,20:00:00,21:00:00
+John,Robinson,Neurologist,Sunday,17:00:00,21:00:00
+John,White,Neurologist,Monday,12:00:00,16:00:00
+John,White,Neurologist,Thursday,09:00:00,13:00:00
+John,White,Neurologist,Friday,18:00:00,21:00:00
+John,White,Neurologist,Sunday,19:00:00,21:00:00
+John,Miller,Pediatrician,Tuesday,09:00:00,13:00:00
+John,Miller,Pediatrician,Wednesday,11:00:00,15:00:00
+John,Miller,Pediatrician,Thursday,09:00:00,13:00:00
+John,Miller,Pediatrician,Friday,12:00:00,16:00:00
+John,Miller,Pediatrician,Saturday,14:00:00,18:00:00
+John,Miller,Pediatrician,Sunday,17:00:00,21:00:00
+John,Jackson,Orthopedist,Monday,14:00:00,18:00:00
+John,Jackson,Orthopedist,Tuesday,15:00:00,19:00:00
+John,Jackson,Orthopedist,Thursday,19:00:00,21:00:00
+John,Jackson,Orthopedist,Friday,17:00:00,21:00:00
+John,Jackson,Orthopedist,Saturday,19:00:00,21:00:00
+John,Williams,Ophthalmologist,Tuesday,16:00:00,20:00:00
+John,Williams,Ophthalmologist,Wednesday,13:00:00,17:00:00
+John,Williams,Ophthalmologist,Thursday,17:00:00,21:00:00
+John,Williams,Ophthalmologist,Saturday,17:00:00,21:00:00
 Joseph,Johnson,Pediatrician,Monday,19:00:00,21:00:00
 Joseph,Johnson,Pediatrician,Tuesday,12:00:00,16:00:00
 Joseph,Johnson,Pediatrician,Wednesday,15:00:00,19:00:00
@@ -93,64 +229,189 @@ Joseph,Johnson,Pediatrician,Thursday,19:00:00,21:00:00
 Joseph,Johnson,Pediatrician,Friday,20:00:00,21:00:00
 Joseph,Johnson,Pediatrician,Saturday,21:00:00,21:00:00
 Joseph,Johnson,Pediatrician,Sunday,17:00:00,21:00:00
-Robert,Anderson,Psychiatrist,Monday,21:00:00,21:00:00
-Robert,Anderson,Psychiatrist,Tuesday,19:00:00,21:00:00
-Robert,Anderson,Psychiatrist,Wednesday,11:00:00,15:00:00
-Robert,Anderson,Psychiatrist,Thursday,11:00:00,15:00:00
+Joseph,Thomas,Psychiatrist,Monday,17:00:00,21:00:00
+Joseph,Thomas,Psychiatrist,Thursday,19:00:00,21:00:00
+Joseph,Thomas,Psychiatrist,Friday,19:00:00,21:00:00
+Joseph,Thomas,Psychiatrist,Saturday,13:00:00,17:00:00
+Joseph,Thomas,Psychiatrist,Sunday,20:00:00,21:00:00
+Joseph,Jackson,Ophthalmologist,Tuesday,17:00:00,21:00:00
+Joseph,Jackson,Ophthalmologist,Wednesday,19:00:00,21:00:00
+Joseph,Jackson,Ophthalmologist,Sunday,10:00:00,14:00:00
+Karen,Moore,ENT Specialist,Monday,12:00:00,16:00:00
+Karen,Moore,ENT Specialist,Tuesday,18:00:00,21:00:00
+Karen,Moore,ENT Specialist,Thursday,16:00:00,20:00:00
+Karen,Moore,ENT Specialist,Saturday,16:00:00,20:00:00
+Karen,Brown,Cardiologist,Monday,13:00:00,17:00:00
+Karen,Brown,Cardiologist,Tuesday,17:00:00,21:00:00
+Karen,Brown,Cardiologist,Friday,20:00:00,21:00:00
+Karen,Brown,Cardiologist,Saturday,21:00:00,21:00:00
+Karen,Brown,Cardiologist,Sunday,11:00:00,15:00:00
+Karen,Davis,ENT Specialist,Tuesday,18:00:00,21:00:00
+Karen,Davis,ENT Specialist,Wednesday,16:00:00,20:00:00
+Karen,Davis,ENT Specialist,Thursday,13:00:00,17:00:00
+Karen,Davis,ENT Specialist,Friday,19:00:00,21:00:00
+Karen,Davis,ENT Specialist,Saturday,13:00:00,17:00:00
+Karen,Davis,ENT Specialist,Sunday,18:00:00,21:00:00
+Karen,Williams,Dermatologist,Monday,16:00:00,20:00:00
+Karen,Williams,Dermatologist,Tuesday,21:00:00,21:00:00
+Karen,Williams,Dermatologist,Wednesday,12:00:00,16:00:00
+Karen,Williams,Dermatologist,Thursday,10:00:00,14:00:00
+Karen,Williams,Dermatologist,Friday,19:00:00,21:00:00
+Karen,Garcia,Cardiologist,Monday,21:00:00,21:00:00
+Karen,Garcia,Cardiologist,Tuesday,10:00:00,14:00:00
+Karen,Garcia,Cardiologist,Wednesday,10:00:00,14:00:00
+Karen,Garcia,Cardiologist,Thursday,10:00:00,14:00:00
+Karen,Garcia,Cardiologist,Friday,15:00:00,19:00:00
+Karen,Garcia,Cardiologist,Sunday,12:00:00,16:00:00
+Karen,Wilson,Gastroenterologist,Monday,12:00:00,16:00:00
+Karen,Wilson,Gastroenterologist,Thursday,13:00:00,17:00:00
+Karen,Wilson,Gastroenterologist,Friday,15:00:00,19:00:00
+Karen,Wilson,Gastroenterologist,Saturday,19:00:00,21:00:00
+Karen,Wilson,Gastroenterologist,Sunday,20:00:00,21:00:00
+Karen,Martinez,Pediatrician,Monday,14:00:00,18:00:00
+Karen,Martinez,Pediatrician,Wednesday,16:00:00,20:00:00
+Karen,Martinez,Pediatrician,Thursday,21:00:00,21:00:00
+Karen,Martinez,Pediatrician,Friday,14:00:00,18:00:00
+Karen,Martinez,Pediatrician,Saturday,16:00:00,20:00:00
+Laura,Jones,General Physician,Monday,16:00:00,20:00:00
+Laura,Jones,General Physician,Thursday,21:00:00,21:00:00
+Laura,Jones,General Physician,Friday,11:00:00,15:00:00
+Laura,Jones,General Physician,Sunday,15:00:00,19:00:00
+Laura,Wilson,Dermatologist,Monday,19:00:00,21:00:00
+Laura,Wilson,Dermatologist,Tuesday,12:00:00,16:00:00
+Laura,Wilson,Dermatologist,Wednesday,12:00:00,16:00:00
+Laura,Wilson,Dermatologist,Thursday,14:00:00,18:00:00
+Laura,Wilson,Dermatologist,Friday,18:00:00,21:00:00
+Laura,Wilson,Dermatologist,Saturday,20:00:00,21:00:00
+Laura,Wilson,Dermatologist,Monday,16:00:00,20:00:00
+Laura,Wilson,Dermatologist,Tuesday,16:00:00,20:00:00
+Laura,Wilson,Dermatologist,Wednesday,21:00:00,21:00:00
+Laura,Wilson,Dermatologist,Thursday,15:00:00,19:00:00
+Laura,Wilson,Dermatologist,Friday,11:00:00,15:00:00
+Laura,Wilson,Dermatologist,Saturday,15:00:00,19:00:00
+Laura,Taylor,ENT Specialist,Monday,09:00:00,13:00:00
+Laura,Taylor,ENT Specialist,Tuesday,13:00:00,17:00:00
+Laura,Taylor,ENT Specialist,Wednesday,13:00:00,17:00:00
+Laura,Taylor,ENT Specialist,Thursday,09:00:00,13:00:00
+Laura,Taylor,ENT Specialist,Friday,16:00:00,20:00:00
+Laura,Martinez,Orthopedist,Tuesday,21:00:00,21:00:00
+Laura,Martinez,Orthopedist,Wednesday,14:00:00,18:00:00
+Laura,Martinez,Orthopedist,Thursday,14:00:00,18:00:00
+Laura,Martinez,Orthopedist,Friday,21:00:00,21:00:00
+Laura,Martinez,Orthopedist,Sunday,15:00:00,19:00:00
+Linda,Miller,Psychiatrist,Monday,12:00:00,16:00:00
+Linda,Miller,Psychiatrist,Tuesday,18:00:00,21:00:00
+Linda,Miller,Psychiatrist,Wednesday,15:00:00,19:00:00
+Linda,Miller,Psychiatrist,Friday,12:00:00,16:00:00
+Linda,Miller,Psychiatrist,Saturday,16:00:00,20:00:00
+Linda,Miller,Psychiatrist,Sunday,15:00:00,19:00:00
 Linda,Williams,Psychiatrist,Monday,09:00:00,13:00:00
 Linda,Williams,Psychiatrist,Tuesday,18:00:00,21:00:00
 Linda,Williams,Psychiatrist,Thursday,17:00:00,21:00:00
 Linda,Williams,Psychiatrist,Friday,12:00:00,16:00:00
 Linda,Williams,Psychiatrist,Saturday,16:00:00,20:00:00
 Linda,Williams,Psychiatrist,Sunday,19:00:00,21:00:00
-Nancy,Miller,General Physician,Monday,15:00:00,19:00:00
-Nancy,Miller,General Physician,Tuesday,10:00:00,14:00:00
-Nancy,Miller,General Physician,Wednesday,13:00:00,17:00:00
-Nancy,Miller,General Physician,Thursday,15:00:00,19:00:00
-Nancy,Miller,General Physician,Saturday,13:00:00,17:00:00
-Nancy,Miller,General Physician,Sunday,20:00:00,21:00:00
-William,Martinez,Psychiatrist,Monday,20:00:00,21:00:00
-William,Martinez,Psychiatrist,Tuesday,14:00:00,18:00:00
-William,Martinez,Psychiatrist,Wednesday,09:00:00,13:00:00
-William,Martinez,Psychiatrist,Thursday,14:00:00,18:00:00
-William,Martinez,Psychiatrist,Friday,12:00:00,16:00:00
-William,Martinez,Psychiatrist,Saturday,13:00:00,17:00:00
-William,Martinez,Psychiatrist,Sunday,12:00:00,16:00:00
+Linda,Garcia,Cardiologist,Monday,18:00:00,21:00:00
+Linda,Garcia,Cardiologist,Wednesday,12:00:00,16:00:00
+Linda,Garcia,Cardiologist,Thursday,11:00:00,15:00:00
+Linda,Garcia,Cardiologist,Friday,11:00:00,15:00:00
+Linda,Garcia,Cardiologist,Sunday,14:00:00,18:00:00
+Linda,White,Gastroenterologist,Monday,17:00:00,21:00:00
+Linda,White,Gastroenterologist,Friday,18:00:00,21:00:00
+Linda,White,Gastroenterologist,Saturday,21:00:00,21:00:00
+Linda,White,Gastroenterologist,Sunday,20:00:00,21:00:00
+Linda,Johnson,Cardiologist,Tuesday,21:00:00,21:00:00
+Linda,Johnson,Cardiologist,Wednesday,11:00:00,15:00:00
+Linda,Johnson,Cardiologist,Friday,13:00:00,17:00:00
+Linda,Johnson,Cardiologist,Saturday,14:00:00,18:00:00
+Linda,Johnson,Cardiologist,Sunday,19:00:00,21:00:00
 Michael,Anderson,Dermatologist,Monday,21:00:00,21:00:00
 Michael,Anderson,Dermatologist,Tuesday,16:00:00,20:00:00
 Michael,Anderson,Dermatologist,Thursday,18:00:00,21:00:00
 Michael,Anderson,Dermatologist,Friday,13:00:00,17:00:00
 Michael,Anderson,Dermatologist,Saturday,17:00:00,21:00:00
 Michael,Anderson,Dermatologist,Sunday,21:00:00,21:00:00
+Michael,Jackson,Gastroenterologist,Monday,14:00:00,18:00:00
+Michael,Jackson,Gastroenterologist,Tuesday,11:00:00,15:00:00
+Michael,Jackson,Gastroenterologist,Thursday,09:00:00,13:00:00
+Michael,Jackson,Gastroenterologist,Friday,09:00:00,13:00:00
+Michael,Jackson,Gastroenterologist,Saturday,16:00:00,20:00:00
+Michael,White,Ophthalmologist,Monday,21:00:00,21:00:00
+Michael,White,Ophthalmologist,Tuesday,16:00:00,20:00:00
+Michael,White,Ophthalmologist,Wednesday,14:00:00,18:00:00
+Michael,White,Ophthalmologist,Thursday,18:00:00,21:00:00
+Michael,White,Ophthalmologist,Friday,09:00:00,13:00:00
+Michael,White,Ophthalmologist,Saturday,20:00:00,21:00:00
+Michael,White,Ophthalmologist,Sunday,17:00:00,21:00:00
+Nancy,Anderson,Pediatrician,Wednesday,17:00:00,21:00:00
+Nancy,Anderson,Pediatrician,Thursday,15:00:00,19:00:00
+Nancy,Anderson,Pediatrician,Friday,12:00:00,16:00:00
+Nancy,Anderson,Pediatrician,Saturday,14:00:00,18:00:00
+Nancy,Anderson,Pediatrician,Sunday,17:00:00,21:00:00
+Nancy,Miller,General Physician,Monday,15:00:00,19:00:00
+Nancy,Miller,General Physician,Tuesday,10:00:00,14:00:00
+Nancy,Miller,General Physician,Wednesday,13:00:00,17:00:00
+Nancy,Miller,General Physician,Thursday,15:00:00,19:00:00
+Nancy,Miller,General Physician,Saturday,13:00:00,17:00:00
+Nancy,Miller,General Physician,Sunday,20:00:00,21:00:00
 Nancy,Williams,ENT Specialist,Wednesday,17:00:00,21:00:00
 Nancy,Williams,ENT Specialist,Saturday,14:00:00,18:00:00
 Nancy,Williams,ENT Specialist,Sunday,15:00:00,19:00:00
-Christopher,Martinez,Pediatrician,Monday,12:00:00,16:00:00
-Christopher,Martinez,Pediatrician,Tuesday,13:00:00,17:00:00
-Christopher,Martinez,Pediatrician,Wednesday,11:00:00,15:00:00
-Christopher,Martinez,Pediatrician,Friday,17:00:00,21:00:00
-Christopher,Martinez,Pediatrician,Saturday,14:00:00,18:00:00
-Daniel,Robinson,Dermatologist,Monday,14:00:00,18:00:00
-Daniel,Robinson,Dermatologist,Thursday,10:00:00,14:00:00
-Daniel,Robinson,Dermatologist,Friday,12:00:00,16:00:00
-Daniel,Robinson,Dermatologist,Saturday,21:00:00,21:00:00
-John,Robinson,Neurologist,Tuesday,19:00:00,21:00:00
-John,Robinson,Neurologist,Thursday,12:00:00,16:00:00
-John,Robinson,Neurologist,Friday,20:00:00,21:00:00
-John,Robinson,Neurologist,Sunday,17:00:00,21:00:00
-David,Garcia,Ophthalmologist,Monday,17:00:00,21:00:00
-David,Garcia,Ophthalmologist,Tuesday,19:00:00,21:00:00
-David,Garcia,Ophthalmologist,Friday,14:00:00,18:00:00
-Emily,Brown,Psychiatrist,Monday,11:00:00,15:00:00
-Emily,Brown,Psychiatrist,Tuesday,10:00:00,14:00:00
-Emily,Brown,Psychiatrist,Thursday,16:00:00,20:00:00
-Emily,Brown,Psychiatrist,Friday,10:00:00,14:00:00
-Emily,Brown,Psychiatrist,Saturday,12:00:00,16:00:00
-Emily,Brown,Psychiatrist,Sunday,16:00:00,20:00:00
-Daniel,Wilson,Gastroenterologist,Monday,17:00:00,21:00:00
-Daniel,Wilson,Gastroenterologist,Friday,13:00:00,17:00:00
-Daniel,Wilson,Gastroenterologist,Saturday,13:00:00,17:00:00
-Daniel,Wilson,Gastroenterologist,Sunday,19:00:00,21:00:00
+Nancy,White,Psychiatrist,Monday,17:00:00,21:00:00
+Nancy,White,Psychiatrist,Tuesday,19:00:00,21:00:00
+Nancy,White,Psychiatrist,Wednesday,21:00:00,21:00:00
+Nancy,White,Psychiatrist,Saturday,12:00:00,16:00:00
+Paul,Martinez,ENT Specialist,Wednesday,12:00:00,16:00:00
+Paul,Martinez,ENT Specialist,Friday,12:00:00,16:00:00
+Paul,Martinez,ENT Specialist,Sunday,19:00:00,21:00:00
+Paul,Harris,General Physician,Monday,15:00:00,19:00:00
+Paul,Harris,General Physician,Tuesday,12:00:00,16:00:00
+Paul,Harris,General Physician,Wednesday,17:00:00,21:00:00
+Paul,Harris,General Physician,Thursday,10:00:00,14:00:00
+Paul,Harris,General Physician,Saturday,11:00:00,15:00:00
+Paul,Harris,General Physician,Sunday,13:00:00,17:00:00
+Paul,Brown,Ophthalmologist,Tuesday,16:00:00,20:00:00
+Paul,Brown,Ophthalmologist,Wednesday,11:00:00,15:00:00
+Paul,Brown,Ophthalmologist,Friday,12:00:00,16:00:00
+Paul,Brown,Ophthalmologist,Sunday,19:00:00,21:00:00
+Paul,Wilson,Gastroenterologist,Monday,12:00:00,16:00:00
+Paul,Wilson,Gastroenterologist,Tuesday,18:00:00,21:00:00
+Paul,Wilson,Gastroenterologist,Thursday,15:00:00,19:00:00
+Paul,Wilson,Gastroenterologist,Friday,21:00:00,21:00:00
+Paul,Jackson,Orthopedist,Monday,12:00:00,16:00:00
+Paul,Jackson,Orthopedist,Wednesday,18:00:00,21:00:00
+Paul,Jackson,Orthopedist,Thursday,09:00:00,13:00:00
+Paul,Jackson,Orthopedist,Friday,20:00:00,21:00:00
+Paul,Jackson,Orthopedist,Saturday,11:00:00,15:00:00
+Robert,Taylor,Orthopedist,Monday,15:00:00,19:00:00
+Robert,Taylor,Orthopedist,Tuesday,20:00:00,21:00:00
+Robert,Taylor,Orthopedist,Thursday,21:00:00,21:00:00
+Robert,Taylor,Orthopedist,Friday,12:00:00,16:00:00
+Robert,Taylor,Orthopedist,Saturday,11:00:00,15:00:00
+Robert,Taylor,Orthopedist,Sunday,15:00:00,19:00:00
+Robert,Anderson,Psychiatrist,Monday,21:00:00,21:00:00
+Robert,Anderson,Psychiatrist,Tuesday,19:00:00,21:00:00
+Robert,Anderson,Psychiatrist,Wednesday,11:00:00,15:00:00
+Robert,Anderson,Psychiatrist,Thursday,11:00:00,15:00:00
+Robert,Smith,Orthopedist,Monday,09:00:00,13:00:00
+Robert,Smith,Orthopedist,Tuesday,10:00:00,14:00:00
+Robert,Smith,Orthopedist,Friday,20:00:00,21:00:00
+Robert,Williams,Psychiatrist,Monday,21:00:00,21:00:00
+Robert,Williams,Psychiatrist,Tuesday,17:00:00,21:00:00
+Robert,Williams,Psychiatrist,Thursday,16:00:00,20:00:00
+Robert,Williams,Psychiatrist,Friday,16:00:00,20:00:00
+Robert,Williams,Psychiatrist,Saturday,21:00:00,21:00:00
+Robert,Williams,Psychiatrist,Sunday,15:00:00,19:00:00
+Sarah,Robinson,ENT Specialist,Monday,09:00:00,13:00:00
+Sarah,Robinson,ENT Specialist,Wednesday,21:00:00,21:00:00
+Sarah,Robinson,ENT Specialist,Thursday,16:00:00,20:00:00
+Sarah,Robinson,ENT Specialist,Friday,20:00:00,21:00:00
+Thomas,Anderson,Orthopedist,Monday,11:00:00,15:00:00
+Thomas,Anderson,Orthopedist,Tuesday,10:00:00,14:00:00
+Thomas,Anderson,Orthopedist,Wednesday,09:00:00,13:00:00
+Thomas,Anderson,Orthopedist,Thursday,20:00:00,21:00:00
+Thomas,Anderson,Orthopedist,Saturday,20:00:00,21:00:00
+Thomas,Anderson,Orthopedist,Sunday,13:00:00,17:00:00
 Thomas,Jones,ENT Specialist,Monday,20:00:00,21:00:00
 Thomas,Jones,ENT Specialist,Tuesday,11:00:00,15:00:00
 Thomas,Jones,ENT Specialist,Wednesday,10:00:00,14:00:00
@@ -165,346 +426,39 @@ Thomas,Williams,ENT Specialist,Thursday,18:00:00,21:00:00
 Thomas,Williams,ENT Specialist,Friday,11:00:00,15:00:00
 Thomas,Williams,ENT Specialist,Saturday,15:00:00,19:00:00
 Thomas,Williams,ENT Specialist,Sunday,18:00:00,21:00:00
-George,Jones,Cardiologist,Monday,13:00:00,17:00:00
-George,Jones,Cardiologist,Wednesday,13:00:00,17:00:00
-George,Jones,Cardiologist,Thursday,18:00:00,21:00:00
-George,Jones,Cardiologist,Friday,20:00:00,21:00:00
-George,Jones,Cardiologist,Saturday,13:00:00,17:00:00
-David,Robinson,Orthopedist,Monday,10:00:00,14:00:00
-David,Robinson,Orthopedist,Tuesday,20:00:00,21:00:00
-David,Robinson,Orthopedist,Thursday,19:00:00,21:00:00
-David,Robinson,Orthopedist,Friday,14:00:00,18:00:00
-David,Robinson,Orthopedist,Sunday,17:00:00,21:00:00
-William,Thompson,ENT Specialist,Monday,19:00:00,21:00:00
-William,Thompson,ENT Specialist,Wednesday,19:00:00,21:00:00
-William,Thompson,ENT Specialist,Thursday,12:00:00,16:00:00
-William,Thompson,ENT Specialist,Friday,15:00:00,19:00:00
-William,Thompson,ENT Specialist,Saturday,19:00:00,21:00:00
-William,Thompson,ENT Specialist,Sunday,15:00:00,19:00:00
-William,Harris,General Physician,Monday,11:00:00,15:00:00
-William,Harris,General Physician,Wednesday,20:00:00,21:00:00
-William,Harris,General Physician,Thursday,13:00:00,17:00:00
-William,Harris,General Physician,Friday,10:00:00,14:00:00
-William,Harris,General Physician,Saturday,10:00:00,14:00:00
-William,Harris,General Physician,Sunday,19:00:00,21:00:00
-David,Jones,Gastroenterologist,Monday,16:00:00,20:00:00
-David,Jones,Gastroenterologist,Wednesday,18:00:00,21:00:00
-David,Jones,Gastroenterologist,Friday,21:00:00,21:00:00
-Linda,Garcia,Cardiologist,Monday,18:00:00,21:00:00
-Linda,Garcia,Cardiologist,Wednesday,12:00:00,16:00:00
-Linda,Garcia,Cardiologist,Thursday,11:00:00,15:00:00
-Linda,Garcia,Cardiologist,Friday,11:00:00,15:00:00
-Linda,Garcia,Cardiologist,Sunday,14:00:00,18:00:00
-Jennifer,Johnson,General Physician,Monday,11:00:00,15:00:00
-Jennifer,Johnson,General Physician,Tuesday,19:00:00,21:00:00
-Jennifer,Johnson,General Physician,Wednesday,13:00:00,17:00:00
-Jennifer,Johnson,General Physician,Thursday,18:00:00,21:00:00
-Jennifer,Johnson,General Physician,Saturday,16:00:00,20:00:00
-Jennifer,Johnson,General Physician,Sunday,18:00:00,21:00:00
-Sarah,Robinson,ENT Specialist,Monday,09:00:00,13:00:00
-Sarah,Robinson,ENT Specialist,Wednesday,21:00:00,21:00:00
-Sarah,Robinson,ENT Specialist,Thursday,16:00:00,20:00:00
-Sarah,Robinson,ENT Specialist,Friday,20:00:00,21:00:00
-Paul,Harris,General Physician,Monday,15:00:00,19:00:00
-Paul,Harris,General Physician,Tuesday,12:00:00,16:00:00
-Paul,Harris,General Physician,Wednesday,17:00:00,21:00:00
-Paul,Harris,General Physician,Thursday,10:00:00,14:00:00
-Paul,Harris,General Physician,Saturday,11:00:00,15:00:00
-Paul,Harris,General Physician,Sunday,13:00:00,17:00:00
-Emily,Anderson,Gastroenterologist,Monday,20:00:00,21:00:00
-Emily,Anderson,Gastroenterologist,Tuesday,16:00:00,20:00:00
-Emily,Anderson,Gastroenterologist,Friday,11:00:00,15:00:00
-Emily,Anderson,Gastroenterologist,Saturday,19:00:00,21:00:00
-Emily,Anderson,Gastroenterologist,Sunday,09:00:00,13:00:00
-Robert,Taylor,Pediatrician,Wednesday,19:00:00,21:00:00
-Robert,Taylor,Pediatrician,Thursday,10:00:00,14:00:00
-Robert,Taylor,Pediatrician,Friday,15:00:00,19:00:00
-Robert,Taylor,Pediatrician,Saturday,12:00:00,16:00:00
-Christopher,Thomas,Ophthalmologist,Monday,11:00:00,15:00:00
-Christopher,Thomas,Ophthalmologist,Tuesday,14:00:00,18:00:00
-Christopher,Thomas,Ophthalmologist,Wednesday,09:00:00,13:00:00
-Christopher,Thomas,Ophthalmologist,Thursday,12:00:00,16:00:00
-Christopher,Thomas,Ophthalmologist,Friday,19:00:00,21:00:00
-Christopher,Thomas,Ophthalmologist,Saturday,18:00:00,21:00:00
-Christopher,Thomas,Ophthalmologist,Sunday,12:00:00,16:00:00
-Emily,Smith,General Physician,Monday,09:00:00,13:00:00
-Emily,Smith,General Physician,Tuesday,21:00:00,21:00:00
-Emily,Smith,General Physician,Wednesday,15:00:00,19:00:00
-Emily,Smith,General Physician,Friday,09:00:00,13:00:00
-Barbara,Taylor,Psychiatrist,Monday,13:00:00,17:00:00
-Barbara,Taylor,Psychiatrist,Thursday,15:00:00,19:00:00
-Barbara,Taylor,Psychiatrist,Saturday,19:00:00,21:00:00
-John,White,Neurologist,Monday,12:00:00,16:00:00
-John,White,Neurologist,Thursday,09:00:00,13:00:00
-John,White,Neurologist,Friday,18:00:00,21:00:00
-John,White,Neurologist,Sunday,19:00:00,21:00:00
 Thomas,Robinson,Psychiatrist,Tuesday,14:00:00,18:00:00
 Thomas,Robinson,Psychiatrist,Wednesday,13:00:00,17:00:00
 Thomas,Robinson,Psychiatrist,Thursday,17:00:00,21:00:00
 Thomas,Robinson,Psychiatrist,Friday,13:00:00,17:00:00
 Thomas,Robinson,Psychiatrist,Saturday,10:00:00,14:00:00
 Thomas,Robinson,Psychiatrist,Sunday,11:00:00,15:00:00
-David,Garcia,Psychiatrist,Monday,15:00:00,19:00:00
-David,Garcia,Psychiatrist,Tuesday,16:00:00,20:00:00
-David,Garcia,Psychiatrist,Wednesday,11:00:00,15:00:00
-David,Garcia,Psychiatrist,Friday,10:00:00,14:00:00
-David,Garcia,Psychiatrist,Saturday,19:00:00,21:00:00
-David,Garcia,Psychiatrist,Sunday,17:00:00,21:00:00
-George,Thompson,Orthopedist,Monday,09:00:00,13:00:00
-George,Thompson,Orthopedist,Tuesday,15:00:00,19:00:00
-George,Thompson,Orthopedist,Wednesday,12:00:00,16:00:00
-George,Thompson,Orthopedist,Thursday,15:00:00,19:00:00
-George,Thompson,Orthopedist,Friday,17:00:00,21:00:00
-George,Thompson,Orthopedist,Sunday,15:00:00,19:00:00
-Laura,Wilson,Dermatologist,Monday,16:00:00,20:00:00
-Laura,Wilson,Dermatologist,Tuesday,16:00:00,20:00:00
-Laura,Wilson,Dermatologist,Wednesday,21:00:00,21:00:00
-Laura,Wilson,Dermatologist,Thursday,15:00:00,19:00:00
-Laura,Wilson,Dermatologist,Friday,11:00:00,15:00:00
-Laura,Wilson,Dermatologist,Saturday,15:00:00,19:00:00
-Christopher,Robinson,Neurologist,Monday,12:00:00,16:00:00
-William,Harris,Dermatologist,Monday,19:00:00,21:00:00
-William,Harris,Dermatologist,Tuesday,15:00:00,19:00:00
-William,Harris,Dermatologist,Wednesday,12:00:00,16:00:00
-William,Harris,Dermatologist,Friday,14:00:00,18:00:00
-William,Harris,Dermatologist,Sunday,10:00:00,14:00:00
-Laura,Taylor,ENT Specialist,Monday,09:00:00,13:00:00
-Laura,Taylor,ENT Specialist,Tuesday,13:00:00,17:00:00
-Laura,Taylor,ENT Specialist,Wednesday,13:00:00,17:00:00
-Laura,Taylor,ENT Specialist,Thursday,09:00:00,13:00:00
-Laura,Taylor,ENT Specialist,Friday,16:00:00,20:00:00
-Christopher,Wilson,ENT Specialist,Monday,18:00:00,21:00:00
-Christopher,Wilson,ENT Specialist,Tuesday,14:00:00,18:00:00
-Christopher,Wilson,ENT Specialist,Wednesday,13:00:00,17:00:00
-Christopher,Wilson,ENT Specialist,Thursday,11:00:00,15:00:00
-Christopher,Wilson,ENT Specialist,Saturday,16:00:00,20:00:00
-Christopher,Wilson,ENT Specialist,Sunday,21:00:00,21:00:00
-Daniel,Taylor,Dermatologist,Monday,18:00:00,21:00:00
-Daniel,Taylor,Dermatologist,Tuesday,13:00:00,17:00:00
-Daniel,Taylor,Dermatologist,Wednesday,17:00:00,21:00:00
-Daniel,Taylor,Dermatologist,Thursday,21:00:00,21:00:00
-Daniel,Taylor,Dermatologist,Friday,16:00:00,20:00:00
-Daniel,Taylor,Dermatologist,Saturday,11:00:00,15:00:00
-Daniel,Taylor,Dermatologist,Sunday,09:00:00,13:00:00
-Karen,Moore,ENT Specialist,Monday,12:00:00,16:00:00
-Karen,Moore,ENT Specialist,Tuesday,18:00:00,21:00:00
-Karen,Moore,ENT Specialist,Thursday,16:00:00,20:00:00
-Karen,Moore,ENT Specialist,Saturday,16:00:00,20:00:00
-Robert,Smith,Orthopedist,Monday,09:00:00,13:00:00
-Robert,Smith,Orthopedist,Tuesday,10:00:00,14:00:00
-Robert,Smith,Orthopedist,Friday,20:00:00,21:00:00
-James,Wilson,Dermatologist,Tuesday,16:00:00,20:00:00
-James,Wilson,Dermatologist,Wednesday,20:00:00,21:00:00
-James,Wilson,Dermatologist,Thursday,20:00:00,21:00:00
-James,Wilson,Dermatologist,Friday,13:00:00,17:00:00
-James,Wilson,Dermatologist,Saturday,20:00:00,21:00:00
-John,Miller,Pediatrician,Tuesday,09:00:00,13:00:00
-John,Miller,Pediatrician,Wednesday,11:00:00,15:00:00
-John,Miller,Pediatrician,Thursday,09:00:00,13:00:00
-John,Miller,Pediatrician,Friday,12:00:00,16:00:00
-John,Miller,Pediatrician,Saturday,14:00:00,18:00:00
-John,Miller,Pediatrician,Sunday,17:00:00,21:00:00
-Laura,Martinez,Orthopedist,Tuesday,21:00:00,21:00:00
-Laura,Martinez,Orthopedist,Wednesday,14:00:00,18:00:00
-Laura,Martinez,Orthopedist,Thursday,14:00:00,18:00:00
-Laura,Martinez,Orthopedist,Friday,21:00:00,21:00:00
-Laura,Martinez,Orthopedist,Sunday,15:00:00,19:00:00
-John,Jackson,Orthopedist,Monday,14:00:00,18:00:00
-John,Jackson,Orthopedist,Tuesday,15:00:00,19:00:00
-John,Jackson,Orthopedist,Thursday,19:00:00,21:00:00
-John,Jackson,Orthopedist,Friday,17:00:00,21:00:00
-John,Jackson,Orthopedist,Saturday,19:00:00,21:00:00
-John,Williams,Ophthalmologist,Tuesday,16:00:00,20:00:00
-John,Williams,Ophthalmologist,Wednesday,13:00:00,17:00:00
-John,Williams,Ophthalmologist,Thursday,17:00:00,21:00:00
-John,Williams,Ophthalmologist,Saturday,17:00:00,21:00:00
-Nancy,Anderson,General Physician,Wednesday,10:00:00,14:00:00
-Nancy,Anderson,General Physician,Thursday,19:00:00,21:00:00
-Nancy,Anderson,General Physician,Saturday,21:00:00,21:00:00
-Barbara,Harris,Neurologist,Monday,15:00:00,19:00:00
-Barbara,Harris,Neurologist,Tuesday,18:00:00,21:00:00
-Barbara,Harris,Neurologist,Wednesday,17:00:00,21:00:00
-Barbara,Harris,Neurologist,Friday,19:00:00,21:00:00
-Barbara,Thompson,Neurologist,Monday,13:00:00,17:00:00
-Barbara,Thompson,Neurologist,Tuesday,12:00:00,16:00:00
-Barbara,Thompson,Neurologist,Thursday,14:00:00,18:00:00
-Barbara,Thompson,Neurologist,Friday,12:00:00,16:00:00
-Barbara,Thompson,Neurologist,Sunday,15:00:00,19:00:00
-Joseph,Thomas,Psychiatrist,Monday,17:00:00,21:00:00
-Joseph,Thomas,Psychiatrist,Thursday,19:00:00,21:00:00
-Joseph,Thomas,Psychiatrist,Friday,19:00:00,21:00:00
-Joseph,Thomas,Psychiatrist,Saturday,13:00:00,17:00:00
-Joseph,Thomas,Psychiatrist,Sunday,20:00:00,21:00:00
-Barbara,Robinson,Pediatrician,Thursday,12:00:00,16:00:00
-Barbara,Robinson,Pediatrician,Friday,11:00:00,15:00:00
-Barbara,Robinson,Pediatrician,Saturday,12:00:00,16:00:00
-Jennifer,Taylor,Dermatologist,Monday,10:00:00,14:00:00
-Jennifer,Taylor,Dermatologist,Wednesday,13:00:00,17:00:00
-Jennifer,Taylor,Dermatologist,Thursday,09:00:00,13:00:00
-Jennifer,Taylor,Dermatologist,Friday,09:00:00,13:00:00
-Jennifer,Taylor,Dermatologist,Saturday,09:00:00,13:00:00
-Jennifer,Taylor,Dermatologist,Sunday,18:00:00,21:00:00
-Emily,Thompson,Ophthalmologist,Monday,13:00:00,17:00:00
-Emily,Thompson,Ophthalmologist,Tuesday,10:00:00,14:00:00
-Emily,Thompson,Ophthalmologist,Wednesday,18:00:00,21:00:00
-Emily,Thompson,Ophthalmologist,Friday,19:00:00,21:00:00
-Emily,Thompson,Ophthalmologist,Saturday,20:00:00,21:00:00
-Emily,Thompson,Ophthalmologist,Sunday,13:00:00,17:00:00
-Joseph,Jackson,Ophthalmologist,Tuesday,17:00:00,21:00:00
-Joseph,Jackson,Ophthalmologist,Wednesday,19:00:00,21:00:00
-Joseph,Jackson,Ophthalmologist,Sunday,10:00:00,14:00:00
 Thomas,Davis,Orthopedist,Monday,10:00:00,14:00:00
 Thomas,Davis,Orthopedist,Tuesday,09:00:00,13:00:00
 Thomas,Davis,Orthopedist,Wednesday,17:00:00,21:00:00
 Thomas,Davis,Orthopedist,Thursday,19:00:00,21:00:00
 Thomas,Davis,Orthopedist,Friday,15:00:00,19:00:00
 Thomas,Davis,Orthopedist,Saturday,10:00:00,14:00:00
-Michael,Jackson,Gastroenterologist,Monday,14:00:00,18:00:00
-Michael,Jackson,Gastroenterologist,Tuesday,11:00:00,15:00:00
-Michael,Jackson,Gastroenterologist,Thursday,09:00:00,13:00:00
-Michael,Jackson,Gastroenterologist,Friday,09:00:00,13:00:00
-Michael,Jackson,Gastroenterologist,Saturday,16:00:00,20:00:00
-Daniel,Williams,Pediatrician,Monday,20:00:00,21:00:00
-Daniel,Williams,Pediatrician,Tuesday,20:00:00,21:00:00
-Daniel,Williams,Pediatrician,Wednesday,10:00:00,14:00:00
-Daniel,Williams,Pediatrician,Thursday,12:00:00,16:00:00
-Daniel,Williams,Pediatrician,Friday,12:00:00,16:00:00
-Daniel,Williams,Pediatrician,Saturday,20:00:00,21:00:00
-George,Smith,Pediatrician,Monday,17:00:00,21:00:00
-George,Smith,Pediatrician,Tuesday,09:00:00,13:00:00
-George,Smith,Pediatrician,Thursday,09:00:00,13:00:00
-George,Smith,Pediatrician,Sunday,20:00:00,21:00:00
-David,Davis,Gastroenterologist,Monday,16:00:00,20:00:00
-David,Davis,Gastroenterologist,Tuesday,09:00:00,13:00:00
-David,Davis,Gastroenterologist,Thursday,11:00:00,15:00:00
-David,Davis,Gastroenterologist,Friday,09:00:00,13:00:00
-Daniel,Thomas,Pediatrician,Monday,09:00:00,13:00:00
-Daniel,Thomas,Pediatrician,Tuesday,15:00:00,19:00:00
-Daniel,Thomas,Pediatrician,Wednesday,10:00:00,14:00:00
-Daniel,Thomas,Pediatrician,Thursday,10:00:00,14:00:00
-Daniel,Thomas,Pediatrician,Saturday,19:00:00,21:00:00
-Daniel,Thomas,Pediatrician,Sunday,09:00:00,13:00:00
-George,White,Ophthalmologist,Monday,16:00:00,20:00:00
-George,White,Ophthalmologist,Tuesday,21:00:00,21:00:00
-George,White,Ophthalmologist,Wednesday,20:00:00,21:00:00
-George,White,Ophthalmologist,Thursday,20:00:00,21:00:00
-George,White,Ophthalmologist,Friday,09:00:00,13:00:00
-George,White,Ophthalmologist,Sunday,20:00:00,21:00:00
-Nancy,White,Psychiatrist,Monday,17:00:00,21:00:00
-Nancy,White,Psychiatrist,Tuesday,19:00:00,21:00:00
-Nancy,White,Psychiatrist,Wednesday,21:00:00,21:00:00
-Nancy,White,Psychiatrist,Saturday,12:00:00,16:00:00
-Paul,Brown,Ophthalmologist,Tuesday,16:00:00,20:00:00
-Paul,Brown,Ophthalmologist,Wednesday,11:00:00,15:00:00
-Paul,Brown,Ophthalmologist,Friday,12:00:00,16:00:00
-Paul,Brown,Ophthalmologist,Sunday,19:00:00,21:00:00
-Karen,Brown,Cardiologist,Monday,13:00:00,17:00:00
-Karen,Brown,Cardiologist,Tuesday,17:00:00,21:00:00
-Karen,Brown,Cardiologist,Friday,20:00:00,21:00:00
-Karen,Brown,Cardiologist,Saturday,21:00:00,21:00:00
-Karen,Brown,Cardiologist,Sunday,11:00:00,15:00:00
-John,White,Gastroenterologist,Monday,16:00:00,20:00:00
-John,White,Gastroenterologist,Tuesday,13:00:00,17:00:00
-John,White,Gastroenterologist,Wednesday,11:00:00,15:00:00
-John,White,Gastroenterologist,Thursday,20:00:00,21:00:00
-John,White,Gastroenterologist,Friday,15:00:00,19:00:00
-John,White,Gastroenterologist,Saturday,17:00:00,21:00:00
-John,White,Gastroenterologist,Sunday,21:00:00,21:00:00
-Daniel,Miller,Gastroenterologist,Monday,21:00:00,21:00:00
-Daniel,Miller,Gastroenterologist,Tuesday,18:00:00,21:00:00
-Daniel,Miller,Gastroenterologist,Wednesday,17:00:00,21:00:00
-Daniel,Miller,Gastroenterologist,Thursday,13:00:00,17:00:00
-Daniel,Miller,Gastroenterologist,Friday,13:00:00,17:00:00
-Daniel,Miller,Gastroenterologist,Saturday,12:00:00,16:00:00
-Daniel,Miller,Gastroenterologist,Sunday,09:00:00,13:00:00
-Paul,Wilson,Gastroenterologist,Monday,12:00:00,16:00:00
-Paul,Wilson,Gastroenterologist,Tuesday,18:00:00,21:00:00
-Paul,Wilson,Gastroenterologist,Thursday,15:00:00,19:00:00
-Paul,Wilson,Gastroenterologist,Friday,21:00:00,21:00:00
-Robert,Williams,Psychiatrist,Monday,21:00:00,21:00:00
-Robert,Williams,Psychiatrist,Tuesday,17:00:00,21:00:00
-Robert,Williams,Psychiatrist,Thursday,16:00:00,20:00:00
-Robert,Williams,Psychiatrist,Friday,16:00:00,20:00:00
-Robert,Williams,Psychiatrist,Saturday,21:00:00,21:00:00
-Robert,Williams,Psychiatrist,Sunday,15:00:00,19:00:00
-Paul,Jackson,Orthopedist,Monday,12:00:00,16:00:00
-Paul,Jackson,Orthopedist,Wednesday,18:00:00,21:00:00
-Paul,Jackson,Orthopedist,Thursday,09:00:00,13:00:00
-Paul,Jackson,Orthopedist,Friday,20:00:00,21:00:00
-Paul,Jackson,Orthopedist,Saturday,11:00:00,15:00:00
-Daniel,Garcia,General Physician,Monday,13:00:00,17:00:00
-Daniel,Garcia,General Physician,Wednesday,10:00:00,14:00:00
-Daniel,Garcia,General Physician,Friday,09:00:00,13:00:00
-Daniel,Garcia,General Physician,Sunday,17:00:00,21:00:00
-Karen,Davis,ENT Specialist,Tuesday,18:00:00,21:00:00
-Karen,Davis,ENT Specialist,Wednesday,16:00:00,20:00:00
-Karen,Davis,ENT Specialist,Thursday,13:00:00,17:00:00
-Karen,Davis,ENT Specialist,Friday,19:00:00,21:00:00
-Karen,Davis,ENT Specialist,Saturday,13:00:00,17:00:00
-Karen,Davis,ENT Specialist,Sunday,18:00:00,21:00:00
-Karen,Williams,Dermatologist,Monday,16:00:00,20:00:00
-Karen,Williams,Dermatologist,Tuesday,21:00:00,21:00:00
-Karen,Williams,Dermatologist,Wednesday,12:00:00,16:00:00
-Karen,Williams,Dermatologist,Thursday,10:00:00,14:00:00
-Karen,Williams,Dermatologist,Friday,19:00:00,21:00:00
 Thomas,Miller,Pediatrician,Monday,09:00:00,13:00:00
 Thomas,Miller,Pediatrician,Tuesday,09:00:00,13:00:00
 Thomas,Miller,Pediatrician,Thursday,13:00:00,17:00:00
 Thomas,Miller,Pediatrician,Friday,15:00:00,19:00:00
 Thomas,Miller,Pediatrician,Saturday,10:00:00,14:00:00
 Thomas,Miller,Pediatrician,Sunday,17:00:00,21:00:00
-David,Brown,Pediatrician,Monday,17:00:00,21:00:00
-David,Brown,Pediatrician,Wednesday,11:00:00,15:00:00
-David,Brown,Pediatrician,Thursday,20:00:00,21:00:00
-David,Brown,Pediatrician,Friday,18:00:00,21:00:00
-David,Brown,Pediatrician,Saturday,13:00:00,17:00:00
-David,Brown,Pediatrician,Sunday,11:00:00,15:00:00
-Michael,White,Ophthalmologist,Monday,21:00:00,21:00:00
-Michael,White,Ophthalmologist,Tuesday,16:00:00,20:00:00
-Michael,White,Ophthalmologist,Wednesday,14:00:00,18:00:00
-Michael,White,Ophthalmologist,Thursday,18:00:00,21:00:00
-Michael,White,Ophthalmologist,Friday,09:00:00,13:00:00
-Michael,White,Ophthalmologist,Saturday,20:00:00,21:00:00
-Michael,White,Ophthalmologist,Sunday,17:00:00,21:00:00
-Karen,Garcia,Cardiologist,Monday,21:00:00,21:00:00
-Karen,Garcia,Cardiologist,Tuesday,10:00:00,14:00:00
-Karen,Garcia,Cardiologist,Wednesday,10:00:00,14:00:00
-Karen,Garcia,Cardiologist,Thursday,10:00:00,14:00:00
-Karen,Garcia,Cardiologist,Friday,15:00:00,19:00:00
-Karen,Garcia,Cardiologist,Sunday,12:00:00,16:00:00
-Karen,Wilson,Gastroenterologist,Monday,12:00:00,16:00:00
-Karen,Wilson,Gastroenterologist,Thursday,13:00:00,17:00:00
-Karen,Wilson,Gastroenterologist,Friday,15:00:00,19:00:00
-Karen,Wilson,Gastroenterologist,Saturday,19:00:00,21:00:00
-Karen,Wilson,Gastroenterologist,Sunday,20:00:00,21:00:00
-Jennifer,Brown,Ophthalmologist,Monday,12:00:00,16:00:00
-Jennifer,Brown,Ophthalmologist,Tuesday,16:00:00,20:00:00
-Jennifer,Brown,Ophthalmologist,Wednesday,13:00:00,17:00:00
-Jennifer,Brown,Ophthalmologist,Friday,11:00:00,15:00:00
-Jennifer,Brown,Ophthalmologist,Saturday,21:00:00,21:00:00
-Jennifer,Brown,Ophthalmologist,Sunday,11:00:00,15:00:00
-Emily,Robinson,General Physician,Monday,16:00:00,20:00:00
-Emily,Robinson,General Physician,Tuesday,19:00:00,21:00:00
-Emily,Robinson,General Physician,Friday,15:00:00,19:00:00
-Emily,Robinson,General Physician,Saturday,12:00:00,16:00:00
-Emily,Robinson,General Physician,Sunday,15:00:00,19:00:00
-Linda,White,Gastroenterologist,Monday,17:00:00,21:00:00
-Linda,White,Gastroenterologist,Friday,18:00:00,21:00:00
-Linda,White,Gastroenterologist,Saturday,21:00:00,21:00:00
-Linda,White,Gastroenterologist,Sunday,20:00:00,21:00:00
-Karen,Martinez,Pediatrician,Monday,14:00:00,18:00:00
-Karen,Martinez,Pediatrician,Wednesday,16:00:00,20:00:00
-Karen,Martinez,Pediatrician,Thursday,21:00:00,21:00:00
-Karen,Martinez,Pediatrician,Friday,14:00:00,18:00:00
-Karen,Martinez,Pediatrician,Saturday,16:00:00,20:00:00
-George,Smith,Cardiologist,Tuesday,11:00:00,15:00:00
-George,Smith,Cardiologist,Wednesday,14:00:00,18:00:00
-George,Smith,Cardiologist,Thursday,13:00:00,17:00:00
-Barbara,Martin,Dermatologist,Thursday,19:00:00,21:00:00
-Barbara,Martin,Dermatologist,Friday,16:00:00,20:00:00
-Barbara,Martin,Dermatologist,Saturday,18:00:00,21:00:00
-Linda,Johnson,Cardiologist,Tuesday,21:00:00,21:00:00
-Linda,Johnson,Cardiologist,Wednesday,11:00:00,15:00:00
-Linda,Johnson,Cardiologist,Friday,13:00:00,17:00:00
-Linda,Johnson,Cardiologist,Saturday,14:00:00,18:00:00
-Linda,Johnson,Cardiologist,Sunday,19:00:00,21:00:00
+William,Martinez,Psychiatrist,Monday,20:00:00,21:00:00
+William,Martinez,Psychiatrist,Tuesday,14:00:00,18:00:00
+William,Martinez,Psychiatrist,Wednesday,09:00:00,13:00:00
+William,Martinez,Psychiatrist,Thursday,14:00:00,18:00:00
+William,Martinez,Psychiatrist,Friday,12:00:00,16:00:00
+William,Martinez,Psychiatrist,Saturday,13:00:00,17:00:00
+William,Martinez,Psychiatrist,Sunday,12:00:00,16:00:00
+William,Thompson,ENT Specialist,Monday,19:00:00,21:00:00
+William,Thompson,ENT Specialist,Wednesday,19:00:00,21:00:00
+William,Thompson,ENT Specialist,Thursday,12:00:00,16:00:00
+William,Thompson,ENT Specialist,Friday,15:00:00,19:00:00
+William,Thompson,ENT Specialist,Saturday,19:00:00,21:00:00
+William,Thompson,ENT Specialist,Sunday,15:00:00,19:00:00
+William,Harris,Dermatologist,Monday,19:00:00,21:00:00
+William,Harris,Dermatologist,Tuesday,15:00:00,19:00:00
+William,Harris,Dermatologist,Wednesday,12:00:00,16:00:00
+William,Harris,Dermatologist,Friday,14:00:00,18:00:00
+William,Harris,Dermatologist,Sunday,10:00:00,14:00:00

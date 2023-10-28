@@ -51,6 +51,8 @@ nlu:
     - I need to set up a doctor's visit.
     - Can we arrange a medical consultation?
     - I'd like to fix a time to meet the doctor.
+    - i want to book an appointment
+    - I want to book an appointment.
 - intent: affirm
   examples: |
     - yes
@@ -124,19 +126,242 @@ nlu:
     - Can you check Dr. [Nancy Johnson](doctor_name)'s schedule for [Friday](Day)?
     - Is dr. [Linda Garcia](doctor_name) available today?
     - Is dr. [george jackson](doctor_name) available?
-- intent: doctor_name
+    - I need to book an appointment with dr. [james miller](doctor_name)
+    - I need to book an appointment with dr. [james miller](doctor_name) on [monday](day)
+    - Dr. [John](doctor_name) [Robinson](doctor_name)
+- intent: provide_doctor_name
   examples: |
-    - John
-    - Smith
-    - Williams
-    - Johnson
-    - Brown
-    - Jones
-    - Miller
-    - Davis
-    - Garcia
-    - Rodriguez
-    - Wilson
+    - I would like to book an appointment with Dr. [Daniel Wilson](doctor_name).
+    - I would like to book an appointment with Dr. [Nancy Anderson](doctor_name).
+    - I would like to book an appointment with Dr. [Linda Garcia](doctor_name).
+    - Can I schedule an appointment with Dr. [John White](doctor_name)?
+    - Can I schedule an appointment with Dr. [Linda Johnson](doctor_name)?
+    - Can I schedule an appointment with Dr. [Nancy White](doctor_name)?
+    - I'm interested in booking a consultation with Dr. [Paul Jackson](doctor_name).
+    - I'm interested in booking a consultation with Dr. [Paul Martinez](doctor_name).
+    - I'm interested in booking a consultation with Dr. [Paul Wilson](doctor_name).
+    - Please help me schedule a meeting with Dr. [Daniel Garcia](doctor_name).
+    - Please help me schedule a meeting with Dr. [John Williams](doctor_name).
+    - Please help me schedule a meeting with Dr. [Emily Brown](doctor_name).
+    - I need to make an appointment with Dr. [Laura Martinez](doctor_name).
+    - I need to make an appointment with Dr. [Nancy Miller](doctor_name).
+    - I need to make an appointment with Dr. [Christopher Wilson](doctor_name).
+    - Could you assist me in booking a session with Dr. [Laura Jones](doctor_name)?
+    - Could you assist me in booking a session with Dr. [Linda Miller](doctor_name)?
+    - Could you assist me in booking a session with Dr. [Michael Jackson](doctor_name)?
+    - I would like to see Dr. [Nancy White](doctor_name) for a check-up.
+    - I would like to see Dr. [John White](doctor_name) for a check-up.
+    - I would like to see Dr. [Emily Smith](doctor_name) for a check-up.
+    - Is it possible to schedule a visit with Dr. [Daniel Taylor](doctor_name)?
+    - Is it possible to schedule a visit with Dr. [Christopher Wilson](doctor_name)?
+    - I'm interested in booking an appointment with Dr. [Nancy Miller](doctor_name).
+    - I'm interested in booking an appointment with Dr. [Emily Brown](doctor_name).
+    - I'm interested in booking an appointment with Dr. [Joseph Jackson](doctor_name).
+    - Can you help me set up a meeting with Dr. [Michael White](doctor_name)?
+    - Can you help me set up a meeting with Dr. [Christopher Wilson](doctor_name)?
+    - Can you help me set up a meeting with Dr. [Paul Jackson](doctor_name)?
+    - I would like to book an appointment with Dr. [Karen Davis](doctor_name).
+    - I would like to book an appointment with Dr. [Christopher Martinez](doctor_name).
+    - I would like to book an appointment with Dr. [Laura Martinez](doctor_name).
+    - Can I schedule an appointment with Dr. [Linda Miller](doctor_name)?
+    - Can I schedule an appointment with Dr. [Thomas Robinson](doctor_name)?
+    - Can I schedule an appointment with Dr. [Michael Jackson](doctor_name)?
+    - I'm interested in booking a consultation with Dr. [Joseph Jackson](doctor_name).
+    - I'm interested in booking a consultation with Dr. [George Smith](doctor_name).
+    - I'm interested in booking a consultation with Dr. [Barbara Martin](doctor_name).
+    - Please help me schedule a meeting with Dr. [Thomas Miller](doctor_name).
+    - Please help me schedule a meeting with Dr. [Paul Harris](doctor_name).
+    - Please help me schedule a meeting with Dr. [Nancy Anderson](doctor_name).
+    - I need to make an appointment with Dr. [John Williams](doctor_name).
+    - I need to make an appointment with Dr. [Robert Williams](doctor_name).
+    - I need to make an appointment with Dr. [Barbara Harris](doctor_name).
+    - Could you assist me in booking a session with Dr. [Linda Johnson](doctor_name)?
+    - Could you assist me in booking a session with Dr. [Joseph Thomas](doctor_name)?
+    - I would like to see Dr. [Christopher Wilson](doctor_name) for a check-up.
+    - I would like to see Dr. [George Martinez](doctor_name) for a check-up.
+    - Is it possible to schedule a visit with Dr. [Daniel Miller](doctor_name)?
+    - Is it possible to schedule a visit with Dr. [Thomas Davis](doctor_name)?
+    - Is it possible to schedule a visit with Dr. [Joseph Thomas](doctor_name)?
+    - I'm interested in booking an appointment with Dr. [Robert Taylor](doctor_name).
+    - I'm interested in booking an appointment with Dr. [Nancy White](doctor_name).
+    - Can you help me set up a meeting with Dr. [John Williams](doctor_name)?
+    - Can you help me set up a meeting with Dr. [Paul Martinez](doctor_name)?
+    - Can you help me set up a meeting with Dr. [Linda Garcia](doctor_name)?
+    - I would like to book an appointment with Dr. [George Jackson](doctor_name).
+    - Can I schedule an appointment with Dr. [Linda Garcia](doctor_name)?
+    - I'm interested in booking a consultation with Dr. [Nancy Anderson](doctor_name).
+    - Please help me schedule a meeting with Dr. [Laura Jones](doctor_name).
+    - I need to make an appointment with Dr. [James Martinez](doctor_name).
+    - Could you assist me in booking a session with Dr. [George Martinez](doctor_name)?
+    - I would like to see Dr. [Linda Miller](doctor_name) for a check-up.
+    - Is it possible to schedule a visit with Dr. [Christopher Harris](doctor_name)?
+    - I would like to book an appointment with Dr. [Emily Anderson](doctor_name).
+    - Can I schedule an appointment with Dr. [Thomas Anderson](doctor_name)?
+    - I'm interested in booking a consultation with Dr. [James Thompson](doctor_name).
+    - Please help me schedule a meeting with Dr. [Robert Taylor](doctor_name).
+    - I need to make an appointment with Dr. [Michael Jackson](doctor_name).
+    - Could you assist me in booking a session with Dr. [Daniel Brown](doctor_name)?
+    - I would like to see Dr. [Joseph Johnson](doctor_name) for a check-up.
+    - Is it possible to schedule a visit with Dr. [Robert Anderson](doctor_name)?
+    - I'm interested in booking an appointment with Dr. [Linda Williams](doctor_name).
+    - Can you help me set up a meeting with Dr. [Nancy Miller](doctor_name)?
+    - I would like to book an appointment with Dr. [William Martinez](doctor_name).
+    - Can I schedule an appointment with Dr. [Michael Anderson](doctor_name)?
+    - I'm interested in booking a consultation with Dr. [Nancy Williams](doctor_name).
+    - Please help me schedule a meeting with Dr. [Christopher Martinez](doctor_name).
+    - I need to make an appointment with Dr. [Daniel Robinson](doctor_name).
+    - Could you assist me in booking a session with Dr. [John Robinson](doctor_name)?
+    - I would like to see Dr. [David Garcia](doctor_name) for a check-up.
+    - Is it possible to schedule a visit with Dr. [Emily Brown](doctor_name)?
+    - I'm interested in booking an appointment with Dr. [Daniel Wilson](doctor_name).
+    - Can you help me set up a meeting with Dr. [Thomas Jones](doctor_name)?
+    - I would like to book an appointment with Dr. [Thomas Williams](doctor_name).
+    - Can I schedule an appointment with Dr. [George Jones](doctor_name)?
+    - I'm interested in booking a consultation with Dr. [David Robinson](doctor_name).
+    - Please help me schedule a meeting with Dr. [William Thompson](doctor_name).
+    - I need to make an appointment with Dr. [William Harris](doctor_name).
+    - Could you assist me in booking a session with Dr. [David Jones](doctor_name)?
+    - I would like to see Dr. [Jennifer Johnson](doctor_name) for a check-up.
+    - Is it possible to schedule a visit with Dr. [Sarah Robinson](doctor_name)?
+    - I'm interested in booking an appointment with Dr. [Paul Harris](doctor_name).
+    - Can you help me set up a meeting with Dr. [Christopher Thomas](doctor_name)?
+    - I would like to book an appointment with Dr. [Emily Smith](doctor_name).
+    - Can I schedule an appointment with Dr. [Barbara Taylor](doctor_name)?
+    - I'm interested in booking a consultation with Dr. [John White](doctor_name).
+    - Please help me schedule a meeting with Dr. [Thomas Robinson](doctor_name).
+    - I need to make an appointment with Dr. [George Thompson](doctor_name).
+    - Could you assist me in booking a session with Dr. [Christopher Robinson](doctor_name)?
+    - I would like to see Dr. [Laura Taylor](doctor_name) for a check-up.
+    - I'm interested in booking an appointment with Dr. [Daniel Taylor](doctor_name).
+    - Can you help me set up a meeting with Dr. [Karen Moore](doctor_name)?
+    - I would like to book an appointment with Dr. [Robert Smith](doctor_name).
+    - Can I schedule an appointment with Dr. [James Wilson](doctor_name)?
+    - I'm interested in booking a consultation with Dr. [John Miller](doctor_name).
+    - Please help me schedule a meeting with Dr. [Laura Martinez](doctor_name).
+    - I need to make an appointment with Dr. [John Jackson](doctor_name).
+    - Could you assist me in booking a session with Dr. [John Williams](doctor_name)?
+    - I would like to see Dr. [Barbara Harris](doctor_name) for a check-up.
+    - Is it possible to schedule a visit with Dr. [Barbara Thompson](doctor_name)?
+    - I'm interested in booking an appointment with Dr. [Joseph Thomas](doctor_name).
+    - Can you help me set up a meeting with Dr. [Barbara Robinson](doctor_name)?
+    - I would like to book an appointment with Dr. [Jennifer Taylor](doctor_name).
+    - Can I schedule an appointment with Dr. [Emily Thompson](doctor_name)?
+    - Please help me schedule a meeting with Dr. [Thomas Davis](doctor_name).
+    - I need to make an appointment with Dr. [Daniel Williams](doctor_name).
+    - Could you assist me in booking a session with Dr. [George Smith](doctor_name)?
+    - I would like to see Dr. [David Davis](doctor_name) for a check-up.
+    - Is it possible to schedule a visit with Dr. [Daniel Thomas](doctor_name)?
+    - I'm interested in booking an appointment with Dr. [George White](doctor_name).
+    - Can you help me set up a meeting with Dr. [Nancy White](doctor_name)?
+    - I would like to book an appointment with Dr. [Paul Brown](doctor_name).
+    - Can I schedule an appointment with Dr. [Karen Brown](doctor_name)?
+    - I'm interested in booking a consultation with Dr. [Daniel Miller](doctor_name).
+    - Please help me schedule a meeting with Dr. [Paul Wilson](doctor_name).
+    - Could you assist me in booking a session with Dr. [Paul Jackson](doctor_name)?
+    - I would like to see Dr. [Daniel Garcia](doctor_name) for a check-up.
+    - Is it possible to schedule a visit with Dr. [Karen Davis](doctor_name)?
+    - I'm interested in booking an appointment with Dr. [Karen Williams](doctor_name).
+    - Can you help me set up a meeting with Dr. [Thomas Miller](doctor_name)?
+    - I would like to book an appointment with Dr. [David Brown](doctor_name).
+    - Can I schedule an appointment with Dr. [Michael White](doctor_name)?
+    - I'm interested in booking a consultation with Dr. [Karen Garcia](doctor_name).
+    - Please help me schedule a meeting with Dr. [Karen Wilson](doctor_name).
+    - I need to make an appointment with Dr. [Jennifer Brown](doctor_name).
+    - Could you assist me in booking a session with Dr. [Emily Robinson](doctor_name)?
+    - I would like to see Dr. [Linda White](doctor_name) for a check-up.
+    - Is it possible to schedule a visit with Dr. [Karen Martinez](doctor_name)?
+    - I'm interested in booking an appointment with Dr. [Barbara Martin](doctor_name).
+    - Can you help me set up a meeting with Dr. [Linda Johnson](doctor_name)?
+    - Dr. [George Jackson](doctor_name)
+    - Dr. [Linda Garcia](doctor_name)
+    - Dr. [Nancy Anderson](doctor_name)
+    - Dr. [Laura Jones](doctor_name)
+    - Dr. [James Martinez](doctor_name)
+    - Dr. [George Martinez](doctor_name)
+    - Dr. [Linda Miller](doctor_name)
+    - Dr. [Christopher Harris](doctor_name)
+    - Dr. [Paul Martinez](doctor_name)
+    - Dr. [Emily Anderson](doctor_name)
+    - Dr. [Thomas Anderson](doctor_name)
+    - Dr. [James Thompson](doctor_name)
+    - Dr. [Robert Taylor](doctor_name)
+    - Dr. [Michael Jackson](doctor_name)
+    - Dr. [Daniel Brown](doctor_name)
+    - Dr. [Joseph Johnson](doctor_name)
+    - Dr. [Robert Anderson](doctor_name)
+    - Dr. [Linda Williams](doctor_name)
+    - Dr. [Nancy Miller](doctor_name)
+    - Dr. [William Martinez](doctor_name)
+    - Dr. [Michael Anderson](doctor_name)
+    - Dr. [Nancy Williams](doctor_name)
+    - Dr. [Christopher Martinez](doctor_name)
+    - Dr. [Daniel Robinson](doctor_name)
+    - Dr. [John Robinson](doctor_name)
+    - Dr. [David Garcia](doctor_name)
+    - Dr. [Emily Brown](doctor_name)
+    - Dr. [Daniel Wilson](doctor_name)
+    - Dr. [Thomas Jones](doctor_name)
+    - Dr. [Thomas Williams](doctor_name)
+    - Dr. [George Jones](doctor_name)
+    - Dr. [David Robinson](doctor_name)
+    - Dr. [William Thompson](doctor_name)
+    - Dr. [William Harris](doctor_name)
+    - [David Jones](doctor_name)
+    - [Jennifer Johnson](doctor_name)
+    - [Sarah Robinson](doctor_name)
+    - [Paul Harris](doctor_name)
+    - [Christopher Thomas](doctor_name)
+    - [Emily Smith](doctor_name)
+    - [Barbara Taylor](doctor_name)
+    - [John White](doctor_name)
+    - [Thomas Robinson](doctor_name)
+    - [George Thompson](doctor_name)
+    - [Christopher Robinson](doctor_name)
+    - [Laura Taylor](doctor_name)
+    - [Christopher Wilson](doctor_name)
+    - [Daniel Taylor](doctor_name)
+    - [Karen Moore](doctor_name)
+    - [Robert Smith](doctor_name)
+    - [James Wilson](doctor_name)
+    - [John Miller](doctor_name)
+    - [Laura Martinez](doctor_name)
+    - [John Jackson](doctor_name)
+    - [John Williams](doctor_name)
+    - [Barbara Harris](doctor_name)
+    - [Barbara Thompson](doctor_name)
+    - [Joseph Thomas](doctor_name)
+    - [Barbara Robinson](doctor_name)
+    - [Jennifer Taylor](doctor_name)
+    - [Emily Thompson](doctor_name)
+    - [Joseph Jackson](doctor_name)
+    - [Thomas Davis](doctor_name)
+    - [Daniel Williams](doctor_name)
+    - [George Smith](doctor_name)
+    - [David Davis](doctor_name)
+    - [Daniel Thomas](doctor_name)
+    - [George White](doctor_name)
+    - [Nancy White](doctor_name)
+    - [Paul Brown](doctor_name)
+    - [Karen Brown](doctor_name)
+    - [Daniel Miller](doctor_name)
+    - [Paul Wilson](doctor_name)
+    - [Robert Williams](doctor_name)
+    - [Paul Jackson](doctor_name)
+    - [Daniel Garcia](doctor_name)
+    - [Karen Davis](doctor_name)
+    - [Karen Williams](doctor_name)
+    - [Thomas Miller](doctor_name)
+    - [David Brown](doctor_name)
+    - [Michael White](doctor_name)
+    - [Karen Garcia](doctor_name)
+    - [Karen Wilson](doctor_name)
+    - [Jennifer Brown](doctor_name)
+    - [Emily Robinson](doctor_name)
+    - [Linda White](doctor_name)
+    - [Karen Martinez](doctor_name)
+    - [Barbara Martin](doctor_name)
+    - [Linda Johnson](doctor_name)
+    - [William Harris](doctor_name)
 - intent: deny
   examples: |
     - no
@@ -146,6 +371,7 @@ nlu:
     - don't like that
     - no way
     - not really
+    - No
 - intent: mood_great
   examples: |
     - perfect
@@ -184,18 +410,6 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-- intent: firstname
-  examples: |
-    - ajith
-    - ruwan
-    - nizar
-    - john
-- intent: lastname
-  examples: |
-    - silva
-    - rajapakshe
-    - raveendra
-    - kumarasamy
 - intent: feedback
   examples: |
     - Great response!
@@ -224,6 +438,7 @@ nlu:
     - You can address me as [Emily](firstname).
     - Firstname? It's [Robert](firstname).
     - [Savindu](firstname)
+    - [Jathushan](firstname)
     - [Savindu](firstname)
 - intent: provide_lastname
   examples: |
@@ -232,6 +447,7 @@ nlu:
     - It's [Doe](lastname).
     - The last name is [Williams](lastname).
     - [Rajapaksha](lastname)
+    - [Jathushan](doctor_name)
     - [Rajapaksha](lastname)
 - intent: provide_age
   examples: |

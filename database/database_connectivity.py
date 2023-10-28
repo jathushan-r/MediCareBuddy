@@ -116,8 +116,8 @@ def add_new_patient(first_name, last_name, age, phone_number):
 
 def get_doctor_availability(first_name, last_name, Day):
     session = Session()
-    availability = session.query(Availability).join(Doctor).filter(Doctor.First_name == first_name, Doctor.Last_name == last_name, Availability.Day == Day).all()
-    session.close()
+    availability = session.query(Availability).join(Doctor).join(Specialty).filter(Doctor.First_name == first_name, Doctor.Last_name == last_name, Availability.Day == Day).all()
+    # session.close()
     return availability
 
 def search_doctors_by_name(name):
