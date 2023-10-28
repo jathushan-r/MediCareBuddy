@@ -20,13 +20,12 @@ intents:
 - provide_firstname
 - provide_lastname
 - provide_phone
-
 entities:
-- age
 - phone
+- age
+- firstname
 - lastname
 - doctor_name
-- firstname
 - day
 - specialty
 
@@ -300,9 +299,9 @@ responses:
     - title: Dr. David
       payload: '/inform{{"doctor_name": "Dr. David"}}'
 actions:
-- utter_ask_book_appointment
-- utter_greet
 - action_submit_appointment_form
+- utter_greet
+- utter_ask_book_appointment
 - action_fetch_doctor_availability_data
 - utter_goodbye
 - utter_happy
