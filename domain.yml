@@ -1,35 +1,35 @@
 version: "3.1"
 intents:
-- affirm
-- ask_for_doctor_availability
-- ask_me_anything
-- book_appointment
-- bot_challenge
-- day
-- deny
-- feedback
-- give_shirt_size
-- goodbye
-- greet
-- kneepain
-- mood_great
-- mood_unhappy
-- out_of_scope
-- provide_age
-- provide_doctor_name
-- provide_firstname
-- provide_lastname
-- provide_phone
-- specialty
+  - affirm
+  - ask_for_doctor_availability
+  - ask_me_anything
+  - book_appointment
+  - bot_challenge
+  - day
+  - deny
+  - feedback
+  - give_shirt_size
+  - goodbye
+  - greet
+  - kneepain
+  - mood_great
+  - mood_unhappy
+  - out_of_scope
+  - provide_age
+  - provide_doctor_name
+  - provide_firstname
+  - provide_lastname
+  - provide_phone
+  - specialty
 entities:
-- age
-- day
-- firstname
-- lastname
-- phone
-- doctor_name
-- specialty
-- start_time
+  - age
+  - day
+  - firstname
+  - lastname
+  - phone
+  - doctor_name
+  - specialty
+  - start_time
 slots:
   firstname:
     type: text
@@ -86,7 +86,7 @@ forms:
       - day
 responses:
   utter_greet:
-    - text: Hey! How can I help you today?
+    - text: welcome to our hospital's customer care service. How may I be of assistance to you today?
   utter_ask_firstname:
     - text: What's your First Name?
   utter_ask_lastname:
@@ -98,49 +98,49 @@ responses:
   utter_ask_doctor_name:
     - text: Which doctor would you like to book an appointment with?
   utter_ask_day:
-  - text: Which day would you like to book an appointment?
-    buttons:
-    - title: Monday
-      payload: '/day{{"day": "Monday"}}'
-    - title: Tuesday
-      payload: '/day{{"day": "Tuesday"}}'
-    - title: Wednesday
-      payload: '/day{{"day": "Wednesday"}}'
-    - title: Thursday
-      payload: '/day{{"day": "Thursday"}}'
-    - title: Friday
-      payload: '/day{{"day": "Friday"}}'
-    - title: Saturday
-      payload: '/day{{"day": "Saturday"}}'
-    - title: Sunday
-      payload: '/day{{"day": "Sunday"}}'
+    - text: Which day would you like to book an appointment?
+      buttons:
+        - title: Monday
+          payload: '/day{{"day": "Monday"}}'
+        - title: Tuesday
+          payload: '/day{{"day": "Tuesday"}}'
+        - title: Wednesday
+          payload: '/day{{"day": "Wednesday"}}'
+        - title: Thursday
+          payload: '/day{{"day": "Thursday"}}'
+        - title: Friday
+          payload: '/day{{"day": "Friday"}}'
+        - title: Saturday
+          payload: '/day{{"day": "Saturday"}}'
+        - title: Sunday
+          payload: '/day{{"day": "Sunday"}}'
   utter_ask_specialty:
-  - text: Which kind of consultant are you looking for?
-    buttons:
-    - title: Orthopedist
-      payload: '/specialty{{"specialty": "Orthopedist"}}'
-    - title: Pediatrician
-      payload: '/specialty{{"specialty": "Pediatrician"}}'
-    - title: General Physician
-      payload: '/specialty{{"specialty": "General Physician"}}'
-    - title: Dermatologist
-      payload: '/specialty{{"specialty": "Dermatologist"}}'
-    - title: ENT Specialist
-      payload: '/specialty{{"specialty": "ENT Specialist"}}'
-    - title: Gastroenterologist
-      payload: '/specialty{{"specialty": "Gastroenterologist"}}'
-    - title: Cardiologist
-      payload: '/specialty{{"specialty": "Cardiologist"}}'
-    - title: Neurologist
-      payload: '/specialty{{"specialty": "Neurologist"}}'
-    - title: Ophthalmologist
-      payload: '/specialty{{"specialty": "Ophthalmologist"}}'
+    - text: Which kind of consultant are you looking for?
+      buttons:
+        - title: Orthopedist
+          payload: '/specialty{{"specialty": "Orthopedist"}}'
+        - title: Pediatrician
+          payload: '/specialty{{"specialty": "Pediatrician"}}'
+        - title: General Physician
+          payload: '/specialty{{"specialty": "General Physician"}}'
+        - title: Dermatologist
+          payload: '/specialty{{"specialty": "Dermatologist"}}'
+        - title: ENT Specialist
+          payload: '/specialty{{"specialty": "ENT Specialist"}}'
+        - title: Gastroenterologist
+          payload: '/specialty{{"specialty": "Gastroenterologist"}}'
+        - title: Cardiologist
+          payload: '/specialty{{"specialty": "Cardiologist"}}'
+        - title: Neurologist
+          payload: '/specialty{{"specialty": "Neurologist"}}'
+        - title: Ophthalmologist
+          payload: '/specialty{{"specialty": "Ophthalmologist"}}'
   utter_ask_book_appointment:
     - text: Would you like to book an appointment?
   utter_ask_to_book_another_day:
-  - text: Would you like to book an appointment for another day?
+    - text: Would you like to book an appointment for another day?
   utter_ask_for_confirmation:
-  - text: Would you like to confirm your appointment?
+    - text: Would you like to confirm your appointment?
   utter_ask_any_other_help:
     - text: Would you like any other help?
   utter_cheer_up:
@@ -153,11 +153,11 @@ responses:
   utter_goodbye:
     - text: Bye
   utter_iamabot:
-    - text: I am a bot, powered by Rasa.
+    - text: I am an AI-powered chatbot, designed to provide efficient support within the hospital domain.
   utter_weather:
-  - text: Today is clear weather
+    - text: Not relevant
   utter_please_rephrase:
-  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+    - text: I'm sorry, I didn't quite understand that. Could you rephrase?
   utter_medical_conditions:
     - text: Certainly! Some common medical conditions include diabetes, hypertension, asthma, and arthritis. These conditions are managed through various treatments and medical care.
   utter_doctor_specialties:
@@ -304,13 +304,13 @@ responses:
         - title: Dr. David
           payload: '/inform{{"doctor_name": "Dr. David"}}'
 actions:
-- utter_greet
-- action_submit_appointment_form
-- utter_ask_any_other_help
-- utter_goodbye
-- utter_ask_book_appointment
-- action_fetch_doctor_availability_data
-- utter_happy
+  - utter_greet
+  - action_submit_appointment_form
+  - utter_ask_any_other_help
+  - utter_goodbye
+  - utter_ask_book_appointment
+  - action_fetch_doctor_availability_data
+  - utter_happy
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
