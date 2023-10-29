@@ -19,10 +19,10 @@ action_endpoint:
 # tracker_store:
 #   type: SQL
 #   dialect: "mysql+pymysql"
-#   url: "mysql+pymysql://root:abcd1234@localhost:3306/chatbot"
-#   db: "chatbot"
+#   url: "mysql+pymysql://root:sql677@localhost:3306/hospitaldb"
+#   db: "hospitaldb"
 #   username: "root"
-#   password: "abcd1234"
+#   password: "sql677"
 
 #tracker_store:
 #    type: redis
@@ -43,9 +43,9 @@ action_endpoint:
 #   type: SQL
 #   dialect: "mysql+pymysql" # the dialect used to interact with the db
 #   url: "" # (optional) host of the sql db, e.g. "localhost"
-#   db: "rasachats" # path to your db
+#   db: "hospitaldb" # path to your db
 #   username: "root" # username used for authentication
-#   password: "abcd1234" # password used for authentication
+#   password: "sql677" # password used for authentication
 
 #event_broker:
 #  url: localhost

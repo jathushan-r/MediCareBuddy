@@ -560,3 +560,37 @@ stories:
     - intent: deny
     - action: utter_goodbye
     - action: action_restart
+  
+
+  # - story: getting medical records
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: request_medical_records
+  #     - action: utter_assistance
+  #     - action: medical_records_form
+  #     - active_loop: medical_records_form
+
+  - story: getting medical records
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: request_medical_records
+      - action: utter_assistance
+      - action: medical_records_form
+      - active_loop: medical_records_form
+
+  # - story: submit_medical_records_form
+  #   steps:
+  #       conditions:
+  #           -active_loop: medical_records_form
+  #       steps: 
+  #           -action: medical_records_form
+  #           -active_loop: null
+  #           - slot_was_set:
+  #             - requested_slot: null
+  #           - action: action_fetch_medical_records
+            # - action: utter_ask_any_other_help
+            # - intent: deny
+            # - action: utter_goodbye
+            # - action: action_restart

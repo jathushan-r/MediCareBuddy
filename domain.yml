@@ -21,6 +21,7 @@ intents:
   - provide_lastname
   - provide_phone
   - specialty
+  - request_medical_records
 entities:
   - age
   - day
@@ -84,6 +85,13 @@ forms:
     required_slots:
       - doctor_name
       - day
+  medical_records_form:
+    required_slots:
+      - firstname
+      - lastname
+      - phone
+
+      
 responses:
   utter_greet:
     - text: welcome to our hospital's customer care service. How may I be of assistance to you today?
@@ -303,6 +311,10 @@ responses:
           payload: '/inform{{"doctor_name": "Dr. Smith"}}'
         - title: Dr. David
           payload: '/inform{{"doctor_name": "Dr. David"}}'
+
+  utter_assistance:
+    - text: Sure, I can assist to give medical records.
+
 actions:
   - utter_greet
   - action_submit_appointment_form
@@ -311,6 +323,8 @@ actions:
   - utter_ask_book_appointment
   - action_fetch_doctor_availability_data
   - utter_happy
+  - action_fetch_medical_records
+  # - validate_medical_records_form
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

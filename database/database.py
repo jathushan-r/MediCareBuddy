@@ -5,7 +5,7 @@ def create_mysql_connection():
     connection = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="abcd1234",
+        password="sql677",
         database="hospitaldb"
     )
     return connection

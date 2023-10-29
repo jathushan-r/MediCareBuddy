@@ -58,3 +58,20 @@ rules:
       # The actions we want to run when the form is submitted.
       - action: action_submit_appointment_form
       - action: utter_ask_any_other_help
+
+  
+  # - rule: Activate_medical_records_form
+  #   steps:
+  #   - intent: utter_assistance
+  #   - action: medical_records_form
+  #   - active_loop: medical_records_form
+ 
+  - rule: Submit_medical_records_form
+    condition:
+    - active_loop: medical_records_form
+    steps: 
+    - action: medical_records_form
+    - active_loop: null
+    - slot_was_set:
+      - requested_slot: null
+    - action: action_fetch_medical_records

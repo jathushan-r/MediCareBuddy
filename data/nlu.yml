@@ -816,7 +816,19 @@ nlu:
     examples: |
       - Where is the hospital located?
       - Can you give me directions to the hospital?
+
       - What's the hospital's address and contact information?
+  - intent: request_medical_records
+    examples: |
+      - I need to request a copy of my medical records.
+      - can i have my medical records.
+      - Could you please provide me the medical records.
+      - I need to obtain a copy of my medical records for my own records.
+      - Could you please assist me in getting a copy of my medical records from my recent visits?
+      - I would like to request access to my complete medical history for personal review.
+      - Can you help me with the process of obtaining my medical records for my records?
+      - I am looking to collect my medical records for my own reference. How can I go about this?
+
 
   - regex: age
     examples: |
@@ -851,3 +863,5 @@ nlu:
       - Cardiologist
       - Neurologist
       - Ophthalmologist
+
+      

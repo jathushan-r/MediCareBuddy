@@ -6,8 +6,8 @@ import csv
 # Replace these with your MySQL server and database information
 host = "localhost"
 user = "root"
-password = "abcd1234"
-database = "rasachats"
+password = "sql677"
+database = "hospitaldb"
 
 # Connect to the MySQL database
 conn = mysql.connector.connect(host=host, user=user, password=password, database=database)
