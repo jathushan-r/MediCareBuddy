@@ -508,6 +508,8 @@ nlu:
       - [Sachin](firstname)
       - [Priyadarshini](firstname)
       - [Rajapriya](firstname)
+      - I am [Vibulan](firstname)
+      - call me [Vijay](firstname)
 
   - intent: provide_lastname
     examples: |
@@ -525,6 +527,7 @@ nlu:
       - [Balasubramanian](lastname)
       - [Perumal](lastname)
       - [Thirunavukkarasu](lastname)
+      - [Jeyarasa](lastname)
       - [Marimuthu](lastname)
       - [Ramasamy](lastname)
       - [Govindarajan](lastname)
@@ -829,6 +832,20 @@ nlu:
       - Can you help me with the process of obtaining my medical records for my records?
       - I am looking to collect my medical records for my own reference. How can I go about this?
 
+  - intent: request_to_cancel_appointment
+    examples: |
+      - I need to cancel my scheduled appointment.
+      - I would like to cancel my upcoming appointment.
+      - Could you please help me cancel my consultation appointment?
+      - I need to cancel my appointment, so please cancel my current appointment.
+      - Please cancel my follow-up appointment.
+      - I'm unable to make it to my scheduled visit, so I would like to cancel the appointment.
+      - I need to cancel my upcoming appointment due to unforeseen circumstances.
+      - Could you please assist me in canceling my appointment?
+      - I would like to cancel my appointment as I won't be able to make it.
+      - Please cancel my appointment scheduled as I have a conflicting engagement.
+      - I need to cancel my scheduled due to a sudden change in my schedule.
+      - can I cancel my appointment?
 
   - regex: age
     examples: |
@@ -863,5 +880,3 @@ nlu:
       - Cardiologist
       - Neurologist
       - Ophthalmologist
-
-      

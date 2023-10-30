@@ -75,3 +75,15 @@ rules:
     - slot_was_set:
       - requested_slot: null
     - action: action_fetch_medical_records
+
+  - rule: Submit_cancel_appointment_form
+    condition:
+    - active_loop: cancel_appointment_form
+    steps: 
+    - action: cancel_appointment_form
+    - active_loop: null
+    - slot_was_set:
+      - requested_slot: null
+    - action: action_fetch_appointments
+    # - intent: affirm
+    # -------check the flow and implement the part related to cancel the appointment
