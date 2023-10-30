@@ -841,11 +841,12 @@ nlu:
       - Please cancel my follow-up appointment.
       - I'm unable to make it to my scheduled visit, so I would like to cancel the appointment.
       - I need to cancel my upcoming appointment due to unforeseen circumstances.
-      - Could you please assist me in canceling my appointment?
+      - Can you please assist me in canceling my appointment?
       - I would like to cancel my appointment as I won't be able to make it.
       - Please cancel my appointment scheduled as I have a conflicting engagement.
       - I need to cancel my scheduled due to a sudden change in my schedule.
       - can I cancel my appointment?
+      - i wish to cancel my account. 
 
   - regex: age
     examples: |
