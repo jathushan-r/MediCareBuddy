@@ -22,6 +22,7 @@ intents:
   - provide_phone
   - specialty
   - request_medical_records
+  - request_to_cancel_appointment
 entities:
   - age
   - day
@@ -86,6 +87,12 @@ forms:
       - doctor_name
       - day
   medical_records_form:
+    required_slots:
+      - firstname
+      - lastname
+      - phone
+
+  cancel_appointment_form:
     required_slots:
       - firstname
       - lastname
@@ -159,7 +166,7 @@ responses:
   utter_happy:
     - text: Great, carry on!
   utter_goodbye:
-    - text: Bye
+    - text: Bye, Have a great day !
   utter_iamabot:
     - text: I am an AI-powered chatbot, designed to provide efficient support within the hospital domain.
   utter_weather:
@@ -313,7 +320,7 @@ responses:
           payload: '/inform{{"doctor_name": "Dr. David"}}'
 
   utter_assistance:
-    - text: Sure, I can assist to give medical records.
+    - text: Sure, I can assist with that.
 
 actions:
   - utter_greet
@@ -324,6 +331,7 @@ actions:
   - action_fetch_doctor_availability_data
   - utter_happy
   - action_fetch_medical_records
+  - action_fetch_appointments
   # - validate_medical_records_form
 session_config:
   session_expiration_time: 60

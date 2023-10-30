@@ -580,6 +580,15 @@ stories:
       - action: medical_records_form
       - active_loop: medical_records_form
 
+  - story: cancel appointment
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: request_to_cancel_appointment
+      - action: utter_assistance
+      - action: cancel_appointment_form
+      - active_loop: cancel_appointment_form
+
   # - story: submit_medical_records_form
   #   steps:
   #       conditions:
