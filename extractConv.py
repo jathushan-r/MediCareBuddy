@@ -6,7 +6,7 @@ import csv
 # Replace these with your MySQL server and database information
 host = "localhost"
 user = "root"
-password = "sql677"
+password = "abcd1234"
 database = "hospitaldb"
 
 # Connect to the MySQL database

@@ -13,6 +13,7 @@ venv
 .rasa
 models
 Chat UI
+LLM/src/db
 
 
 

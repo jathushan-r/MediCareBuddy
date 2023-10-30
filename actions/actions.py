@@ -69,21 +69,6 @@ class ActionFetchDoctorAvailability(Action):
             return[SlotSet("day", None),FollowupAction(name ='doctor_avaialability_form')]
         return [SlotSet("specialty",specialty),FollowupAction(name = 'utter_ask_book_appointment')]
 
-class ActionSayShirtSize(Action):
-
-    def name(self) -> Text:
-        return "action_say_shirt_size"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        shirt_size = tracker.get_slot("shirt_size")
-        if not shirt_size:
-            dispatcher.utter_message(text="I don't know your shirt size.")
-        else:
-            dispatcher.utter_message(text=f"Your shirt size is {shirt_size}!")
-        return []
 
 class ActionConfirmAppointment(Action):
     def name(self):
@@ -106,15 +91,14 @@ class ActionConfirmAppointment(Action):
         # patientID = add_new_patient(first_name, last_name, age, phone)
         # add_new_appointment(patientID, doctor_name, appointment_time,appointment_date)
         # Create the summary message
-        summary = f"Here is the information you've provided:"
-        summary += f"- First Name: {first_name}"
-        summary += f"- Last Name: {last_name}"
-        summary += f"- Age: {age}"
-        summary += f"- Phone: {phone}"
-        summary += f"- Appointment Date: {appointment_date}"
-        summary += f"- Appointment Time: {appointment_time}"
-        
-        summary += "\nYour appointment has been successfully booked."
+        summary = f"Here is the information you've provided: \n"
+        summary += f"- First Name: {first_name} \n"
+        summary += f"- Last Name: {last_name} \n"
+        summary += f"- Age: {age} \n"
+        summary += f"- Phone: {phone} \n"
+        summary += f"- Appointment Date: {appointment_date} \n"
+        summary += f"- Appointment Time: {appointment_time} \n \n"
+        summary += "Your appointment has been successfully booked. \n"
 
         # Send the summary message
         dispatcher.utter_message(text=summary)
