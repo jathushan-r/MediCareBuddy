@@ -89,3 +89,186 @@ stories:
       are you a bot?
     intent: bot_challenge
   - action: utter_iamabot
+
+- story: booking an appointment 1
+  steps:
+  - user: |
+      good morning
+    intent: greet
+  - action: utter_greet
+  - user: |
+      I have aching knees.
+    intent: kneepain
+  - action: utter_ask_book_appointment
+  - user: |
+      no way
+    intent: deny
+  - action: utter_goodbye
+
+- story: booking an appointment with a doctor
+  steps:
+  - user: |
+      hey there
+    intent: greet
+  - action: utter_greet
+  - user: |
+      Is Dr. [John Doe](doctor_name) available?
+    intent: ask_for_doctor_availability
+  - action: doctor_availability_form
+  - active_loop: doctor_availability_form
+
+- story: appointment booking done with the doctor
+  steps:
+  - action: action_submit_appointment_form
+  - action: utter_ask_any_other_help
+  - user: |
+      never
+    intent: deny
+  - action: utter_goodbye
+
+- story: doctor is not available
+  steps:
+  - user: |
+      hey dude
+    intent: greet
+  - action: utter_greet
+  - user: |
+      Is Dr. [James Miller](doctor_name) working on [Friday](Day)?
+    intent: ask_for_doctor_availability
+  - action: doctor_availability_form
+  - active_loop: doctor_availability_form
+  - action: action_listen
+  - user: |
+      of course
+    intent: affirm
+  - action: appointment_booking_form
+
+- story: getting medical records
+  steps:
+  - user: |
+      hey dude
+    intent: greet
+  - action: utter_greet
+  - user: |
+      can i have my medical records
+    intent: request_medical_records
+  - action: utter_assistance
+  - action: medical_records_form
+  - active_loop: medical_records_form
+
+- story: cancel appointment
+  steps:
+  - user: |
+      hey
+    intent: greet
+  - action: utter_greet
+  - user: |
+      Please cancel my follow-up appointment.
+    intent: request_to_cancel_appointment
+  - action: utter_assistance
+  - action: cancel_appointment_form
+  - active_loop: cancel_appointment_form
+
+- story: interactive_story_1
+  steps:
+  - user: |
+      good evening
+    intent: greet
+  - action: utter_greet
+  - user: |
+      Is Dr. [John](doctor_name) available on [Friday](day)?
+    intent: ask_for_doctor_availability
+    entities:
+      - doctor_name: Linda Garcia
+  - slot_was_set:
+      - doctor_name: Linda Garcia
+  - action: doctor_availability_form
+  - active_loop: doctor_availability_form
+  - slot_was_set:
+      - doctor_name: Linda Garcia
+  - slot_was_set:
+      - requested_slot: day
+  - user: |
+      Is dr. [Linda Garcia](doctor_name) available today?
+    intent: ask_for_doctor_availability
+    entities:
+      - day: Wednesday
+  - slot_was_set:
+      - day: Wednesday
+  - action: doctor_availability_form
+  - slot_was_set:
+      - requested_slot: null
+  - active_loop: null
+  - action: action_fetch_doctor_availability_data
+  - action: utter_ask_book_appointment
+  - user: |
+      yes
+    intent: affirm
+  - action: appointment_booking_form
+  - active_loop: appointment_booking_form
+  - slot_was_set:
+      - requested_slot: firstname
+  - user: |
+      Call me [Sarah](firstname).
+    intent: provide_firstname
+    entities:
+      - firstname: Savindu
+  - slot_was_set:
+      - firstname: Savindu
+  - action: appointment_booking_form
+  - slot_was_set:
+      - requested_slot: lastname
+  - user: |
+      It's [Doe](lastname).
+    intent: provide_lastname
+    entities:
+      - lastname: Rajapaksha
+  - slot_was_set:
+      - lastname: Rajapaksha
+  - action: appointment_booking_form
+  - slot_was_set:
+      - requested_slot: age
+  - user: |
+      I'm [22](age).
+    intent: provide_age
+    entities:
+      - age: "23"
+  - slot_was_set:
+      - age: "23"
+  - action: appointment_booking_form
+  - slot_was_set:
+      - requested_slot: phone
+  - user: |
+      You can reach me at [987-654-3210](phone).
+    intent: provide_phone
+    entities:
+      - phone: "0712845669"
+  - action: appointment_booking_form
+  - slot_was_set:
+      - requested_slot: phone
+  - user: |
+      My phone number is [123-456-7890](phone).
+    intent: provide_phone
+    entities:
+      - phone: "0712845669"
+  - action: appointment_booking_form
+  - slot_was_set:
+      - requested_slot: phone
+  - user: |
+      My phone number is [0759999888](phone)
+    intent: provide_phone
+    entities:
+      - phone: 071-284-5669
+  - slot_was_set:
+      - phone: 071-284-5669
+  - action: appointment_booking_form
+  - slot_was_set:
+      - requested_slot: null
+  - active_loop: null
+  - action: action_submit_appointment_form
+  - action: utter_ask_any_other_help
+  - user: |
+      Nope
+    intent: deny
+  - action: utter_goodbye
+  - action: action_restart

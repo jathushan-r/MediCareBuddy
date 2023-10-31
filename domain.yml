@@ -112,6 +112,20 @@ responses:
     - text: What is your phone number?
   utter_ask_doctor_name:
     - text: Which doctor would you like to book an appointment with?
+  utter_contact_info:
+    - text: Hospital name - Mora Hospital 
+            Phone no - 076 1212123
+            Address - Bandaranayake Mawatha, Moratuwa 10400
+            Email - morahospital@gmail.com
+  utter_phone_number:
+    - text: 076 1212123
+  utter_hospital_name:
+    - text: Mora Hospital
+  utter_address:
+    - text: Bandaranayake Mawatha, Moratuwa 10400
+  utter_email:
+    - text: morahospital@gmail.com
+
   utter_ask_day:
     - text: Which day would you like to book an appointment?
       buttons:

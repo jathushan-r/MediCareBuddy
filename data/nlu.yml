@@ -372,6 +372,7 @@ nlu:
       - no way
       - not really
       - No
+      - Nope
   - intent: mood_great
     examples: |
       - perfect

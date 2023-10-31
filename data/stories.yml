@@ -589,6 +589,34 @@ stories:
       - action: cancel_appointment_form
       - active_loop: cancel_appointment_form
 
+  - story: User asks contact info
+    steps:
+      - user: "give me your contact info"
+      - action: utter_contact_info
+
+  - story: User asks contact number
+    steps:
+    - user: "give me your contact number"
+    - action: utter_phone_number
+
+  - story: User asks address
+    steps:
+    - user: "give me your address"
+    - action: utter_address
+
+  - story: User asks email
+    steps:
+    - user: "give me your email address"
+    - action: utter_email
+
+  - story: User asks hospital name
+    steps:
+    - user: "What is the name of your hospital"
+    - action: utter_hospital_name
+
+
+
+
   # - story: submit_medical_records_form
   #   steps:
   #       conditions:
