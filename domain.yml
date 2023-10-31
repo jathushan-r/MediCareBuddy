@@ -98,7 +98,6 @@ forms:
       - lastname
       - phone
 
-      
 responses:
   utter_greet:
     - text: welcome to our hospital's customer care service. How may I be of assistance to you today?

@@ -45,13 +45,13 @@ def main():
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 
     custom_prompt_template = """
-I want you to act as a hospital chatbot. My request is "{query}."
+As a hospital chatbot, I'm here to provide information about diseases, wellness tips, and answer general medical questions.\n
+your question is "{query}?"
 """
 
     
     
     CUSTOM_QUESTION_PROMPT = PromptTemplate(input_variables = ['query'], template=custom_prompt_template)
-
 
 
     qa_chain = ConversationalRetrievalChain.from_llm(
@@ -61,8 +61,9 @@ I want you to act as a hospital chatbot. My request is "{query}."
     return_source_documents=False, 
     return_generated_question = False,
     verbose=True,
-    memory = memory
+    # memory = memory
     )
+    
     vectdb = kb.get_vector_db()
     chat_history = []
 
@@ -73,7 +74,7 @@ I want you to act as a hospital chatbot. My request is "{query}."
 
         result = qa_chain({"question": CUSTOM_QUESTION_PROMPT.format(query=query), "chat_history": chat_history})
         print(result["answer"])
-        chat_history.extend([(query, result["answer"])])
+        # chat_history.extend([(query, result["answer"])])
 
 
 if __name__ == '__main__':
