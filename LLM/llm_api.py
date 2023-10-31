@@ -50,7 +50,8 @@ retriever = kb.return_retriever_from_persistant_vector_db()
 memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 
 custom_prompt_template = """
-I want you to act as a hospital chatbot.  "{query}."
+As a hospital chatbot, I'm here to provide information about diseases, wellness tips, and answer general medical questions.\n
+your question is "{query}?"
 """
 
 
