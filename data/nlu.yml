@@ -672,6 +672,19 @@ nlu:
       - \d{10-12}
       - \d{3}[-]\d{3}[-]\d{4}
 
+  - intent: wellness_tips
+    examples: |
+      - Can you suggest some daily wellness practices?
+      - What are the key components of a healthy lifestyle?
+      - How can I boost my immune system for better wellness?
+      - Share tips for a stress-free life
+      - What's the secret to long-term wellness?
+      - How can I achieve a work-life balance for better wellness?
+      - Give me some self-care strategies for wellness.
+      - Tips for staying healthy during the winter season
+      - How to maintain mental and emotional wellness?
+      - Can you recommend wellness resources or books to read?
+
   - intent: out_of_scope
     examples: |
       - I want to order food

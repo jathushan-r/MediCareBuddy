@@ -1,10 +1,12 @@
 # uvicorn llm_api:app --host 0.0.0.0 --port 8000
 
+from langchain.llms import OpenAI
 from fastapi import FastAPI, Request
 from pydantic import BaseModel
 from langchain.chains import RetrievalQA, ConversationalRetrievalChain
 from langchain.prompts import PromptTemplate
 from langchain.chains.conversation.memory import ConversationBufferMemory
+from langchain.chains.question_answering import load_qa_chain
 from langchain.llms import Replicate
 import os
 
@@ -22,12 +24,12 @@ class ChatResponse(BaseModel):
     answer: str
 
 # Initialize your components here
-# os.environ["REPLICATE_API_TOKEN"] = "dwejfwe"
-
-# llm = Replicate(
-#     model="replicate/llama-2-70b-chat:2796ee9483c3fd7aa2e171d38f4ca12251a30609463dcfd4cd76703f22e96cdf",
-#     input={"temperature": 0.7, "max_length": 150, "top_p": 1},
-# )
+# os.environ["OPENAI_API_KEY"] = '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'
+# os.environ["REPLICATE_API_TOKEN"] = "r8_6rXolartKZeUccahg23a7e9rrUMMUyU241P5V"
+llm = Replicate(
+    model="replicate/llama-2-70b-chat:2796ee9483c3fd7aa2e171d38f4ca12251a30609463dcfd4cd76703f22e96cdf",
+    input={"temperature": 0.7, "max_length": 150, "top_p": 1},
+)
 
 chat_model = MyGPT4ALL(
     model_folder_path=r'.\src\models',
@@ -56,18 +58,24 @@ your question is "{query}?"
 
 
 
-CUSTOM_QUESTION_PROMPT = PromptTemplate(input_variables = ['query'], template=custom_prompt_template)
+prompt_template = """Use the following pieces of context to answer the question.
 
+{context}
 
+Question: {question}
+"""
+PROMPT = PromptTemplate(
+    template=prompt_template, input_variables=["context", "question"]
+)
 
-qa_chain = ConversationalRetrievalChain.from_llm(
-llm = chat_model,
+chain_type_kwargs = {"prompt": PROMPT}
+
+qa_chain = RetrievalQA.from_chain_type(
+llm = llm,
 chain_type='stuff',
 retriever=retriever,
-return_source_documents=False, 
-return_generated_question = False,
-verbose=True,
-memory = memory
+chain_type_kwargs=chain_type_kwargs,
+verbose=True
 )
 vectdb = kb.get_vector_db()
 chat_history = []
@@ -79,9 +87,9 @@ async def chat_with_bot(request: Request, chat_request: ChatRequest):
     if query == 'exit':
         return {"answer": "Goodbye!"}
 
-    result = qa_chain({"question": CUSTOM_QUESTION_PROMPT.format(query=query), "chat_history": chat_history})
-    chat_history.extend([(query, result["answer"])])
-    return ChatResponse(answer=result["answer"])
+    result = qa_chain({"query": query})
+    # chat_history.extend([(query, result["answer"])])
+    return ChatResponse(answer=result["result"])
 
 @app.get("/chat-history")
 async def get_chat_history():

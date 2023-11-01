@@ -1,12 +1,10 @@
 version: "3.1"
 
 stories:
-  - story: happy path
+  - story: wellness_tips_conversation
     steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: mood_great
-      - action: utter_happy
+      - intent: wellness_tips
+      - action: action_llm_response
 
   - story: sad path 1
     steps:
@@ -388,16 +386,14 @@ stories:
   #     - action: utter_goodbye
   - story: doctor is not available
     steps:
-    - intent: greet
-    - action: utter_greet
-    - intent: ask_for_doctor_availability
-    - action: doctor_availability_form
-    - active_loop: doctor_availability_form
-    - action: action_listen
-    - intent: affirm
-    - action: appointment_booking_form
-
-
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_for_doctor_availability
+      - action: doctor_availability_form
+      - active_loop: doctor_availability_form
+      - action: action_listen
+      - intent: affirm
+      - action: appointment_booking_form
 
   - story: interactive_story_1
     steps:
@@ -483,11 +479,11 @@ stories:
 
   - story: interactive_story_2
     steps:
-    - intent: greet
-    - action: utter_greet
-    - intent: book_appointment
-    - action: doctor_availability_form
-    - active_loop: doctor_availability_form
+      - intent: greet
+      - action: utter_greet
+      - intent: book_appointment
+      - action: doctor_availability_form
+      - active_loop: doctor_availability_form
 
   - story: interactive_story_3
     steps:

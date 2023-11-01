@@ -30,7 +30,7 @@ if __name__ == "__main__":
         user_input = input("User: ")
         if user_input == "exit":
             break
-
+ 
         chat_response = send_chat_request(user_input)
         if chat_response:
             print("Bot:", chat_response["answer"])

@@ -4,9 +4,23 @@ from rasa_sdk.events import SlotSet,FollowupAction
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import AllSlotsReset
+import requests
 from datetime import datetime, timedelta
 from database.database_connectivity import get_doctor_availability, search_doctors_by_name ,add_new_patient, add_new_appointment
 
+# Define the base URL of the API
+base_url = "http://localhost:8000"  # Change this URL if your API is hosted elsewhere
+
+# Function to send a chat request to the API
+def send_chat_request(query):
+    endpoint = "/chat"
+    data = {"query": query}
+    response = requests.post(base_url + endpoint, json=data)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        print("Error:", response.text)
+        return None
 
 class ActionFetchDoctorAvailability(Action):
 
@@ -103,6 +117,18 @@ class ActionConfirmAppointment(Action):
         # Send the summary message
         dispatcher.utter_message(text=summary)
         return [AllSlotsReset()]
+    
+
+class LLMResponseAction(Action):
+    def name(self) -> Text:
+        return "action_llm_response"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        user_input = (tracker.latest_message)['text']
+        response_text = send_chat_request(user_input)
+        response_text = response_text['answer']
+        dispatcher.utter_message(text=response_text)
+        return []
 
 
 

@@ -37,6 +37,8 @@ intents:
   - faq_visitor_policy
   - faq_cafeteria
   - faq_pharmacy
+  - request_medical_appointments
+  - wellness_tips
 
 entities:
   - age
@@ -413,6 +415,8 @@ actions:
   - utter_happy
   - action_fetch_medical_records
   - action_fetch_appointments
+  - action_llm_response
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

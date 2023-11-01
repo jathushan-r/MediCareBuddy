@@ -10,9 +10,9 @@ venv
 
 **/*.db*
 */story_graph.dot
-*/.rasa
-
 .rasa
+
+.rasa23
 models
 Chat UI
 LLM/src/db
