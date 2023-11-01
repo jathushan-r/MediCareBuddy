@@ -6,7 +6,7 @@ def create_mysql_connection():
         host="localhost",
         user="root",
         password="abcd1234",
-        database="hospitaldb"
+        database="chatbot"
     )
     return connection
 

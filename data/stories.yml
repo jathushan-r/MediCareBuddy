@@ -60,7 +60,16 @@ stories:
       - action: utter_ask_any_other_help
       - intent: deny
       - action: utter_goodbye
-
+  - story: search doctor by name and book appointment
+    steps:
+      - intent: book_appointment
+      - action: doctor_availability_form
+      - active_loop: doctor_availability_form
+      # - action: action_listen
+      - intent: affirm
+      - action: appointment_booking_form
+      - active_loop: appointment_booking_form
+      
   - story: sad path 2
     steps:
       - user: "what is the Weather today?"
@@ -175,7 +184,7 @@ stories:
 
   - story: User complains about broken online booking
     steps:
-      - user: "My online booking platform is broken / doesn’t work. What is happening?"
+      - user: "My online booking platform is broken / doesn't work. What is happening?"
       - action: utter_broken_online_booking
 
   - story: User asks about short appointments
@@ -353,39 +362,6 @@ stories:
       - user: "How do you ensure patient satisfaction?"
       - action: utter_patient_satisfaction
 
-  # - story: give name story 1
-  #   steps:
-  #     - intent: ask_me_anything
-  #     - action: utter_ask_shirt_size
-  #     - intent: give_shirt_size
-  #       entities:
-  #         - shirt_size: large
-  #     - slot_was_set:
-  #         - shirt_size: large
-  #     - action: utter_remember
-  #     - intent: repeat_shirt_size
-  #     - action: action_say_shirt_size
-  #     - intent: goodbye
-  #     - action: utter_goodbye
-
-  # - story: give name story 2
-  #   steps:
-  #     - intent: greet
-  #     - action: utter_greet
-  #     - intent: repeat_shirt_size
-  #     - action: action_say_shirt_size
-  #     - intent: ask_me_anything
-  #     - action: utter_ask_shirt_size
-  #     - intent: give_shirt_size
-  #       entities:
-  #         - shirt_size: large
-  #     - slot_was_set:
-  #         - shirt_size: large
-  #     - action: utter_remember
-  #     - intent: repeat_shirt_size
-  #     - action: action_say_shirt_size
-  #     - intent: goodbye
-  #     - action: utter_goodbye
   - story: doctor is not available
     steps:
     - intent: greet
@@ -397,126 +373,351 @@ stories:
     - intent: affirm
     - action: appointment_booking_form
 
+  - story: first name of dr. given
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_for_doctor_availability
+    - action: doctor_availability_form
+    - active_loop: doctor_availability_form
+    - action: action_fetch_doctor_availability_data
+    - intent: deny
+    - action: utter_ask_any_other_help
+    - intent: deny 
+    - action: utter_goodbye
+  
+  - story: doctor not available in the hospital happy path
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: book_appointment
+    - action: doctor_availability_form
+    - active_loop: doctor_availability_form
+    - action: action_fetch_doctor_availability_data
+    - intent: affirm
+    - action: doctor_availability_form
+    - active_loop: doctor_availability_form
+    - action: action_listen
+    - intent: affirm
+    - action: appointment_booking_form
+    - active_loop: appointment_booking_form
+    # - action: action_send_otp
+    # - action: utter_ask_otp
+    # - intent: provide_otp
+    # - action: action_submit_appointment_form
+    # - action: utter_ask_any_other_help
+    - intent: deny
+    - action: utter_goodbye
+    - action: action_restart
 
+  - story: doctor not available in the hospital unhappy path 1
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: book_appointment
+    - action: doctor_availability_form
+    - active_loop: doctor_availability_form
+    - action: action_fetch_doctor_availability_data
+    - intent: deny
+    - action: utter_ask_any_other_help
+    - intent: deny
+    - action: utter_goodbye
+    - action: action_restart
+
+  # - story: doctor not available in the hospital unhappy path 1
+  #   steps:
+  #   - intent: greet
+  #   - action: utter_greet
+
+
+  # - story: interactive_story_1
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: ask_for_doctor_availability
+  #       entities:
+  #         - doctor_name: Linda Garcia
+  #     - slot_was_set:
+  #         - doctor_name: Linda Garcia
+  #     - action: doctor_availability_form
+  #     - active_loop: doctor_availability_form
+  #     - slot_was_set:
+  #         - doctor_name: Linda Garcia
+  #     - slot_was_set:
+  #         - requested_slot: day
+  #     - intent: ask_for_doctor_availability
+  #       entities:
+  #         - day: Wednesday
+  #     - slot_was_set:
+  #         - day: Wednesday
+  #     - action: doctor_availability_form
+  #     - slot_was_set:
+  #         - requested_slot: null
+  #     - active_loop: null
+  #     - action: action_fetch_doctor_availability_data
+  #     - action: utter_ask_book_appointment
+  #     - intent: affirm
+  #     - action: appointment_booking_form
+  #     - active_loop: appointment_booking_form
+  #     - slot_was_set:
+  #         - requested_slot: firstname
+  #     - intent: provide_firstname
+  #       entities:
+  #         - firstname: Savindu
+  #     - slot_was_set:
+  #         - firstname: Savindu
+  #     - action: appointment_booking_form
+  #     - slot_was_set:
+  #         - requested_slot: lastname
+  #     - intent: provide_lastname
+  #       entities:
+  #         - lastname: Rajapaksha
+  #     - slot_was_set:
+  #         - lastname: Rajapaksha
+  #     - action: appointment_booking_form
+  #     - slot_was_set:
+  #         - requested_slot: age
+  #     - intent: provide_age
+  #       entities:
+  #         - age: "23"
+  #     - slot_was_set:
+  #         - age: "23"
+  #     - action: appointment_booking_form
+  #     - slot_was_set:
+  #         - requested_slot: phone
+  #     - intent: provide_phone
+  #       entities:
+  #         - phone: "0712845669"
+  #     - action: appointment_booking_form
+  #     - slot_was_set:
+  #         - requested_slot: phone
+  #     - intent: provide_phone
+  #       entities:
+  #         - phone: "0712845669"
+  #     - action: appointment_booking_form
+  #     - slot_was_set:
+  #         - requested_slot: phone
+  #     - intent: provide_phone
+  #       entities:
+  #         - phone: 071-284-5669
+  #     - slot_was_set:
+  #         - phone: 071-284-5669
+  #     - action: appointment_booking_form
+  #     - slot_was_set:
+  #         - requested_slot: null
+  #     - active_loop: null
+  #     - action: action_send_otp
+  #     - action: utter_ask_otp
+  #     - action: action_submit_appointment_form
+  #     - action: utter_ask_any_other_help
+  #     - intent: deny
+  #     - action: utter_goodbye
+  #     - action: action_restart
+
+  # - story: interactive_story_2
+  #   steps:
+  #   - intent: greet
+  #   - action: utter_greet
+  #   - intent: book_appointment
+  #   - action: doctor_availability_form
+  #   - active_loop: doctor_availability_form
+
+  # - story: interactive_story_3
+  #   steps:
+  #   - intent: greet
+  #   - action: utter_greet
+  #   - intent: book_appointment
+  #   - action: doctor_availability_form
+  #   - active_loop: doctor_availability_form
+  #   - slot_was_set:
+  #     - requested_slot: doctor_name
+  #   - intent: provide_doctor_name
+  #     entities:
+  #     - doctor_name: William Harris
+  #   - slot_was_set:
+  #     - doctor_name: William Harris
+  #   - action: doctor_availability_form
+  #   - slot_was_set:
+  #     - requested_slot: day
+  #   - intent: day
+  #     entities:
+  #     - day: Wednesday
+  #   - slot_was_set:
+  #     - day: Wednesday
+  #   - action: doctor_availability_form
+  #   - slot_was_set:
+  #     - requested_slot: null
+  #   - active_loop: null
+  #   - action: action_fetch_doctor_availability_data
+  #   - action: utter_ask_book_appointment
+  #   - intent: affirm
+  #   - action: appointment_booking_form
+  #   - active_loop: appointment_booking_form
+  #   - slot_was_set:
+  #     - requested_slot: firstname
+  #   - intent: provide_firstname
+  #     entities:
+  #     - firstname: Savindu
+  #   - slot_was_set:
+  #     - firstname: Savindu
+  #   - action: appointment_booking_form
+  #   - slot_was_set:
+  #     - requested_slot: lastname
+  #   - intent: provide_lastname
+  #     entities:
+  #     - lastname: Rajapaksha
+  #   - slot_was_set:
+  #     - lastname: Rajapaksha
+  #   - action: appointment_booking_form
+  #   - slot_was_set:
+  #     - requested_slot: age
+  #   - intent: provide_age
+  #     entities:
+  #     - age: '23'
+  #   - slot_was_set:
+  #     - age: '23'
+  #   - action: appointment_booking_form
+  #   - slot_was_set:
+  #     - requested_slot: phone
+  #   - intent: provide_phone
+  #     entities:
+  #     - phone: '0712845669'
+  #   - slot_was_set:
+  #     - phone: '0712845669'
+  #   - action: appointment_booking_form
+  #   - slot_was_set:
+  #     - requested_slot: null
+  #   - active_loop: null
+  #   - action: action_send_otp
+  #   - action: utter_ask_otp
+  #   - action: action_submit_appointment_form
+  #   - action: utter_ask_any_other_help
+  #   - intent: deny
+  #   - action: utter_goodbye
+  #   - action: action_restart
 
   - story: interactive_story_1
     steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: ask_for_doctor_availability
-        entities:
-          - doctor_name: Linda Garcia
-      - slot_was_set:
-          - doctor_name: Linda Garcia
-      - action: doctor_availability_form
-      - active_loop: doctor_availability_form
-      - slot_was_set:
-          - doctor_name: Linda Garcia
-      - slot_was_set:
-          - requested_slot: day
-      - intent: ask_for_doctor_availability
-        entities:
-          - day: Wednesday
-      - slot_was_set:
-          - day: Wednesday
-      - action: doctor_availability_form
-      - slot_was_set:
-          - requested_slot: null
-      - active_loop: null
-      - action: action_fetch_doctor_availability_data
-      - action: utter_ask_book_appointment
-      - intent: affirm
-      - action: appointment_booking_form
-      - active_loop: appointment_booking_form
-      - slot_was_set:
-          - requested_slot: firstname
-      - intent: provide_firstname
-        entities:
-          - firstname: Savindu
-      - slot_was_set:
-          - firstname: Savindu
-      - action: appointment_booking_form
-      - slot_was_set:
-          - requested_slot: lastname
-      - intent: provide_lastname
-        entities:
-          - lastname: Rajapaksha
-      - slot_was_set:
-          - lastname: Rajapaksha
-      - action: appointment_booking_form
-      - slot_was_set:
-          - requested_slot: age
-      - intent: provide_age
-        entities:
-          - age: "23"
-      - slot_was_set:
-          - age: "23"
-      - action: appointment_booking_form
-      - slot_was_set:
-          - requested_slot: phone
-      - intent: provide_phone
-        entities:
-          - phone: "0712845669"
-      - action: appointment_booking_form
-      - slot_was_set:
-          - requested_slot: phone
-      - intent: provide_phone
-        entities:
-          - phone: "0712845669"
-      - action: appointment_booking_form
-      - slot_was_set:
-          - requested_slot: phone
-      - intent: provide_phone
-        entities:
-          - phone: 071-284-5669
-      - slot_was_set:
-          - phone: 071-284-5669
-      - action: appointment_booking_form
-      - slot_was_set:
-          - requested_slot: null
-      - active_loop: null
-      - action: action_submit_appointment_form
-      - action: utter_ask_any_other_help
-      - intent: deny
-      - action: utter_goodbye
-      - action: action_restart
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_for_doctor_availability
+      entities:
+      - day: Sunday
+      - doctor_name: linda martin
+      - Day: Sunday
+    - slot_was_set:
+      - doctor_name: linda martin
+    - slot_was_set:
+      - day: Sunday
+    - action: doctor_availability_form
+    - action: action_fetch_doctor_availability_data
+      # emily thompson
 
   - story: interactive_story_2
     steps:
     - intent: greet
     - action: utter_greet
-    - intent: book_appointment
+    - intent: ask_for_doctor_availability
+      entities:
+      - day: Monday
+      - doctor_name: thompson
+      - day: Monday
+    - slot_was_set:
+      - doctor_name: thompson
+    - slot_was_set:
+      - day: Monday
+    - intent: ask_for_doctor_availability
+      entities:
+      - doctor_name: emily thompson
+      - day: Monday
+      - day: Monday
     - action: doctor_availability_form
     - active_loop: doctor_availability_form
+    - slot_was_set:
+      - doctor_name: emily thompson
+    - slot_was_set:
+      - day: Monday
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_fetch_doctor_availability_data
+    - intent: affirm
+    - action: appointment_booking_form
+    - active_loop: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: firstname
+    - intent: provide_firstname
+      entities:
+      - firstname: Savindu
+    - slot_was_set:
+      - firstname: Savindu
+    - action: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: lastname
+    - intent: provide_lastname
+      entities:
+      - lastname: Bandara
+    - slot_was_set:
+      - lastname: Bandara
+    - action: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: age
+    - intent: provide_age
+      entities:
+      - age: '43'
+      - age: '43'
+    - slot_was_set:
+      - age: '43'
+    - action: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: phone
+    - intent: provide_phone
+      entities:
+      - phone: '0712845669'
+    - slot_was_set:
+      - phone: '0712845669'
+    - action: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_send_otp
+    - slot_was_set:
+      - otp_generated: '187608'
+    - action: utter_ask_otp
+    - intent: provide_otp
+      entities:
+      - otp: '187608'
+      - otp: '187608'
+    - slot_was_set:
+      - otp: '187608'
+    - action: action_submit_appointment_form
+    - slot_was_set:
+      - otp: null
+    - action: utter_ask_any_other_help
 
   - story: interactive_story_3
     steps:
     - intent: greet
     - action: utter_greet
-    - intent: book_appointment
+    - intent: ask_for_doctor_availability
+      entities:
+      - day: Friday
+      - doctor_name: Barbara Thompson
+      - Day: Friday
+    - slot_was_set:
+      - doctor_name: Barbara Thompson
+    - slot_was_set:
+      - day: Friday
     - action: doctor_availability_form
     - active_loop: doctor_availability_form
     - slot_was_set:
-      - requested_slot: doctor_name
-    - intent: provide_doctor_name
-      entities:
-      - doctor_name: William Harris
+      - doctor_name: Barbara Thompson
     - slot_was_set:
-      - doctor_name: William Harris
-    - action: doctor_availability_form
-    - slot_was_set:
-      - requested_slot: day
-    - intent: day
-      entities:
-      - day: Wednesday
-    - slot_was_set:
-      - day: Wednesday
-    - action: doctor_availability_form
+      - day: Friday
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
     - action: action_fetch_doctor_availability_data
-    - action: utter_ask_book_appointment
     - intent: affirm
     - action: appointment_booking_form
     - active_loop: appointment_booking_form
@@ -535,14 +736,20 @@ stories:
       - lastname: Rajapaksha
     - slot_was_set:
       - lastname: Rajapaksha
+    - intent: provide_lastname
+      entities:
+      - lastname: Bandara
+    - slot_was_set:
+      - lastname: Bandara
     - action: appointment_booking_form
     - slot_was_set:
       - requested_slot: age
     - intent: provide_age
       entities:
-      - age: '23'
+      - age: '43'
+      - age: '43'
     - slot_was_set:
-      - age: '23'
+      - age: '43'
     - action: appointment_booking_form
     - slot_was_set:
       - requested_slot: phone
@@ -555,8 +762,249 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_send_otp
+    - slot_was_set:
+      - otp_generated: '945741'
+    - action: utter_ask_otp
+    - intent: provide_age
+      entities:
+      - age: '9'
+      - age: '9'
+    - slot_was_set:
+      - age: '9'
+    - intent: provide_otp
+      entities:
+      - otp: '945741'
+      - otp: '945741'
+    - slot_was_set:
+      - otp: '945741'
     - action: action_submit_appointment_form
+    - slot_was_set:
+      - otp: null
     - action: utter_ask_any_other_help
     - intent: deny
     - action: utter_goodbye
     - action: action_restart
+
+# - story: interactive_story_1
+#   steps:
+#   - slot_was_set:
+#     - requested_slot: doctor_name
+#   - slot_was_set:
+#     - requested_slot: doctor_name
+#   - slot_was_set:
+#     - doctor_name: George Martian
+#   - slot_was_set:
+#     - requested_slot: day
+#   - slot_was_set:
+#     - day: Friday
+#   - slot_was_set:
+#     - requested_slot: null
+#   - slot_was_set:
+#     - doctor_name: null
+#   - slot_was_set:
+#     - requested_slot: doctor_name
+#   - slot_was_set:
+#     - doctor_name: James Wilson
+#   - slot_was_set:
+#     - requested_slot: null
+#   - slot_was_set:
+#     - specialty: Dermatologist
+#   - slot_was_set:
+#     - start_time: 13:00
+#   - intent: affirm
+#   - action: appointment_booking_form
+#   - active_loop: appointment_booking_form
+#   - slot_was_set:
+#     - requested_slot: firstname
+#   - intent: provide_firstname
+#     entities:
+#     - firstname: Kalinga
+#   - slot_was_set:
+#     - firstname: Kalinga
+#   - action: appointment_booking_form
+#   - slot_was_set:
+#     - requested_slot: lastname
+#   - intent: provide_lastname
+#     entities:
+#     - lastname: Ranaweera
+#   - slot_was_set:
+#     - lastname: Ranaweera
+#   - action: appointment_booking_form
+#   - slot_was_set:
+#     - requested_slot: age
+#   - intent: provide_age
+#     entities:
+#     - age: '31'
+#     - age: '31'
+#   - slot_was_set:
+#     - age: '31'
+#   - action: appointment_booking_form
+#   - slot_was_set:
+#     - requested_slot: phone
+#   - intent: provide_phone
+#     entities:
+#     - phone: '0712845669'
+#   - slot_was_set:
+#     - phone: '0712845669'
+#   - action: appointment_booking_form
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_send_otp
+#   - slot_was_set:
+#     - otp_generated: '935319'
+#   - action: utter_ask_otp
+#   - intent: provide_otp
+#     entities:
+#     - otp: '458652'
+#     - otp: '458652'
+#   - slot_was_set:
+#     - otp: '458652'
+#   - action: action_submit_appointment_form
+#   - slot_was_set:
+#     - otp: null
+#   - intent: provide_otp
+#     entities:
+#     - otp: '935319'
+#     - otp: '935319'
+#   - slot_was_set:
+#     - otp: '935319'
+#   - action: action_submit_appointment_form
+#   - slot_was_set:
+#     - otp: null
+#   - action: utter_ask_any_other_help
+#   - intent: deny
+#   - action: utter_goodbye
+#   - action: action_restart
+
+  - story: interactive_story_1
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: book_appointment
+    - action: doctor_availability_form
+    - active_loop: doctor_availability_form
+    - slot_was_set:
+      - requested_slot: doctor_name
+    - intent: provide_doctor_name
+      entities:
+      - doctor_name: Daniel Robinson
+    - slot_was_set:
+      - doctor_name: Daniel Robinson
+    - action: doctor_availability_form
+    - slot_was_set:
+      - requested_slot: day
+    - intent: day
+      entities:
+      - day: Thursday
+    - slot_was_set:
+      - day: Thursday
+    - action: doctor_availability_form
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_fetch_doctor_availability_data
+    - slot_was_set:
+      - specialty: Dermatologist
+    - slot_was_set:
+      - start_time: 10:00
+    - intent: affirm
+    - action: appointment_booking_form
+    - active_loop: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: firstname
+    - intent: provide_firstname
+      entities:
+      - firstname: Gaveesha
+    - slot_was_set:
+      - firstname: Gaveesha
+    - action: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: lastname
+    - intent: provide_lastname
+      entities:
+      - lastname: Fernando
+    - slot_was_set:
+      - lastname: Fernando
+    - action: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: age
+    - intent: provide_age
+      entities:
+      - age: '19'
+      - age: '19'
+    - slot_was_set:
+      - age: '19'
+    - action: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: phone
+    - intent: provide_phone
+      entities:
+      - phone: '0712845669'
+    - slot_was_set:
+      - phone: '0712845669'
+    - action: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_send_otp
+    - slot_was_set:
+      - otp_generated: '146695'
+    - action: utter_ask_otp
+    - intent: provide_otp
+      entities:
+      - otp: '146695'
+      - otp: '146695'
+    - slot_was_set:
+      - otp: '146695'
+    - action: action_submit_appointment_form
+    - slot_was_set:
+      - otp: null
+    - action: utter_ask_any_other_help
+    - intent: deny
+    - action: utter_goodbye
+    - action: action_restart
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: book_appointment
+  - action: doctor_availability_form
+  - active_loop: doctor_availability_form
+  - slot_was_set:
+    - requested_slot: doctor_name
+  - intent: provide_doctor_name
+    entities:
+    - doctor_name: David Jones
+  - slot_was_set:
+    - doctor_name: David Jones
+  - action: doctor_availability_form
+  - slot_was_set:
+    - requested_slot: day
+  - intent: day
+    entities:
+    - day: Tuesday
+  - slot_was_set:
+    - day: Tuesday
+  - action: doctor_availability_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_fetch_doctor_availability_data
+  - action: action_fetch_doctor_availability_data
+  - slot_was_set:
+    - day: null
+  - action: action_fetch_doctor_availability_data
+  - slot_was_set:
+    - day: null
+  - action: action_fetch_doctor_availability_data
+  - slot_was_set:
+    - day: null
+  - action: action_fetch_doctor_availability_data
+  - slot_was_set:
+    - day: null
+  - action: action_fetch_doctor_availability_data
+  - slot_was_set:
+    - day: null
