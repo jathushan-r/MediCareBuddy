@@ -112,7 +112,7 @@ stories:
     intent: greet
   - action: utter_greet
   - user: |
-      Is Dr. [John Doe](doctor_name) available?
+      Is Dr. [John Doe]{"entity": "doctor_name"} available?
     intent: ask_for_doctor_availability
   - action: doctor_availability_form
   - active_loop: doctor_availability_form
@@ -133,7 +133,7 @@ stories:
     intent: greet
   - action: utter_greet
   - user: |
-      Is Dr. [James Miller](doctor_name) working on [Friday](Day)?
+      Is Dr. [James Miller]{"entity": "doctor_name"} working on [Friday]{"entity": "Day"}?
     intent: ask_for_doctor_availability
   - action: doctor_availability_form
   - active_loop: doctor_availability_form
@@ -176,7 +176,7 @@ stories:
     intent: greet
   - action: utter_greet
   - user: |
-      Is Dr. [John](doctor_name) available on [Friday](day)?
+      Is Dr. [John]{"entity": "doctor_name"} available on [Friday]{"entity": "day"}?
     intent: ask_for_doctor_availability
     entities:
       - doctor_name: Linda Garcia
@@ -189,7 +189,7 @@ stories:
   - slot_was_set:
       - requested_slot: day
   - user: |
-      Is dr. [Linda Garcia](doctor_name) available today?
+      Is dr. [Linda Garcia]{"entity": "doctor_name"} available today?
     intent: ask_for_doctor_availability
     entities:
       - day: Wednesday
@@ -209,7 +209,7 @@ stories:
   - slot_was_set:
       - requested_slot: firstname
   - user: |
-      Call me [Sarah](firstname).
+      Call me [Sarah]{"entity": "firstname"}.
     intent: provide_firstname
     entities:
       - firstname: Savindu
@@ -219,7 +219,7 @@ stories:
   - slot_was_set:
       - requested_slot: lastname
   - user: |
-      It's [Doe](lastname).
+      It's [Doe]{"entity": "lastname"}.
     intent: provide_lastname
     entities:
       - lastname: Rajapaksha
@@ -229,7 +229,7 @@ stories:
   - slot_was_set:
       - requested_slot: age
   - user: |
-      I'm [22](age).
+      I'm [22]{"entity": "age"}.
     intent: provide_age
     entities:
       - age: "23"
@@ -239,7 +239,7 @@ stories:
   - slot_was_set:
       - requested_slot: phone
   - user: |
-      You can reach me at [987-654-3210](phone).
+      You can reach me at [987-654-3210]{"entity": "phone"}.
     intent: provide_phone
     entities:
       - phone: "0712845669"
@@ -247,7 +247,7 @@ stories:
   - slot_was_set:
       - requested_slot: phone
   - user: |
-      My phone number is [123-456-7890](phone).
+      My phone number is [123-456-7890]{"entity": "phone"}.
     intent: provide_phone
     entities:
       - phone: "0712845669"
@@ -255,7 +255,7 @@ stories:
   - slot_was_set:
       - requested_slot: phone
   - user: |
-      My phone number is [0759999888](phone)
+      My phone number is [0759999888]{"entity": "phone"}
     intent: provide_phone
     entities:
       - phone: 071-284-5669

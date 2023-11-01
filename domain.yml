@@ -23,6 +23,21 @@ intents:
   - specialty
   - request_medical_records
   - request_to_cancel_appointment
+  - faq_hospital_services
+  - faq_doctor_specialties
+  - faq_visiting_hours
+  - faq_patient_admissions
+  - faq_billing_and_payment
+  - faq_insurance
+  - faq_emergency_services
+  - faq_medical_records
+  - faq_patient_feedback
+  - faq_covid-19
+  - faq_parking
+  - faq_visitor_policy
+  - faq_cafeteria
+  - faq_pharmacy
+
 entities:
   - age
   - day
@@ -86,7 +101,7 @@ forms:
     required_slots:
       - doctor_name
       - day
-  medical_records_form:
+  medical_appointments_form:
     required_slots:
       - firstname
       - lastname
@@ -112,12 +127,14 @@ responses:
   utter_ask_doctor_name:
     - text: Which doctor would you like to book an appointment with?
   utter_contact_info:
-    - text: Hospital name - Mora Hospital 
-            Phone no - 076 1212123
-            Address - Bandaranayake Mawatha, Moratuwa 10400
-            Email - morahospital@gmail.com
+    - text: |-
+        Our contact information is as follows:
+        - Hospital name - Mora Hospital.
+        - Phone no - 076 1212123
+        - Address - Bandaranayake Mawatha, Moratuwa 10400.
+        - Email - morahospital@gmail.com
   utter_phone_number:
-    - text: 076 1212123
+    - text: Our contact number is 076 1212123
   utter_hospital_name:
     - text: Mora Hospital
   utter_address:
@@ -334,6 +351,57 @@ responses:
 
   utter_assistance:
     - text: Sure, I can assist with that.
+  ###################################################
+  utter_faq_hospital_services:
+    - text: Our hospital provides a comprehensive range of medical services, including emergency care, inpatient and outpatient services, surgical procedures, diagnostic imaging, laboratory services, and specialized care in areas such as cardiology, orthopedics, and obstetrics. We also prioritize community health initiatives and preventive care programs to promote the overall well-being of our residents.
+
+  utter_faq_doctor_specialties:
+    - text: |-
+        Specialties are Psychiatrist
+        - Orthopedist
+        - Pediatrician
+        - General Physician
+        - Dermatologist
+        - ENT Specialist
+        - Gastroenterologist
+        - Cardiologist
+        - Neurologist
+        - Ophthalmologist
+  utter_faq_visiting_hours:
+    - text: Our hospital's visiting hours are from 10:00 a.m. to 8:00 p.m. daily. However, please note that these hours may be subject to change based on the specific needs and condition of our patients. We encourage visitors to check with our reception desk or nursing staff for any updates or special circumstances related to visiting hours.
+
+  utter_faq_patient_admissions:
+    - text: The process for patient admissions at our hospital typically begins with registration at the front desk, where our staff will collect necessary personal and insurance information. Following registration, patients are then directed to the appropriate department or unit for further assessment by our medical team. Depending on the severity of the condition, patients may undergo preliminary examinations, consultations, and diagnostic tests as required. After evaluation, our medical team will determine the most suitable course of treatment and care for the patient. Admissions are finalized once the necessary paperwork and formalities are completed, and the patient is assigned a room or bed within the hospital. Our priority is to ensure a smooth and efficient admission process while providing a comfortable and supportive environment for our patients.
+
+  utter_faq_billing_and_payment:
+    - text: The hospital's billing process starts with the compilation of all medical services provided. Once treatment is complete, the billing department generates an itemized invoice detailing the services rendered. This invoice is then sent to the patient or their insurance provider, depending on the payment arrangement. Patients can settle their bills through various methods, including cash, credit/debit cards, or insurance claims. Our billing department is available to address any queries or concerns regarding the invoice and payment process.
+
+  utter_faq_insurance:
+    - text: Yes, our hospital does accept a variety of health insurance plans. We work with several major insurance providers to ensure that our patients can access the necessary medical services without financial strain. However, it is advisable to confirm the acceptance of your specific insurance plan with our administrative staff during the registration process. Our team is readily available to assist you in understanding your coverage and to address any concerns or inquiries you may have related to insurance acceptance and billing procedures.
+
+  utter_faq_emergency_services:
+    - text: Our hospital is equipped to handle a wide range of medical emergencies with a dedicated emergency department that operates 24/7. We provide timely and efficient emergency care for various critical conditions, including but not limited to trauma, heart attacks, strokes, respiratory distress, and other acute medical situations. Our skilled medical professionals, including emergency physicians and nurses, are trained to deliver swift and comprehensive care to stabilize patients in critical situations. Additionally, our emergency department is supported by advanced medical technology and equipment to ensure prompt and effective treatment during emergencies.
+
+  utter_faq_medical_records:
+    - text: Accessing your medical records from our hospital is a straightforward process. You can request your medical records by contacting our medical records department directly. Our staff will guide you through the necessary steps and provide you with the required forms for requesting access to your medical information. Depending on the specific requirements and regulations, you may need to provide a signed authorization form and valid identification. Our priority is to ensure the security and confidentiality of your medical records while facilitating a smooth and efficient process for accessing your personal health information.
+
+  utter_faq_patient_feedback:
+    - text: We value your feedback and are committed to continuously improving our services. There are several ways you can provide feedback about your experience at our hospital. You can fill out a feedback form available at our reception desk, or you can submit your comments and suggestions through our official website's designated feedback portal. Additionally, you may also reach out to our patient relations department directly via phone or email to share your feedback and experiences. Your input is instrumental in helping us enhance our services and ensure that we meet and exceed your expectations.
+
+  utter_faq_covid-19:
+    - text: At our hospital, we have implemented stringent COVID-19 safety protocols to safeguard the health and well-being of our patients, visitors, and staff. These measures include mandatory mask-wearing, regular sanitization of all facilities, social distancing guidelines in waiting areas, and the provision of hand sanitizers throughout the premises. Additionally, we conduct regular temperature checks and screening for COVID-19 symptoms for all individuals entering the hospital. We also follow all guidelines and recommendations from local health authorities and the World Health Organization to ensure the highest standard of safety and care during the ongoing pandemic.
+
+  utter_faq_parking:
+    - text: Our hospital offers convenient parking facilities for patients, visitors, and staff. We have designated parking areas located in close proximity to the main entrance for easy access to the hospital. Additionally, we provide accessible parking spaces for individuals with special needs. Our parking facilities are well-maintained and equipped with adequate lighting and security measures to ensure the safety of vehicles and individuals. Should you require any assistance or have inquiries regarding parking, our staff members are available to provide guidance and support to ensure a smooth parking experience during your visit to the hospital.
+
+  utter_faq_visitor_policy:
+    - text: What is the current visitor policy at the hospital?
+
+  utter_faq_cafeteria:
+    - text: Yes, our hospital features a cafeteria that provides a range of freshly prepared and nutritious meals for patients, visitors, and staff. The cafeteria offers a variety of dining options to accommodate different dietary preferences and restrictions. Additionally, we prioritize maintaining high standards of hygiene and food safety to ensure that our patrons can enjoy their meals in a clean and comfortable environment. Our cafeteria is open during designated hours to serve breakfast, lunch, and dinner, providing a convenient dining option for those within the hospital premises.
+
+  utter_faq_pharmacy:
+    - text: Yes, our hospital has an in-house pharmacy that is readily accessible to fulfill the medication needs of our patients. The pharmacy is staffed with experienced pharmacists who provide expert guidance and dispense prescribed medications as per the instructions of our medical professionals. Additionally, the pharmacy stocks a wide range of prescription drugs, over-the-counter medications, and other pharmaceutical supplies to ensure the timely and efficient provision of essential medicines to our patients. We prioritize patient safety and satisfaction by maintaining high standards of quality and compliance within our pharmacy services.
 
 actions:
   - utter_greet
@@ -345,7 +413,6 @@ actions:
   - utter_happy
   - action_fetch_medical_records
   - action_fetch_appointments
-  # - validate_medical_records_form
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

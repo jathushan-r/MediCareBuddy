@@ -66,11 +66,11 @@ rules:
   #   - action: medical_records_form
   #   - active_loop: medical_records_form
  
-  - rule: Submit_medical_records_form
+  - rule: Submit_medical_appointments_form
     condition:
-    - active_loop: medical_records_form
+    - active_loop: medical_appointments_form
     steps: 
-    - action: medical_records_form
+    - action: medical_appointments_form
     - active_loop: null
     - slot_was_set:
       - requested_slot: null

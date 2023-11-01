@@ -491,76 +491,75 @@ stories:
 
   - story: interactive_story_3
     steps:
-    - intent: greet
-    - action: utter_greet
-    - intent: book_appointment
-    - action: doctor_availability_form
-    - active_loop: doctor_availability_form
-    - slot_was_set:
-      - requested_slot: doctor_name
-    - intent: provide_doctor_name
-      entities:
-      - doctor_name: William Harris
-    - slot_was_set:
-      - doctor_name: William Harris
-    - action: doctor_availability_form
-    - slot_was_set:
-      - requested_slot: day
-    - intent: day
-      entities:
-      - day: Wednesday
-    - slot_was_set:
-      - day: Wednesday
-    - action: doctor_availability_form
-    - slot_was_set:
-      - requested_slot: null
-    - active_loop: null
-    - action: action_fetch_doctor_availability_data
-    - action: utter_ask_book_appointment
-    - intent: affirm
-    - action: appointment_booking_form
-    - active_loop: appointment_booking_form
-    - slot_was_set:
-      - requested_slot: firstname
-    - intent: provide_firstname
-      entities:
-      - firstname: Savindu
-    - slot_was_set:
-      - firstname: Savindu
-    - action: appointment_booking_form
-    - slot_was_set:
-      - requested_slot: lastname
-    - intent: provide_lastname
-      entities:
-      - lastname: Rajapaksha
-    - slot_was_set:
-      - lastname: Rajapaksha
-    - action: appointment_booking_form
-    - slot_was_set:
-      - requested_slot: age
-    - intent: provide_age
-      entities:
-      - age: '23'
-    - slot_was_set:
-      - age: '23'
-    - action: appointment_booking_form
-    - slot_was_set:
-      - requested_slot: phone
-    - intent: provide_phone
-      entities:
-      - phone: '0712845669'
-    - slot_was_set:
-      - phone: '0712845669'
-    - action: appointment_booking_form
-    - slot_was_set:
-      - requested_slot: null
-    - active_loop: null
-    - action: action_submit_appointment_form
-    - action: utter_ask_any_other_help
-    - intent: deny
-    - action: utter_goodbye
-    - action: action_restart
-  
+      - intent: greet
+      - action: utter_greet
+      - intent: book_appointment
+      - action: doctor_availability_form
+      - active_loop: doctor_availability_form
+      - slot_was_set:
+          - requested_slot: doctor_name
+      - intent: provide_doctor_name
+        entities:
+          - doctor_name: William Harris
+      - slot_was_set:
+          - doctor_name: William Harris
+      - action: doctor_availability_form
+      - slot_was_set:
+          - requested_slot: day
+      - intent: day
+        entities:
+          - day: Wednesday
+      - slot_was_set:
+          - day: Wednesday
+      - action: doctor_availability_form
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: action_fetch_doctor_availability_data
+      - action: utter_ask_book_appointment
+      - intent: affirm
+      - action: appointment_booking_form
+      - active_loop: appointment_booking_form
+      - slot_was_set:
+          - requested_slot: firstname
+      - intent: provide_firstname
+        entities:
+          - firstname: Savindu
+      - slot_was_set:
+          - firstname: Savindu
+      - action: appointment_booking_form
+      - slot_was_set:
+          - requested_slot: lastname
+      - intent: provide_lastname
+        entities:
+          - lastname: Rajapaksha
+      - slot_was_set:
+          - lastname: Rajapaksha
+      - action: appointment_booking_form
+      - slot_was_set:
+          - requested_slot: age
+      - intent: provide_age
+        entities:
+          - age: "23"
+      - slot_was_set:
+          - age: "23"
+      - action: appointment_booking_form
+      - slot_was_set:
+          - requested_slot: phone
+      - intent: provide_phone
+        entities:
+          - phone: "0712845669"
+      - slot_was_set:
+          - phone: "0712845669"
+      - action: appointment_booking_form
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: action_submit_appointment_form
+      - action: utter_ask_any_other_help
+      - intent: deny
+      - action: utter_goodbye
+      - action: action_restart
 
   # - story: getting medical records
   #   steps:
@@ -568,17 +567,17 @@ stories:
   #     - action: utter_greet
   #     - intent: request_medical_records
   #     - action: utter_assistance
-  #     - action: medical_records_form
-  #     - active_loop: medical_records_form
+  #     - action: medical_appointments_form
+  #     - active_loop: medical_appointments_form
 
-  - story: getting medical records
+  - story: getting medical appointments
     steps:
       - intent: greet
       - action: utter_greet
-      - intent: request_medical_records
+      - intent: request_medical_appointments
       - action: utter_assistance
-      - action: medical_records_form
-      - active_loop: medical_records_form
+      - action: medical_appointments_form
+      - active_loop: medical_appointments_form
 
   - story: cancel appointment
     steps:
@@ -596,38 +595,105 @@ stories:
 
   - story: User asks contact number
     steps:
-    - user: "give me your contact number"
-    - action: utter_phone_number
+      - user: "give me your contact number"
+      - action: utter_phone_number
 
   - story: User asks address
     steps:
-    - user: "give me your address"
-    - action: utter_address
+      - user: "give me your address"
+      - action: utter_address
 
   - story: User asks email
     steps:
-    - user: "give me your email address"
-    - action: utter_email
+      - user: "give me your email address"
+      - action: utter_email
 
   - story: User asks hospital name
     steps:
-    - user: "What is the name of your hospital"
-    - action: utter_hospital_name
+      - user: "What is the name of your hospital"
+      - action: utter_hospital_name
+  ##########################################
+  - story: User asks about hospital_services
+    steps:
+      - intent: faq_hospital_services
+      - action: utter_faq_hospital_services
 
+  - story: User asks about doctor_specialties
+    steps:
+      - intent: faq_doctor_specialties
+      - action: utter_faq_doctor_specialties
 
+  - story: User asks about visiting_hours
+    steps:
+      - intent: faq_visiting_hours
+      - action: utter_faq_visiting_hours
 
+  - story: User asks about patient_admissions
+    steps:
+      - intent: faq_patient_admissions
+      - action: utter_faq_patient_admissions
 
-  # - story: submit_medical_records_form
+  - story: User asks about billing_and_payment
+    steps:
+      - intent: faq_billing_and_payment
+      - action: utter_faq_billing_and_payment
+
+  - story: User asks about insurance
+    steps:
+      - intent: faq_insurance
+      - action: utter_faq_insurance
+
+  - story: User asks about emergency_services
+    steps:
+      - intent: faq_emergency_services
+      - action: utter_faq_emergency_services
+
+  - story: User asks about medical_records
+    steps:
+      - intent: faq_medical_records
+      - action: utter_faq_medical_records
+
+  - story: User asks about patient_feedback
+    steps:
+      - intent: faq_patient_feedback
+      - action: utter_faq_patient_feedback
+
+  - story: User asks about covid-19
+    steps:
+      - intent: faq_covid-19
+      - action: utter_faq_covid-19
+
+  - story: User asks about parking
+    steps:
+      - intent: faq_parking
+      - action: utter_faq_parking
+
+  - story: User asks about visitor_policy
+    steps:
+      - intent: faq_visitor_policy
+      - action: utter_faq_visitor_policy
+
+  - story: User asks about cafeteria
+    steps:
+      - intent: faq_cafeteria
+      - action: utter_faq_cafeteria
+
+  - story: User asks about pharmacy
+    steps:
+      - intent: faq_pharmacy
+      - action: utter_faq_pharmacy
+
+  # - story: submit_medical_appointments_form
   #   steps:
   #       conditions:
-  #           -active_loop: medical_records_form
-  #       steps: 
-  #           -action: medical_records_form
+  #           -active_loop: medical_appointments_form
+  #       steps:
+  #           -action: medical_appointments_form
   #           -active_loop: null
   #           - slot_was_set:
   #             - requested_slot: null
   #           - action: action_fetch_medical_records
-            # - action: utter_ask_any_other_help
-            # - intent: deny
-            # - action: utter_goodbye
-            # - action: action_restart
+  # - action: utter_ask_any_other_help
+  # - intent: deny
+  # - action: utter_goodbye
+  # - action: action_restart

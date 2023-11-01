@@ -708,130 +708,129 @@ nlu:
       - What's the process of photosynthesis in plants?
       - Can you suggest tips for time management and productivity?
 
-  - intent: faq/hospital_services
+  - intent: faq_hospital_services
     examples: |
       - What services does the hospital offer?
       - Tell me about the services provided by the hospital.
       - What medical facilities are available at the hospital?
 
-  - intent: faq/appointments
-    examples: |
-      - How can I schedule a doctor's appointment?
-      - What's the process for booking an appointment?
-      - Can I book a medical appointment online?
+  # - intent: faq_appointments
+  #   examples: |
+  #     - How can I schedule a doctor's appointment?
+  #     - What's the process for booking an appointment?
+  #     - Can I book a medical appointment online?
 
-  - intent: faq/doctor_specialties
+  - intent: faq_doctor_specialties
     examples: |
       - What medical specialties do the doctors at the hospital have?
       - Tell me about the different doctor specialties available.
       - Who are the specialists at the hospital?
 
-  - intent: faq/visiting_hours
+  - intent: faq_visiting_hours
     examples: |
       - What are the visiting hours at the hospital?
       - Can you provide me with the hospital's visiting schedule?
       - When can I visit a patient at the hospital?
 
-  - intent: faq/patient_admissions
+  - intent: faq_patient_admissions
     examples: |
       - How do I admit a patient to the hospital?
       - What's the process for patient admissions?
       - Can you explain the admission procedure?
 
-  - intent: faq/billing_and_payment
+  - intent: faq_billing_and_payment
     examples: |
       - How does the hospital billing and payment process work?
       - What payment methods are accepted for medical bills?
       - Can you provide information on hospital fees and payments?
 
-  - intent: faq/insurance
+  - intent: faq_insurance
     examples: |
       - Does the hospital accept health insurance?
       - How can I use my insurance at the hospital?
       - Tell me about the insurance policies accepted by the hospital.
 
-  - intent: faq/emergency_services
+  - intent: faq_emergency_services
     examples: |
       - What emergency medical services does the hospital provide?
       - How can I reach the hospital's emergency department?
       - Is there an emergency hotline I can call for assistance?
 
-  - intent: faq/medical_records
+  - intent: faq_medical_records
     examples: |
       - How can I access my medical records from the hospital?
       - Tell me about the process for obtaining medical records.
       - Can I request my health records online?
 
-  - intent: faq/patient_feedback
+  - intent: faq_patient_feedback
     examples: |
       - How can I provide feedback about my experience at the hospital?
       - Is there a patient feedback form or survey?
       - Where can I share my suggestions or complaints?
 
-  - intent: faq/covid-19
+  - intent: faq_covid-19
     examples: |
       - What COVID-19 safety measures are in place at the hospital?
       - Tell me about the hospital's response to the pandemic.
       - Is COVID-19 testing available at the hospital?
 
-  - intent: faq/parking
+  - intent: faq_parking
     examples: |
       - Is there parking available at the hospital?
       - Can you provide information about hospital parking facilities?
       - What are the parking rates at the hospital?
 
-  - intent: faq/visitor_policy
+  - intent: faq_visitor_policy
     examples: |
       - What is the current visitor policy at the hospital?
       - Are there any restrictions on hospital visitors?
       - Can you explain the hospital's visitor guidelines?
 
-  - intent: faq/volunteer_opportunities
-    examples: |
-      - How can I volunteer at the hospital?
-      - Tell me about volunteer opportunities at the hospital.
-      - Is there a volunteer program I can join?
+  # - intent: faq_volunteer_opportunities
+  #   examples: |
+  #     - How can I volunteer at the hospital?
+  #     - Tell me about volunteer opportunities at the hospital.
+  #     - Is there a volunteer program I can join?
 
-  - intent: faq/cafeteria
+  - intent: faq_cafeteria
     examples: |
       - Does the hospital have a cafeteria or food services?
       - What dining options are available for patients and visitors?
       - Can you provide information about the hospital's cafeteria hours?
 
-  - intent: faq/patient_rights
-    examples: |
-      - What are the rights and responsibilities of hospital patients?
-      - Tell me about patient rights at the hospital.
-      - Can you explain the code of conduct for patients?
+  # - intent: faq_patient_rights
+  #   examples: |
+  #     - What are the rights and responsibilities of hospital patients?
+  #     - Tell me about patient rights at the hospital.
+  #     - Can you explain the code of conduct for patients?
 
-  - intent: faq/pharmacy
+  - intent: faq_pharmacy
     examples: |
       - Is there a pharmacy at the hospital?
       - Can I get my prescriptions filled at the hospital's pharmacy?
       - What are the pharmacy operating hours?
 
-  - intent: faq/patient_support
-    examples: |
-      - What support services are available for patients and their families?
-      - Tell me about patient support and counseling options.
-      - Can you provide information about patient advocacy services?
+  # - intent: faq_patient_support
+  #   examples: |
+  #     - What support services are available for patients and their families?
+  #     - Tell me about patient support and counseling options.
+  #
+  # - intent: faq_hospital_location
+  #   examples: |
+  #     - Where is the hospital located?
+  #     - Can you give me directions to the hospital?
+  #     - What's the hospital's address and contact information?
 
-  - intent: faq/hospital_location
+  - intent: request_medical_appointments
     examples: |
-      - Where is the hospital located?
-      - Can you give me directions to the hospital?
-
-      - What's the hospital's address and contact information?
-  - intent: request_medical_records
-    examples: |
-      - I need to request a copy of my medical records.
-      - can i have my medical records.
-      - Could you please provide me the medical records.
-      - I need to obtain a copy of my medical records for my own records.
-      - Could you please assist me in getting a copy of my medical records from my recent visits?
+      - I need to request a copy of my medical appointments.
+      - can i have my medical appointments.
+      - Could you please provide me the medical appointments.
+      - I need to obtain a copy of my medical appointments.
+      - Could you please assist me in getting a copy of my medical appointments from my recent visits?
       - I would like to request access to my complete medical history for personal review.
-      - Can you help me with the process of obtaining my medical records for my records?
-      - I am looking to collect my medical records for my own reference. How can I go about this?
+      - Can you help me with the process of obtaining my medical appointments?
+      - I am looking to collect my medical appointments for my own reference. How can I go about this?
 
   - intent: request_to_cancel_appointment
     examples: |
@@ -847,7 +846,7 @@ nlu:
       - Please cancel my appointment scheduled as I have a conflicting engagement.
       - I need to cancel my scheduled due to a sudden change in my schedule.
       - can I cancel my appointment?
-      - i wish to cancel my account. 
+      - i wish to cancel my account.
 
   - regex: age
     examples: |
