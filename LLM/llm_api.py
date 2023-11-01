@@ -24,8 +24,8 @@ class ChatResponse(BaseModel):
     answer: str
 
 # Initialize your components here
-# os.environ["OPENAI_API_KEY"] = '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'
-# os.environ["REPLICATE_API_TOKEN"] = "r8_6rXolartKZeUccahg23a7e9rrUMMUyU241P5V"
+# os.environ["OPENAI_API_KEY"] = 'sk-fdfd'
+# os.environ["REPLICATE_API_TOKEN"] = "fvdfd"
 llm = Replicate(
     model="replicate/llama-2-70b-chat:2796ee9483c3fd7aa2e171d38f4ca12251a30609463dcfd4cd76703f22e96cdf",
     input={"temperature": 0.7, "max_length": 150, "top_p": 1},
