@@ -19,6 +19,26 @@ rules:
   #     - intent: affirm
   #     - action: appointment_booking_form
   #     - active_loop: appointment_booking_form
+  - rule: denying help
+    steps:
+      - action: utter_ask_any_other_help
+      - intent: deny
+      - action: utter_goodbye
+      - action: action_restart
+
+  - rule: confirming_need
+    steps:
+      - intent: Confirm_need
+      - action: appointment_booking_form
+      - active_loop: appointment_booking_form
+  # - rule: transfer
+  #   steps:
+  #     - action: action_fetch_doctor_availability_data
+  #     - intent: affirm
+  #     - action: appointment_booking_form
+  #     - active_loop: appointment_booking_form
+  #     - action: action_send_otp
+  #     - action: utter_ask_otp
 
   - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
     steps:
@@ -53,4 +73,5 @@ rules:
       - action: utter_ask_otp
       - intent: provide_otp
       - action: action_submit_appointment_form
+      # - action: utter_ask_any_other_help
       # - action: utter_ask_any_other_help

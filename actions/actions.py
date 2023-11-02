@@ -169,19 +169,18 @@ class ActionConfirmAppointment(Action):
             patientID = add_new_patient(first_name, last_name, age, phone)
             add_new_appointment(patientID, doctor_name, appointment_time,appointment_date)
             # Create the summary message
-            summary = f"Here is the information you've provided:"
+            summary = f"Here is the information you've provided:\n"
             summary += f"- First Name: {first_name}\n"
             summary += f"- Last Name: {last_name}\n"
             summary += f"- Age: {age}\n"
             summary += f"- Phone: {phone}\n"
             summary += f"- Appointment Date: {appointment_date}\n"
             summary += f"- Appointment Time: {appointment_time}"
-
             summary += "\nYour appointment has been successfully booked."
-
             # Send the summary message
             dispatcher.utter_message(text=summary)
-            # return [SlotSet("otp_generated",None),SlotSet("otp",None)]
+                # return [SlotSet("otp_generated",None),SlotSet("otp",None)]
+            # return [SlotSet("otp",None)]
             return [SlotSet("otp",None)]
         else:
             dispatcher.utter_message(text="OTP is incorrect.Please try again.")

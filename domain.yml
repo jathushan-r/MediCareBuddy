@@ -27,14 +27,16 @@ intents:
 - provide_phone
 - specialty
 - wellness_tips
+- Confirm_need
+
 entities:
-- lastname
-- phone
-- age
-- otp
 - firstname
 - doctor_name
 - day
+- age
+- otp
+- lastname
+- phone
 - Day
 - specialty
 - start_time
@@ -334,13 +336,13 @@ responses:
     - title: Dr. David
       payload: '/inform{{"doctor_name": "Dr. David"}}'
 actions:
-- utter_ask_otp
 - utter_greet
-- utter_goodbye
-- utter_ask_any_other_help
+- action_fetch_doctor_availability_data
+- utter_ask_otp
 - action_send_otp
 - action_submit_appointment_form
-- action_fetch_doctor_availability_data
+- utter_goodbye
+- utter_ask_any_other_help
 - action_llm_response
 session_config:
   session_expiration_time: 60

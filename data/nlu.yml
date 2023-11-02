@@ -55,6 +55,24 @@ nlu:
     - I want to book an appointment.
     - I want to book an appointment
     - I would like to book an appointment
+    - i would like to book an appointment
+
+- intent: Confirm_need
+  examples: |
+    - Yes, I need to see this doctor
+    - Yes, I need to see this doctor
+    - yes, i want to meet this doctor
+    - Yes, I need to schedule an appointment with this doctor
+    - Yes, I'm interested in booking a consultation with this doctor
+    - Yes, Please help me arrange a meeting with this specific doctor
+    - Yes, I would like to meet with this doctor as soon as possible
+    - Yes, Could you please assist me in setting up an appointment with this particular doctor?
+    - Yes, I am eager to see this doctor at the earliest convenient time
+    - Yes, I'm looking forward to consulting with this doctor regarding my health concerns
+    - Yes, I have heard great things about this doctor and would like to see them for myself
+    - Yes, I have been advised to seek the expertise of this specific doctor and would like to schedule a visit
+    - Yes, It is important for me to have an appointment with this doctor due to my medical needs
+
 - intent: affirm
   examples: |
     - yes
@@ -370,6 +388,8 @@ nlu:
     - [William Harris](doctor_name)
     - Dr. [David Jones](doctor_name)
     - dr. [daniel brown]{"entity": "doctor_name", "value": "Daniel Brown"}
+    - dr. [george jackson](doctor_name)
+    - Dr. [George White](doctor_name)
 - intent: deny
   examples: |
     - no
@@ -511,6 +531,9 @@ nlu:
     - [Kalinga](firstname)
     - [Gaveesha](firstname)
     - [ganidu](firstname)
+    - [gavindu](firstname)
+    - nadil
+    - [nadil](firstname)
 - intent: provide_lastname
   examples: |
     - My last name is [Smith](lastname).
@@ -575,6 +598,7 @@ nlu:
     - [Ranaweera](lastname)
     - [fernando]{"entity": "lastname", "value": "Fernando"}
     - [karunarathna](lastname)
+    - [bandara]{"entity": "lastname", "value": "Bandara"}
 - intent: provide_age
   examples: |
     - I am [25](age) years old.
@@ -590,6 +614,7 @@ nlu:
     - [31][{"entity": "age"}, {"entity": "age"}]
     - [19][{"entity": "age"}, {"entity": "age"}]
     - [35][{"entity": "age"}, {"entity": "age"}]
+    - [23][{"entity": "age"}, {"entity": "age"}]
 - intent: provide_phone
   examples: |
     - My phone number is [123-456-7890](phone).
@@ -658,7 +683,6 @@ nlu:
     - [072-123-4567](phone)
     - [+9474-555-5666](phone)
     - [774 888 9999](phone)
-    - [0712845669](phone)
 - intent: provide_otp
   examples: |
     - [123456](otp)
@@ -669,6 +693,7 @@ nlu:
     - [935319][{"entity": "otp"}, {"entity": "otp"}]
     - [146695][{"entity": "otp"}, {"entity": "otp"}]
     - [214548][{"entity": "otp"}, {"entity": "otp"}]
+    - [420967][{"entity": "otp"}, {"entity": "otp"}]
 - intent: out_of_scope
   examples: |
     - I want to order food
@@ -781,9 +806,15 @@ nlu:
 - synonym: Monday
   examples: |
     - monday
+- synonym: Daniel Brown
+  examples: |
+    - daniel brown
 - synonym: Fernando
   examples: |
     - fernando
+- synonym: Bandara
+  examples: |
+    - bandara
 - regex: age
   examples: |
     - \b\d{1,2}\b
