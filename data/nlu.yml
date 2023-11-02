@@ -56,10 +56,8 @@ nlu:
     - I want to book an appointment
     - I would like to book an appointment
     - i would like to book an appointment
-
 - intent: Confirm_need
   examples: |
-    - Yes, I need to see this doctor
     - Yes, I need to see this doctor
     - yes, i want to meet this doctor
     - Yes, I need to schedule an appointment with this doctor
@@ -72,7 +70,6 @@ nlu:
     - Yes, I have heard great things about this doctor and would like to see them for myself
     - Yes, I have been advised to seek the expertise of this specific doctor and would like to schedule a visit
     - Yes, It is important for me to have an appointment with this doctor due to my medical needs
-
 - intent: affirm
   examples: |
     - yes
@@ -390,6 +387,19 @@ nlu:
     - dr. [daniel brown]{"entity": "doctor_name", "value": "Daniel Brown"}
     - dr. [george jackson](doctor_name)
     - Dr. [George White](doctor_name)
+    - dr. [daniel miller]{"entity": "doctor_name", "value": "Daniel Miller"}
+- intent: request_medical_appointments
+  examples: |
+    - Can I have my medical appointments, please.
+    - Could you please give me the details of my medical appointments.
+    - I would like to know the specifics of my upcoming medical appointments, if possible.
+    - May I inquire about the details of my scheduled medical appointments.
+    - Is it possible to receive information about my medical appointments at this hospital.
+    - I'm interested in obtaining information about my medical appointments. Could you assist me with that.
+    - Could you provide me with the details of my upcoming medical appointments, including dates and times.
+    - Can you please share the details of my scheduled medical appointments.
+    - I need to check the specifics of my medical appointments. Can you help me with that.
+    - I was hoping to get information about my medical appointments. Could you guide me on how to do that.
 - intent: deny
   examples: |
     - no
@@ -534,6 +544,7 @@ nlu:
     - [gavindu](firstname)
     - nadil
     - [nadil](firstname)
+    - [savindu]{"entity": "firstname", "value": "Savindu"}
 - intent: provide_lastname
   examples: |
     - My last name is [Smith](lastname).
@@ -599,6 +610,7 @@ nlu:
     - [fernando]{"entity": "lastname", "value": "Fernando"}
     - [karunarathna](lastname)
     - [bandara]{"entity": "lastname", "value": "Bandara"}
+    - [rajapaksha]{"entity": "lastname", "value": "Rajapaksha"}
 - intent: provide_age
   examples: |
     - I am [25](age) years old.
@@ -614,6 +626,7 @@ nlu:
     - [31][{"entity": "age"}, {"entity": "age"}]
     - [19][{"entity": "age"}, {"entity": "age"}]
     - [35][{"entity": "age"}, {"entity": "age"}]
+    - [23][{"entity": "age"}, {"entity": "age"}]
     - [23][{"entity": "age"}, {"entity": "age"}]
 - intent: provide_phone
   examples: |
@@ -683,6 +696,7 @@ nlu:
     - [072-123-4567](phone)
     - [+9474-555-5666](phone)
     - [774 888 9999](phone)
+    - [0712845669](phone)
 - intent: provide_otp
   examples: |
     - [123456](otp)
@@ -694,6 +708,7 @@ nlu:
     - [146695][{"entity": "otp"}, {"entity": "otp"}]
     - [214548][{"entity": "otp"}, {"entity": "otp"}]
     - [420967][{"entity": "otp"}, {"entity": "otp"}]
+    - [560398][{"entity": "otp"}, {"entity": "otp"}]
 - intent: out_of_scope
   examples: |
     - I want to order food

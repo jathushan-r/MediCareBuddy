@@ -4,6 +4,7 @@ rules:
     steps:
       - intent: goodbye
       - action: utter_goodbye
+      - action: action_restart
   - rule: Say 'I am a bot' anytime the user challenges
     steps:
       - intent: bot_challenge
@@ -74,4 +75,17 @@ rules:
       - intent: provide_otp
       - action: action_submit_appointment_form
       # - action: utter_ask_any_other_help
+      # - action: utter_ask_any_other_help
+
+  - rule: Submit medical appointment form
+    condition:
+      - active_loop: medical_appointment_form
+    steps:
+      # Form is deactivated
+      - action: medical_appointment_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      # The actions we want to run when the form is submitted.
+      - action: action_submit_medical_appointment_form
       # - action: utter_ask_any_other_help

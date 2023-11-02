@@ -4,7 +4,7 @@ from rasa_sdk.events import SlotSet,FollowupAction,AllSlotsReset,ActionReverted,
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from datetime import datetime, timedelta
-from database.database_connectivity import get_doctor_availability, search_doctors_by_name ,add_new_patient,search_doctors_by_fullname, add_new_appointment
+from database.database_connectivity import get_doctor_availability, search_doctors_by_name ,add_new_patient,search_doctors_by_fullname, add_new_appointment,get_patient_appointments
 from Helpers.sendSMS import sendSMS,convert_to_desired_format,convert_to_desired_format1
 from Helpers.Day_Date import get_latest_date_for_day
 from database.database_connectivity import delete_appointment, get_upcoming_appointments
@@ -257,6 +257,35 @@ class LLMResponseAction(Action):
         print(response_text)
         dispatcher.utter_message(text=response_text)
         return []
+
+class ActionListPatientAppointments(Action):
+    def name(self) -> Text:
+        return "action_submit_medical_appointment_form"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Fetch slot values
+        first_name = tracker.get_slot("firstname")
+        last_name = tracker.get_slot("lastname")
+        phone = tracker.get_slot("phone")
+
+        appointments = get_patient_appointments(first_name, last_name, phone)
+
+        if appointments:
+            message = "Here are your upcoming appointments:\n"
+            for appointment in appointments:
+                message += f"- Appointment ID: {appointment['AppointmentID']}\n"
+                message += f"- Doctor Name: {appointment['DoctorName']}\n"
+                message += f"- Doctor Specialty: {appointment['DoctorSpecialty']}\n"
+                message += f"- Appointment Time: {appointment['AppointmentTime']}\n"
+                message += f"- Is Past: {'Yes' if appointment['IsPast'] else 'No'}\n"
+                message += "\n"
+
+            dispatcher.utter_message(message)
+        else:
+            dispatcher.utter_message("You don't have any upcoming appointments.")
+
+        return []
+
 # class ActionAddNewPatient(Action):
 
 #     def name(self) -> Text:

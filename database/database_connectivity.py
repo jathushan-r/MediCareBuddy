@@ -118,7 +118,8 @@ def add_new_patient(first_name, last_name, age, phone_number):
             .filter(Patient.Phone_number == phone_number, 
                     func.lower(Patient.First_name) == func.lower(first_name), 
                     func.lower(Patient.Last_name) == func.lower(last_name))\
-            .first():        
+            .first():  
+        print("New patient added")      
         new_patient = Patient(First_name=first_name, Last_name=last_name, Age=age, Phone_number=phone_number)
         session.add(new_patient)
         session.commit()
@@ -132,6 +133,7 @@ def add_new_patient(first_name, last_name, age, phone_number):
     #         session.commit()
     #         new_patient_added = False
     else:
+        print("Patient already exists")
         new_patientId = session.query(Patient)\
             .filter(Patient.Phone_number == phone_number, 
                     func.lower(Patient.First_name) == func.lower(first_name), 

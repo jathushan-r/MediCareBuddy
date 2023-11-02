@@ -1,5 +1,6 @@
 version: '3.1'
 intents:
+- Confirm_need
 - affirm
 - ask_for_doctor_availability
 - ask_me_anything
@@ -25,18 +26,17 @@ intents:
 - provide_lastname
 - provide_otp
 - provide_phone
+- request_medical_appointments
 - specialty
 - wellness_tips
-- Confirm_need
-
 entities:
 - firstname
-- doctor_name
 - day
-- age
-- otp
-- lastname
 - phone
+- age
+- doctor_name
+- lastname
+- otp
 - Day
 - specialty
 - start_time
@@ -113,6 +113,11 @@ forms:
     required_slots:
     - doctor_name
     - day
+  medical_appointment_form:
+    required_slots:
+    - firstname
+    - lastname
+    - phone
 responses:
   utter_greet:
   - text: welcome to our hospital's customer care service. How may I be of assistance to you today?
@@ -182,6 +187,8 @@ responses:
   - text: Did that help you?
   utter_happy:
   - text: Great, carry on!
+  utter_assistance:
+  - text: I am here to assist you.
   utter_goodbye:
   - text: Good bye. Have a nice day! Stay Healthy!
   utter_iamabot:
@@ -336,12 +343,14 @@ responses:
     - title: Dr. David
       payload: '/inform{{"doctor_name": "Dr. David"}}'
 actions:
-- utter_greet
-- action_fetch_doctor_availability_data
-- utter_ask_otp
+- action_submit_medical_appointment_form
 - action_send_otp
+- action_fetch_doctor_availability_data
+- utter_greet
 - action_submit_appointment_form
 - utter_goodbye
+- utter_assistance
+- utter_ask_otp
 - utter_ask_any_other_help
 - action_llm_response
 session_config:
