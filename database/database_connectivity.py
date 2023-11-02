@@ -2,8 +2,19 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, Time
 from sqlalchemy.orm import relationship
-from sqlalchemy import func, and_, or_
+from sqlalchemy import func, and_, or_ , case
 from datetime import datetime
+
+
+day_mapping = {
+    "Sunday": 1,
+    "Monday": 2,
+    "Tuesday": 3,
+    "Wednesday": 4,
+    "Thursday": 5,
+    "Friday": 6,
+    "Saturday": 7,
+} 
 
 Base = declarative_base()
 ENGINE = create_engine("mysql+pymysql://root:abcd1234@localhost:3306/chatbot")
@@ -175,13 +186,15 @@ def get_patient_appointments(first_name, last_name, phone_number):
 
     if patient:
         current_datetime = datetime.now()
-
+        day_case = case(value=Availability.Day, whens=day_mapping)
         # Retrieve appointments for the patient and join with other tables to get doctor and specialty details
         appointments = session.query(Appointment, Doctor, Specialty, Availability) \
             .filter(Appointment.PatientID == patient.PatientID) \
             .join(Doctor, Doctor.DoctorID == Appointment.DoctorID) \
             .join(Specialty, Specialty.SpecialtyID == Availability.SpecialtyID) \
-            .join(Availability, and_(Availability.DoctorID == Doctor.DoctorID, Availability.Day == Appointment.Appointment_day)) \
+            .join(Availability, and_(Availability.DoctorID == Doctor.DoctorID,
+                                    day_case == Availability.Day,
+                                    func.dayofweek(Appointment.Appointment_day) == day_case)) \
             .all()
 
         appointment_data = []
@@ -259,5 +272,5 @@ def get_doctorID_by_name(doctor_name,session):
 # Availability = get_doctor_availability("George","Jackson","Monday")
 # print(Availability[0].Start_Time)
 
-# appointment_data = get_patient_appointments("savindu","rajapaksha","0712845669")
-# print(appointment_data)
+appointment_data = get_patient_appointments("savindu","rajapaksha","0712845669")
+print(appointment_data)
