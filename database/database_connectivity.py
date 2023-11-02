@@ -1,7 +1,7 @@
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, Time
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship,aliased
 from sqlalchemy import func, and_, or_ , case
 from datetime import datetime
 
@@ -191,12 +191,12 @@ def get_patient_appointments(first_name, last_name, phone_number):
         appointments = session.query(Appointment, Doctor, Specialty, Availability) \
             .filter(Appointment.PatientID == patient.PatientID) \
             .join(Doctor, Doctor.DoctorID == Appointment.DoctorID) \
-            .join(Specialty, Specialty.SpecialtyID == Availability.SpecialtyID) \
             .join(Availability, and_(Availability.DoctorID == Doctor.DoctorID,
-                                    day_case == Availability.Day,
+                                    # day_case == Availability.Day,
                                     func.dayofweek(Appointment.Appointment_day) == day_case)) \
+            .join(Specialty, Specialty.SpecialtyID == Availability.SpecialtyID) \
             .all()
-
+        print(day_case)
         appointment_data = []
 
         for appointment, doctor, specialty, availability in appointments:
@@ -274,3 +274,6 @@ def get_doctorID_by_name(doctor_name,session):
 
 # appointment_data = get_patient_appointments("savindu","bandara","0712845669")
 # print(appointment_data)
+
+# upcoming_appointments = get_upcoming_appointments("savindu","bandara","0712845669")
+# print(upcoming_appointments[0].Appointment_day)
