@@ -13,12 +13,12 @@ rules:
       - intent: out_of_scope
       - action: utter_out_of_scope
 
-  - rule: Activate_form_1
-    steps:
-      - action: utter_ask_book_appointment
-      - intent: affirm
-      - action: appointment_booking_form
-      - active_loop: appointment_booking_form
+  # - rule: Activate_form_1
+  #   steps:
+  #     - action: utter_ask_book_appointment
+  #     - intent: affirm
+  #     - action: appointment_booking_form
+  #     - active_loop: appointment_booking_form
 
   - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
     steps:
@@ -53,4 +53,4 @@ rules:
       - action: utter_ask_otp
       - intent: provide_otp
       - action: action_submit_appointment_form
-      - action: utter_ask_any_other_help
+      # - action: utter_ask_any_other_help

@@ -7,9 +7,11 @@ intents:
 - bot_challenge
 - day
 - deny
+- disease_queries
 - faq:
     is_retrieval_intent: true
 - feedback
+- general_medical
 - give_shirt_size
 - goodbye
 - greet
@@ -24,14 +26,15 @@ intents:
 - provide_otp
 - provide_phone
 - specialty
+- wellness_tips
 entities:
-- doctor_name
-- age
-- phone
-- firstname
-- otp
-- day
 - lastname
+- phone
+- age
+- otp
+- firstname
+- doctor_name
+- day
 - Day
 - specialty
 - start_time
@@ -331,13 +334,14 @@ responses:
     - title: Dr. David
       payload: '/inform{{"doctor_name": "Dr. David"}}'
 actions:
-- action_fetch_doctor_availability_data
+- utter_ask_otp
 - utter_greet
+- utter_goodbye
+- utter_ask_any_other_help
 - action_send_otp
 - action_submit_appointment_form
-- utter_ask_any_other_help
-- utter_ask_otp
-- utter_goodbye
+- action_fetch_doctor_availability_data
+- action_llm_response
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

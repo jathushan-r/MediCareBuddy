@@ -110,7 +110,7 @@ if __name__ == "__main__":
         if not st.session_state.authentication_status:
             st.markdown("<h1 style='text-align: center; font-size:30px;'> </h1>", unsafe_allow_html=True)
             st.markdown("<h1 style='text-align: center; font-size:50px;'> </h1>", unsafe_allow_html=True)
-            st.markdown("<h1 style='text-align: center; font-size:30px;'>🏥 HealthBot 🤖</h1>", unsafe_allow_html=True)
+            st.markdown("<h1 style='text-align: center; font-size:28px;'>🏥MediCareBuddy🤖</h1>", unsafe_allow_html=True)
     with c3:
         name, authentication_status, username = authenticator.login("Login", "main")
 
@@ -122,7 +122,7 @@ if __name__ == "__main__":
     if authentication_status:      
 
         with st.sidebar:
-            st.markdown("<h1 style='text-align: center; font-size:30px;'>🏥 HealthBot 🤖</h1>", unsafe_allow_html=True)            
+            st.markdown("<h1 style='text-align: center; font-size:30px;'>🏥 MediCareBuddy 🤖</h1>", unsafe_allow_html=True)            
             
             st.markdown("***")
            
@@ -145,12 +145,12 @@ if __name__ == "__main__":
 
             col11, col21, col31 = st.sidebar.columns((1, 3, 1))
             with col21:
-                if st.button('notifications'):
-                    st.toast('find the egg',icon='🥚')
-                    time.sleep(.5)
-                    st.toast('fry it', icon='🍳')
-                    time.sleep(.5)
-                    st.toast('ENJOY THE MEAL!', icon='😋')
+                # if st.button('notifications'):
+                #     st.toast('find the egg',icon='🥚')
+                #     time.sleep(.5)
+                #     st.toast('fry it', icon='🍳')
+                #     time.sleep(.5)
+                #     st.toast('ENJOY THE MEAL!', icon='😋')
 
 
                 if st.button("Clear Chat"):

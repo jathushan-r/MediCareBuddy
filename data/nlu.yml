@@ -369,6 +369,7 @@ nlu:
     - [Linda Johnson](doctor_name)
     - [William Harris](doctor_name)
     - Dr. [David Jones](doctor_name)
+    - dr. [daniel brown]{"entity": "doctor_name", "value": "Daniel Brown"}
 - intent: deny
   examples: |
     - no
@@ -509,6 +510,7 @@ nlu:
     - [Rajapriya](firstname)
     - [Kalinga](firstname)
     - [Gaveesha](firstname)
+    - [ganidu](firstname)
 - intent: provide_lastname
   examples: |
     - My last name is [Smith](lastname).
@@ -516,7 +518,6 @@ nlu:
     - It's [Doe](lastname).
     - The last name is [Williams](lastname).
     - [Rajapaksha](lastname)
-    - [Jathushan](lastname)
     - [Sundaram](lastname)
     - [Murugan](lastname)
     - [Shanmugam](lastname)
@@ -573,6 +574,7 @@ nlu:
     - [Rajapakse](lastname)
     - [Ranaweera](lastname)
     - [fernando]{"entity": "lastname", "value": "Fernando"}
+    - [karunarathna](lastname)
 - intent: provide_age
   examples: |
     - I am [25](age) years old.
@@ -584,10 +586,10 @@ nlu:
     - [50](age)
     - [30](age)
     - [40](age)
-    - [0712845669](age)
     - [43][{"entity": "age"}, {"entity": "age"}]
     - [31][{"entity": "age"}, {"entity": "age"}]
     - [19][{"entity": "age"}, {"entity": "age"}]
+    - [35][{"entity": "age"}, {"entity": "age"}]
 - intent: provide_phone
   examples: |
     - My phone number is [123-456-7890](phone).
@@ -656,6 +658,7 @@ nlu:
     - [072-123-4567](phone)
     - [+9474-555-5666](phone)
     - [774 888 9999](phone)
+    - [0712845669](phone)
 - intent: provide_otp
   examples: |
     - [123456](otp)
@@ -665,6 +668,7 @@ nlu:
     - [945741][{"entity": "otp"}, {"entity": "otp"}]
     - [935319][{"entity": "otp"}, {"entity": "otp"}]
     - [146695][{"entity": "otp"}, {"entity": "otp"}]
+    - [214548][{"entity": "otp"}, {"entity": "otp"}]
 - intent: out_of_scope
   examples: |
     - I want to order food
@@ -700,6 +704,77 @@ nlu:
     - How do I knit a scarf?
     - What's the process of photosynthesis in plants?
     - Can you suggest tips for time management and productivity?
+- intent: wellness_tips
+  examples: |
+    - Can you suggest some daily wellness practices?
+    - What are the key components of a healthy lifestyle?
+    - How can I boost my immune system for better wellness?
+    - Share tips for a stress-free life
+    - What's the secret to long-term wellness?
+    - How can I achieve a work-life balance for better wellness?
+    - Give me some self-care strategies for wellness.
+    - Tips for staying healthy during the winter season
+    - How to maintain mental and emotional wellness?
+    - Can you recommend wellness resources or books to read?
+- intent: disease_queries
+  examples: |
+    - What are the common symptoms of diabetes?
+    - How is cancer diagnosed?
+    - What are the treatment options for heart disease?
+    - Can you explain the risk factors for hypertension?
+    - Are there any preventive measures for Alzheimer's disease?
+    - What is the prognosis for someone with COVID-19?
+    - Can you tell me about the latest research and advancements in the treatment of asthma?
+    - Are there any support groups or resources available for people with depression?
+    - What should I do if I suspect I have the symptoms of the flu?
+    - Can you provide information on the prevalence of obesity in our region?
+    - How does arthritis affect different age groups or demographics?
+    - Are there any lifestyle changes that can help manage or prevent stroke?
+    - What are the potential complications associated with HIV/AIDS?
+    - Can you explain the hereditary factors of cystic fibrosis?
+    - Do you have information on the latest treatments and clinical trials for COVID-19?
+    - What are the common symptoms of asthma?
+    - How is arthritis diagnosed?
+    - What are the treatment options for depression?
+    - Can you explain the risk factors for Alzheimer's disease?
+    - Are there any preventive measures for heart disease?
+    - What is the prognosis for someone with diabetes?
+    - Can you tell me about the latest research and advancements in the treatment of hypertension?
+    - Are there any support groups or resources available for people with cancer?
+    - What should I do if I suspect I have the symptoms of the common cold?
+    - Can you provide information on the prevalence of allergies in our region?
+    - How does osteoporosis affect different age groups or demographics?
+    - Are there any lifestyle changes that can help manage or prevent obesity?
+    - What are the potential complications associated with epilepsy?
+    - Can you explain the hereditary factors of Parkinson's disease?
+    - Do you have information on the latest treatments and clinical trials for HIV/AIDS?
+- intent: general_medical
+  examples: |
+    - How does the immune system work to protect the body?
+    - What are the common symptoms of the flu?
+    - What is the recommended daily water intake for an average adult?
+    - What is the function of red blood cells in the body?
+    - What are the major risk factors for heart disease?
+    - How can you reduce the risk of developing Type 2 diabetes?
+    - What is the role of insulin in the body, and what happens in diabetes?
+    - What is the importance of regular physical activity for overall health?
+    - How is blood pressure measured, and what are healthy ranges?
+    - What are the signs and symptoms of a stroke?
+    - What are the benefits of a balanced diet?
+    - How does cholesterol impact heart health?
+    - What are the different types of anesthesia used in surgery?
+    - What is the purpose of the lymphatic system in the body?
+    - What is the difference between a benign and malignant tumor?
+    - What are the primary functions of the liver in the human body?
+    - How does the menstrual cycle work, and what is a typical duration?
+    - What are the potential complications of high blood sugar in diabetes?
+    - What are the different stages of sleep, and why is sleep important?
+    - What are the symptoms of allergies, and how are they treated?
+    - What is the significance of maintaining a healthy body mass index (BMI)?
+    - How can one prevent the spread of infectious diseases?
+    - What is the purpose of the urinary system in the human body?
+    - What are the risk factors for osteoporosis, and how can it be prevented?
+    - What are the key components of a first-aid kit, and how should it be used in emergencies?
 - synonym: Sunday
   examples: |
     - sunday

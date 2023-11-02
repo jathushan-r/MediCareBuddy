@@ -1,5 +1,5 @@
 from typing import Any, Text, Dict, List
-
+import requests
 from rasa_sdk.events import SlotSet,FollowupAction,AllSlotsReset,ActionReverted,UserUtteranceReverted
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
@@ -8,6 +8,25 @@ from database.database_connectivity import get_doctor_availability, search_docto
 from Helpers.sendSMS import sendSMS,convert_to_desired_format,convert_to_desired_format1
 from Helpers.Day_Date import get_latest_date_for_day
 from database.database_connectivity import delete_appointment, get_upcoming_appointments
+
+
+# Define the base URL of the API
+base_url = "http://localhost:8000"  # Change this URL if your API is hosted elsewhere
+
+# Define the base URL of the API
+base_url = "http://localhost:8000"  # Change this URL if your API is hosted elsewhere
+
+# Function to send a chat request to the API
+def send_chat_request(query):
+    endpoint = "/chat"
+    data = {"query": query}
+    response = requests.post(base_url + endpoint, json=data)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        print("Error:", response.text)
+        return None
+
 
 class ActionFetchDoctorAvailability(Action):
 
@@ -60,7 +79,7 @@ class ActionFetchDoctorAvailability(Action):
                 for doctor, specialty in doctors:
                     message += f"- {doctor.first_name} {doctor.last_name} ({specialty.name})\n"
                 dispatcher.utter_message(text=message)
-                return[SlotSet("doctor_name", None),ActionReverted()]
+                return[SlotSet("doctor_name", None)]
             elif len(doctors) == 1:
                 doctor, specialty = doctors[0]
                 availability = get_doctor_availability(doctor.first_name, doctor.last_name, appointment_day)
@@ -80,7 +99,7 @@ class ActionFetchDoctorAvailability(Action):
                 # message +="Ophthalmologist"
 
                 dispatcher.utter_message(text=message)
-                return [SlotSet("day",None)]
+                return [SlotSet("doctor",None)]
             return[]
 
     def _respond_with_availability(self, dispatcher, availability):
@@ -142,6 +161,7 @@ class ActionConfirmAppointment(Action):
         appointment_date = get_latest_date_for_day(tracker.get_slot("day"))
         otp = tracker.get_slot("otp")
         otp_generated = tracker.get_slot("otp_generated")
+        print(appointment_date)
         # otp_generated = 187608
         #-------------- Uncomment below two line ----------------------------
         if (otp == otp_generated):
@@ -224,6 +244,19 @@ class ActionListUpcomingAppointments(Action):
         else:
             dispatcher.utter_message("You don't have any upcoming appointments.")
 
+        return []
+    
+
+class LLMResponseAction(Action):
+    def name(self) -> Text:
+        return "action_llm_response"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        user_input = (tracker.latest_message)['text']
+        response_text = send_chat_request(user_input)
+        response_text = response_text['answer'].replace('\n', ' ').replace('\r', '')
+        print(response_text)
+        dispatcher.utter_message(text=response_text)
         return []
 # class ActionAddNewPatient(Action):
 

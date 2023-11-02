@@ -1,6 +1,21 @@
 version: "3.1"
 
 stories:
+  - story: wellness_tips_conversation
+    steps:
+      - intent: wellness_tips
+      - action: action_llm_response
+
+  - story: disease_conversation
+    steps:
+      - intent: disease_queries
+      - action: action_llm_response
+      
+  - story: general_medical_conv
+    steps:
+      - intent: general_medical
+      - action: action_llm_response
+      
   - story: happy path
     steps:
       - intent: greet
@@ -45,30 +60,6 @@ stories:
   #     - intent: kneepain
   #     - action: utter_ask_book_appointment
   #     - intent: book_appointment
-
-  - story: booking an appointment with a doctor
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: ask_for_doctor_availability
-      - action: doctor_availability_form
-      - active_loop: doctor_availability_form
-
-  - story: appointment booking done with the doctor
-    steps:
-      - action: action_submit_appointment_form
-      - action: utter_ask_any_other_help
-      - intent: deny
-      - action: utter_goodbye
-  - story: search doctor by name and book appointment
-    steps:
-      - intent: book_appointment
-      - action: doctor_availability_form
-      - active_loop: doctor_availability_form
-      # - action: action_listen
-      - intent: affirm
-      - action: appointment_booking_form
-      - active_loop: appointment_booking_form
       
   - story: sad path 2
     steps:
@@ -362,18 +353,18 @@ stories:
       - user: "How do you ensure patient satisfaction?"
       - action: utter_patient_satisfaction
 
-  - story: doctor is not available
-    steps:
-    - intent: greet
-    - action: utter_greet
-    - intent: ask_for_doctor_availability
-    - action: doctor_availability_form
-    - active_loop: doctor_availability_form
-    - action: action_listen
-    - intent: affirm
-    - action: appointment_booking_form
+  # - story: doctor is not available
+  #   steps:
+  #   - intent: greet
+  #   - action: utter_greet
+  #   - intent: ask_for_doctor_availability
+  #   - action: doctor_availability_form
+  #   - active_loop: doctor_availability_form
+  #   - action: action_listen
+  #   - intent: affirm
+  #   - action: appointment_booking_form
 
-  - story: first name of dr. given
+  - story: first name of dr. given unhappy path 1
     steps:
     - intent: greet
     - action: utter_greet
@@ -386,26 +377,79 @@ stories:
     - intent: deny 
     - action: utter_goodbye
   
-  - story: doctor not available in the hospital happy path
+  # - story: doctor not available in the hospital happy path
+  #   steps:
+  #   - intent: greet
+  #   - action: utter_greet
+  #   - intent: book_appointment
+  #   - action: doctor_availability_form
+  #   - active_loop: doctor_availability_form
+  #   - action: action_fetch_doctor_availability_data
+  #   - intent: affirm
+  #   - action: doctor_availability_form
+  #   - active_loop: doctor_availability_form
+  #   - action: action_listen
+  #   - intent: affirm
+  #   - action: appointment_booking_form
+  #   - active_loop: appointment_booking_form
+  #   # - action: action_send_otp
+  #   # - action: utter_ask_otp
+  #   # - intent: provide_otp
+  #   # - action: action_submit_appointment_form
+  #   # - action: utter_ask_any_other_help
+  #   - intent: deny
+  #   - action: utter_goodbye
+  #   - action: action_restart
+  - story: doctor is available but day is not available
     steps:
     - intent: greet
     - action: utter_greet
     - intent: book_appointment
     - action: doctor_availability_form
     - active_loop: doctor_availability_form
-    - action: action_fetch_doctor_availability_data
+    # - action: action_fetch_doctor_availability_data
+    - or:
+      - slot_was_set:
+          - day: None
     - intent: affirm
     - action: doctor_availability_form
     - active_loop: doctor_availability_form
-    - action: action_listen
+    - action: action_fetch_doctor_availability_data
     - intent: affirm
     - action: appointment_booking_form
     - active_loop: appointment_booking_form
-    # - action: action_send_otp
-    # - action: utter_ask_otp
-    # - intent: provide_otp
-    # - action: action_submit_appointment_form
-    # - action: utter_ask_any_other_help
+    - action: action_send_otp
+    - action: utter_ask_otp
+    - intent: provide_otp
+    - action: action_submit_appointment_form
+    - action: utter_ask_any_other_help
+    - intent: deny
+    - action: utter_goodbye
+    - action: action_restart
+
+  - story: doctor is not available but still want to book an appointment
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: book_appointment
+    - action: doctor_availability_form
+    - active_loop: doctor_availability_form
+    # - action: action_fetch_doctor_availability_data
+    - or:
+      - slot_was_set:
+          - doctor_name: None
+    - intent: affirm
+    - action: doctor_availability_form
+    - active_loop: doctor_availability_form
+    - action: action_fetch_doctor_availability_data
+    - intent: affirm
+    - action: appointment_booking_form
+    - active_loop: appointment_booking_form
+    - action: action_send_otp
+    - action: utter_ask_otp
+    - intent: provide_otp
+    - action: action_submit_appointment_form
+    - action: utter_ask_any_other_help
     - intent: deny
     - action: utter_goodbye
     - action: action_restart
@@ -417,13 +461,49 @@ stories:
     - intent: book_appointment
     - action: doctor_availability_form
     - active_loop: doctor_availability_form
-    - action: action_fetch_doctor_availability_data
+    # - action: action_fetch_doctor_availability_data
     - intent: deny
     - action: utter_ask_any_other_help
     - intent: deny
     - action: utter_goodbye
     - action: action_restart
 
+  - story: booking an appointment with a doctor happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_for_doctor_availability
+      - action: doctor_availability_form
+      - active_loop: doctor_availability_form
+      - action: action_fetch_doctor_availability_data
+      - intent: affirm
+      - action: appointment_booking_form
+      - active_loop: appointment_booking_form
+      - action: action_send_otp
+      - action: utter_ask_otp
+      - intent: provide_otp
+      - action: action_submit_appointment_form
+      - action: utter_ask_any_other_help
+      - intent: deny
+      - action: utter_goodbye
+      - action: action_restart
+
+  # - story: appointment booking done with the doctor
+  #   steps:
+  #     - action: action_submit_appointment_form
+  #     - action: utter_ask_any_other_help
+  #     - intent: deny
+  #     - action: utter_goodbye
+      
+  # - story: search doctor by name and book appointment
+  #   steps:
+  #     - intent: book_appointment
+  #     - action: doctor_availability_form
+  #     - active_loop: doctor_availability_form
+  #     - action: action_fetch_doctor_availability_data
+  #     - intent: deny
+  #     - action: appointment_booking_form
+  #     - active_loop: appointment_booking_form
   # - story: doctor not available in the hospital unhappy path 1
   #   steps:
   #   - intent: greet
@@ -610,6 +690,7 @@ stories:
     - slot_was_set:
       - day: Sunday
     - action: doctor_availability_form
+    - active_loop: doctor_availability_form
     - action: action_fetch_doctor_availability_data
       # emily thompson
 
@@ -878,7 +959,7 @@ stories:
 #   - action: utter_goodbye
 #   - action: action_restart
 
-  - story: interactive_story_1
+  - story: interactive_story_5
     steps:
     - intent: greet
     - action: utter_greet
@@ -966,45 +1047,133 @@ stories:
     - action: utter_goodbye
     - action: action_restart
 
-- story: interactive_story_1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: book_appointment
-  - action: doctor_availability_form
-  - active_loop: doctor_availability_form
-  - slot_was_set:
-    - requested_slot: doctor_name
-  - intent: provide_doctor_name
-    entities:
-    - doctor_name: David Jones
-  - slot_was_set:
-    - doctor_name: David Jones
-  - action: doctor_availability_form
-  - slot_was_set:
-    - requested_slot: day
-  - intent: day
-    entities:
-    - day: Tuesday
-  - slot_was_set:
-    - day: Tuesday
-  - action: doctor_availability_form
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_fetch_doctor_availability_data
-  - action: action_fetch_doctor_availability_data
-  - slot_was_set:
-    - day: null
-  - action: action_fetch_doctor_availability_data
-  - slot_was_set:
-    - day: null
-  - action: action_fetch_doctor_availability_data
-  - slot_was_set:
-    - day: null
-  - action: action_fetch_doctor_availability_data
-  - slot_was_set:
-    - day: null
-  - action: action_fetch_doctor_availability_data
-  - slot_was_set:
-    - day: null
+  # - story: interactive_story_6
+  #   steps:
+  #   - intent: greet
+  #   - action: utter_greet
+  #   - intent: book_appointment
+  #   - action: doctor_availability_form
+  #   - active_loop: doctor_availability_form
+  #   - slot_was_set:
+  #     - requested_slot: doctor_name
+  #   - intent: provide_doctor_name
+  #     entities:
+  #     - doctor_name: David Jones
+  #   - slot_was_set:
+  #     - doctor_name: David Jones
+  #   - action: doctor_availability_form
+  #   - slot_was_set:
+  #     - requested_slot: day
+  #   - intent: day
+  #     entities:
+  #     - day: Tuesday
+  #   - slot_was_set:
+  #     - day: Tuesday
+  #   - action: doctor_availability_form
+  #   - slot_was_set:
+  #     - requested_slot: null
+  #   - active_loop: null
+  #   - action: action_fetch_doctor_availability_data
+  #   # - action: action_fetch_doctor_availability_data
+  #   # - slot_was_set:
+  #   #   - day: null
+  #   # - action: action_fetch_doctor_availability_data
+  #   # - slot_was_set:
+  #   #   - day: null
+  #   # - action: action_fetch_doctor_availability_data
+  #   # - slot_was_set:
+  #   #   - day: null
+  #   # - action: action_fetch_doctor_availability_data
+  #   # - slot_was_set:
+  #   #   - day: null
+  #   # - action: action_fetch_doctor_availability_data
+  #   # - slot_was_set:
+  #   #   - day: null
+
+  - story: interactive_story_6
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: book_appointment
+    - action: doctor_availability_form
+    - active_loop: doctor_availability_form
+    - slot_was_set:
+      - requested_slot: doctor_name
+    - intent: provide_doctor_name
+      entities:
+      - doctor_name: Daniel Brown
+    - slot_was_set:
+      - doctor_name: Daniel Brown
+    - action: doctor_availability_form
+    - slot_was_set:
+      - requested_slot: day
+    - intent: day
+      entities:
+      - day: Wednesday
+    - slot_was_set:
+      - day: Wednesday
+    - action: doctor_availability_form
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_fetch_doctor_availability_data
+    - slot_was_set:
+      - specialty: Gastroenterologist
+    - slot_was_set:
+      - start_time: 17:00
+    - intent: affirm
+    - action: appointment_booking_form
+    - active_loop: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: firstname
+    - intent: provide_firstname
+      entities:
+      - firstname: ganidu
+    - slot_was_set:
+      - firstname: ganidu
+    - action: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: lastname
+    - intent: provide_lastname
+      entities:
+      - lastname: karunarathna
+    - slot_was_set:
+      - lastname: karunarathna
+    - action: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: age
+    - intent: provide_age
+      entities:
+      - age: '35'
+      - age: '35'
+    - slot_was_set:
+      - age: '35'
+    - action: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: phone
+    - intent: provide_phone
+      entities:
+      - phone: '0712845669'
+    - slot_was_set:
+      - phone: '0712845669'
+    - action: appointment_booking_form
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_send_otp
+    - slot_was_set:
+      - otp_generated: '214548'
+    - action: utter_ask_otp
+    - intent: provide_otp
+      entities:
+      - otp: '214548'
+      - otp: '214548'
+    - slot_was_set:
+      - otp: '214548'
+    - action: action_submit_appointment_form
+    - slot_was_set:
+      - otp: null
+    - action: utter_ask_any_other_help
+    - intent: deny
+    - action: utter_goodbye
+    - action: action_restart

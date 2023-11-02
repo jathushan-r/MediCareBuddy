@@ -272,5 +272,5 @@ def get_doctorID_by_name(doctor_name,session):
 # Availability = get_doctor_availability("George","Jackson","Monday")
 # print(Availability[0].Start_Time)
 
-appointment_data = get_patient_appointments("savindu","rajapaksha","0712845669")
-print(appointment_data)
+# appointment_data = get_patient_appointments("savindu","bandara","0712845669")
+# print(appointment_data)
