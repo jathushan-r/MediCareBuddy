@@ -25,7 +25,7 @@ class ChatResponse(BaseModel):
 
 # Initialize your components here
 # os.environ["OPENAI_API_KEY"] = 'sk-fdfd'
-os.environ["REPLICATE_API_TOKEN"] = "r8_6rXolartKZeUccahg23a7e9rrUMMUyU241P5V"
+os.environ["REPLICATE_API_TOKEN"] = "r8_F8jqcdzqxqyCQGpIOsEixdJxd8Eg6Po2g9nXx"
 llm = Replicate(
     model="meta/llama-2-13b-chat:f4e2de70d66816a838a89eeeb621910adffb0dd0baba3976c96980970978018d",
     input={"temperature": 0.7, "max_length": 100, "top_p": 1},
