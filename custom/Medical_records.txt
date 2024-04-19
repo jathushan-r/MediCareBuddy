@@ -1,0 +1,52 @@
+Medical Records
+Patient: Hi
+
+Hospital Representative: utter greet
+
+Patient:I need to request a copy of my medical records.
+
+Hospital Representative: Sure, I can assist with that. Could you provide your first name and
+Patient: My name is [Name]
+
+Hospital Representative: Sure, I can assist with that. Could you provide your last mnae and
+Patient: My name is [Name]
+
+Hospital Representative: Sure, I can assist with that. Could you provide your phone number and
+Patient: My name is [Name]
+
+Hospital Representative: Noted. We'll need you to fill out a release form. We'll send the form shortly through whatsapp
+Do you have any other questions?
+
+Patient: No, that's all. Thank you for your help.
+
+Hospital Representative: You're welcome. Have a great day!
+
+stories
+  - story: getting medical records
+    steps:
+        intent: greet
+        action: utter_greet
+        intent: request_medical_records
+        action: utter_assistance
+        action: medical_records_form
+        active_loop: medical_records_form
+
+  - story: submit_medical_records_form
+    steps:
+        conditions:
+            -active_loop: medical_records_form
+        steps: 
+            -action: medical_records_form
+            -active_loop: null
+            -slot_was_set
+                - requested_slot: null
+            - action: action_fetch_medical_records
+            - action: utter_ask_any_other_help
+
+ forms:
+    medical_records_form:
+        - firstname
+        - lastname
+        - phone
+
+       

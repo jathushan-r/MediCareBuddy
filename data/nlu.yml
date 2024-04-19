@@ -53,6 +53,23 @@ nlu:
       - I'd like to fix a time to meet the doctor.
       - i want to book an appointment
       - I want to book an appointment.
+      - I want to book an appointment
+      - I would like to book an appointment
+      - i would like to book an appointment
+  - intent: Confirm_need
+    examples: |
+      - Yes, I need to see this doctor
+      - yes, i want to meet this doctor
+      - Yes, I need to schedule an appointment with this doctor
+      - Yes, I'm interested in booking a consultation with this doctor
+      - Yes, Please help me arrange a meeting with this specific doctor
+      - Yes, I would like to meet with this doctor as soon as possible
+      - Yes, Could you please assist me in setting up an appointment with this particular doctor?
+      - Yes, I am eager to see this doctor at the earliest convenient time
+      - Yes, I'm looking forward to consulting with this doctor regarding my health concerns
+      - Yes, I have heard great things about this doctor and would like to see them for myself
+      - Yes, I have been advised to seek the expertise of this specific doctor and would like to schedule a visit
+      - Yes, It is important for me to have an appointment with this doctor due to my medical needs
   - intent: affirm
     examples: |
       - yes
@@ -62,6 +79,7 @@ nlu:
       - that sounds good
       - correct
       - fine
+      - Yes
   - intent: ask_for_doctor_availability
     examples: |
       - Is Dr. [John](doctor_name) available?
@@ -129,6 +147,9 @@ nlu:
       - I need to book an appointment with dr. [james miller](doctor_name)
       - I need to book an appointment with dr. [james miller](doctor_name) on [monday](day)
       - Dr. [John](doctor_name) [Robinson](doctor_name)
+      - is dr. [linda martin](doctor_name) available on [sunday][{"entity": "day", "value": "Sunday"}, {"entity": "Day", "value": "Sunday"}]?
+      - Is dr. [emily thompson](doctor_name) available on [monday][{"entity": "day", "value": "Monday"}, {"entity": "day", "value": "Monday"}]?
+      - Is Dr. [Barbara Thompson](doctor_name) available on [Friday][{"entity": "day"}, {"entity": "Day"}]?
   - intent: provide_doctor_name
     examples: |
       - I would like to book an appointment with Dr. [Daniel Wilson](doctor_name).
@@ -362,6 +383,23 @@ nlu:
       - [Barbara Martin](doctor_name)
       - [Linda Johnson](doctor_name)
       - [William Harris](doctor_name)
+      - Dr. [David Jones](doctor_name)
+      - dr. [daniel brown]{"entity": "doctor_name", "value": "Daniel Brown"}
+      - dr. [george jackson](doctor_name)
+      - Dr. [George White](doctor_name)
+      - dr. [daniel miller]{"entity": "doctor_name", "value": "Daniel Miller"}
+  - intent: request_medical_appointments
+    examples: |
+      - Can I have my medical appointments, please.
+      - Could you please give me the details of my medical appointments.
+      - I would like to know the specifics of my upcoming medical appointments, if possible.
+      - May I inquire about the details of my scheduled medical appointments.
+      - Is it possible to receive information about my medical appointments at this hospital.
+      - I'm interested in obtaining information about my medical appointments. Could you assist me with that.
+      - Could you provide me with the details of my upcoming medical appointments, including dates and times.
+      - Can you please share the details of my scheduled medical appointments.
+      - I need to check the specifics of my medical appointments. Can you help me with that.
+      - I was hoping to get information about my medical appointments. Could you guide me on how to do that.
   - intent: deny
     examples: |
       - no
@@ -372,7 +410,6 @@ nlu:
       - no way
       - not really
       - No
-      - Nope
   - intent: mood_great
     examples: |
       - perfect
@@ -389,7 +426,6 @@ nlu:
       - so so perfect
       - so good
       - so perfect
-
   - intent: mood_unhappy
     examples: |
       - my day was horrible
@@ -432,7 +468,6 @@ nlu:
       - Verify you're human
       - Bot or user?
       - I need a human touch
-
   - intent: feedback
     examples: |
       - Great response!
@@ -462,13 +497,7 @@ nlu:
       - Firstname? It's [Robert](firstname).
       - [Savindu](firstname)
       - [Jathushan](firstname)
-      - [Savindu](firstname)
-      - My first name is [John](firstname).
-      - Call me [Sarah](firstname).
-      - You can address me as [Emily](firstname).
       - First name? It's [Robert](firstname).
-      - [Savindu](firstname)
-      - [Jathushan](firstname)
       - [Nimal](firstname)
       - [Malini](firstname)
       - [Kamal](firstname)
@@ -509,9 +538,13 @@ nlu:
       - [Sachin](firstname)
       - [Priyadarshini](firstname)
       - [Rajapriya](firstname)
-      - I am [Vibulan](firstname)
-      - call me [Vijay](firstname)
-
+      - [Kalinga](firstname)
+      - [Gaveesha](firstname)
+      - [ganidu](firstname)
+      - [gavindu](firstname)
+      - nadil
+      - [nadil](firstname)
+      - [savindu]{"entity": "firstname", "value": "Savindu"}
   - intent: provide_lastname
     examples: |
       - My last name is [Smith](lastname).
@@ -519,7 +552,6 @@ nlu:
       - It's [Doe](lastname).
       - The last name is [Williams](lastname).
       - [Rajapaksha](lastname)
-      - [Jathushan](lastname)
       - [Sundaram](lastname)
       - [Murugan](lastname)
       - [Shanmugam](lastname)
@@ -528,7 +560,6 @@ nlu:
       - [Balasubramanian](lastname)
       - [Perumal](lastname)
       - [Thirunavukkarasu](lastname)
-      - [Jeyarasa](lastname)
       - [Marimuthu](lastname)
       - [Ramasamy](lastname)
       - [Govindarajan](lastname)
@@ -550,7 +581,6 @@ nlu:
       - [Fonseka](lastname)
       - [Karunaratne](lastname)
       - [Krishnamurthy](lastname)
-      - [Shanmugam](lastname)
       - [Palanisamy](lastname)
       - [Sivasubramanian](lastname)
       - [Venkatachalam](lastname)
@@ -563,7 +593,6 @@ nlu:
       - [Wijesekera](lastname)
       - [Ranasinghe](lastname)
       - [Seneviratne](lastname)
-      - [Perumal](lastname)
       - [Mendis](lastname)
       - [Amarasinghe](lastname)
       - [Weerasinghe](lastname)
@@ -577,7 +606,11 @@ nlu:
       - [Pathirana](lastname)
       - [Kuruppu](lastname)
       - [Rajapakse](lastname)
-
+      - [Ranaweera](lastname)
+      - [fernando]{"entity": "lastname", "value": "Fernando"}
+      - [karunarathna](lastname)
+      - [bandara]{"entity": "lastname", "value": "Bandara"}
+      - [rajapaksha]{"entity": "lastname", "value": "Rajapaksha"}
   - intent: provide_age
     examples: |
       - I am [25](age) years old.
@@ -589,8 +622,12 @@ nlu:
       - [50](age)
       - [30](age)
       - [40](age)
-      - [0712845669](age)
-      - [23](age)
+      - [43][{"entity": "age"}, {"entity": "age"}]
+      - [31][{"entity": "age"}, {"entity": "age"}]
+      - [19][{"entity": "age"}, {"entity": "age"}]
+      - [35][{"entity": "age"}, {"entity": "age"}]
+      - [23][{"entity": "age"}, {"entity": "age"}]
+      - [23][{"entity": "age"}, {"entity": "age"}]
   - intent: provide_phone
     examples: |
       - My phone number is [123-456-7890](phone).
@@ -607,7 +644,6 @@ nlu:
       - [+94 987654321](phone)
       - my phone number is [071-284-5669](phone)
       - my phone number is [0712845669](phone)
-      - [0712845669](phone)
       - [077-333-3333](phone)
       - [072-999-9999](phone)
       - [+94 772-222-2222](phone)
@@ -660,31 +696,19 @@ nlu:
       - [072-123-4567](phone)
       - [+9474-555-5666](phone)
       - [774 888 9999](phone)
-      - [7445555555](phone)
-      - [7551234567](phone)
-      - [0759999888](phone)
-
-  - regex: phone
+      - [0712845669](phone)
+  - intent: provide_otp
     examples: |
-      - [(]\d{3}[)]\s\d{3}[-]\d{4}
-      - [+]\d{11-12}
-      - [+]\d{2}\s\d{9}
-      - \d{10-12}
-      - \d{3}[-]\d{3}[-]\d{4}
-
-  - intent: wellness_tips
-    examples: |
-      - Can you suggest some daily wellness practices?
-      - What are the key components of a healthy lifestyle?
-      - How can I boost my immune system for better wellness?
-      - Share tips for a stress-free life
-      - What's the secret to long-term wellness?
-      - How can I achieve a work-life balance for better wellness?
-      - Give me some self-care strategies for wellness.
-      - Tips for staying healthy during the winter season
-      - How to maintain mental and emotional wellness?
-      - Can you recommend wellness resources or books to read?
-
+      - [123456](otp)
+      - [123478](otp)
+      - [456789](otp)
+      - [187608][{"entity": "otp"}, {"entity": "otp"}]
+      - [945741][{"entity": "otp"}, {"entity": "otp"}]
+      - [935319][{"entity": "otp"}, {"entity": "otp"}]
+      - [146695][{"entity": "otp"}, {"entity": "otp"}]
+      - [214548][{"entity": "otp"}, {"entity": "otp"}]
+      - [420967][{"entity": "otp"}, {"entity": "otp"}]
+      - [560398][{"entity": "otp"}, {"entity": "otp"}]
   - intent: out_of_scope
     examples: |
       - I want to order food
@@ -720,152 +744,98 @@ nlu:
       - How do I knit a scarf?
       - What's the process of photosynthesis in plants?
       - Can you suggest tips for time management and productivity?
-
-  - intent: faq_hospital_services
+  - intent: wellness_tips
     examples: |
-      - What services does the hospital offer?
-      - Tell me about the services provided by the hospital.
-      - What medical facilities are available at the hospital?
-
-  # - intent: faq_appointments
-  #   examples: |
-  #     - How can I schedule a doctor's appointment?
-  #     - What's the process for booking an appointment?
-  #     - Can I book a medical appointment online?
-
-  - intent: faq_doctor_specialties
+      - Can you suggest some daily wellness practices?
+      - What are the key components of a healthy lifestyle?
+      - How can I boost my immune system for better wellness?
+      - Share tips for a stress-free life
+      - What's the secret to long-term wellness?
+      - How can I achieve a work-life balance for better wellness?
+      - Give me some self-care strategies for wellness.
+      - Tips for staying healthy during the winter season
+      - How to maintain mental and emotional wellness?
+      - Can you recommend wellness resources or books to read?
+  - intent: disease_queries
     examples: |
-      - What medical specialties do the doctors at the hospital have?
-      - Tell me about the different doctor specialties available.
-      - Who are the specialists at the hospital?
-
-  - intent: faq_visiting_hours
+      - What are the common symptoms of diabetes?
+      - How is cancer diagnosed?
+      - What are the treatment options for heart disease?
+      - Can you explain the risk factors for hypertension?
+      - Are there any preventive measures for Alzheimer's disease?
+      - What is the prognosis for someone with COVID-19?
+      - Can you tell me about the latest research and advancements in the treatment of asthma?
+      - Are there any support groups or resources available for people with depression?
+      - What should I do if I suspect I have the symptoms of the flu?
+      - Can you provide information on the prevalence of obesity in our region?
+      - How does arthritis affect different age groups or demographics?
+      - Are there any lifestyle changes that can help manage or prevent stroke?
+      - What are the potential complications associated with HIV/AIDS?
+      - Can you explain the hereditary factors of cystic fibrosis?
+      - Do you have information on the latest treatments and clinical trials for COVID-19?
+      - What are the common symptoms of asthma?
+      - How is arthritis diagnosed?
+      - What are the treatment options for depression?
+      - Can you explain the risk factors for Alzheimer's disease?
+      - Are there any preventive measures for heart disease?
+      - What is the prognosis for someone with diabetes?
+      - Can you tell me about the latest research and advancements in the treatment of hypertension?
+      - Are there any support groups or resources available for people with cancer?
+      - What should I do if I suspect I have the symptoms of the common cold?
+      - Can you provide information on the prevalence of allergies in our region?
+      - How does osteoporosis affect different age groups or demographics?
+      - Are there any lifestyle changes that can help manage or prevent obesity?
+      - What are the potential complications associated with epilepsy?
+      - Can you explain the hereditary factors of Parkinson's disease?
+      - Do you have information on the latest treatments and clinical trials for HIV/AIDS?
+  - intent: general_medical
     examples: |
-      - What are the visiting hours at the hospital?
-      - Can you provide me with the hospital's visiting schedule?
-      - When can I visit a patient at the hospital?
-
-  - intent: faq_patient_admissions
+      - How does the immune system work to protect the body?
+      - What are the common symptoms of the flu?
+      - What is the recommended daily water intake for an average adult?
+      - What is the function of red blood cells in the body?
+      - What are the major risk factors for heart disease?
+      - How can you reduce the risk of developing Type 2 diabetes?
+      - What is the role of insulin in the body, and what happens in diabetes?
+      - What is the importance of regular physical activity for overall health?
+      - How is blood pressure measured, and what are healthy ranges?
+      - What are the signs and symptoms of a stroke?
+      - What are the benefits of a balanced diet?
+      - How does cholesterol impact heart health?
+      - What are the different types of anesthesia used in surgery?
+      - What is the purpose of the lymphatic system in the body?
+      - What is the difference between a benign and malignant tumor?
+      - What are the primary functions of the liver in the human body?
+      - How does the menstrual cycle work, and what is a typical duration?
+      - What are the potential complications of high blood sugar in diabetes?
+      - What are the different stages of sleep, and why is sleep important?
+      - What are the symptoms of allergies, and how are they treated?
+      - What is the significance of maintaining a healthy body mass index (BMI)?
+      - How can one prevent the spread of infectious diseases?
+      - What is the purpose of the urinary system in the human body?
+      - What are the risk factors for osteoporosis, and how can it be prevented?
+      - What are the key components of a first-aid kit, and how should it be used in emergencies?
+  - synonym: Sunday
     examples: |
-      - How do I admit a patient to the hospital?
-      - What's the process for patient admissions?
-      - Can you explain the admission procedure?
-
-  - intent: faq_billing_and_payment
+      - sunday
+  - synonym: Monday
     examples: |
-      - How does the hospital billing and payment process work?
-      - What payment methods are accepted for medical bills?
-      - Can you provide information on hospital fees and payments?
-
-  - intent: faq_insurance
+      - monday
+  - synonym: Daniel Brown
     examples: |
-      - Does the hospital accept health insurance?
-      - How can I use my insurance at the hospital?
-      - Tell me about the insurance policies accepted by the hospital.
-
-  - intent: faq_emergency_services
+      - daniel brown
+  - synonym: Fernando
     examples: |
-      - What emergency medical services does the hospital provide?
-      - How can I reach the hospital's emergency department?
-      - Is there an emergency hotline I can call for assistance?
-
-  - intent: faq_medical_records
+      - fernando
+  - synonym: Bandara
     examples: |
-      - How can I access my medical records from the hospital?
-      - Tell me about the process for obtaining medical records.
-      - Can I request my health records online?
-
-  - intent: faq_patient_feedback
-    examples: |
-      - How can I provide feedback about my experience at the hospital?
-      - Is there a patient feedback form or survey?
-      - Where can I share my suggestions or complaints?
-
-  - intent: faq_covid-19
-    examples: |
-      - What COVID-19 safety measures are in place at the hospital?
-      - Tell me about the hospital's response to the pandemic.
-      - Is COVID-19 testing available at the hospital?
-
-  - intent: faq_parking
-    examples: |
-      - Is there parking available at the hospital?
-      - Can you provide information about hospital parking facilities?
-      - What are the parking rates at the hospital?
-
-  - intent: faq_visitor_policy
-    examples: |
-      - What is the current visitor policy at the hospital?
-      - Are there any restrictions on hospital visitors?
-      - Can you explain the hospital's visitor guidelines?
-
-  # - intent: faq_volunteer_opportunities
-  #   examples: |
-  #     - How can I volunteer at the hospital?
-  #     - Tell me about volunteer opportunities at the hospital.
-  #     - Is there a volunteer program I can join?
-
-  - intent: faq_cafeteria
-    examples: |
-      - Does the hospital have a cafeteria or food services?
-      - What dining options are available for patients and visitors?
-      - Can you provide information about the hospital's cafeteria hours?
-
-  # - intent: faq_patient_rights
-  #   examples: |
-  #     - What are the rights and responsibilities of hospital patients?
-  #     - Tell me about patient rights at the hospital.
-  #     - Can you explain the code of conduct for patients?
-
-  - intent: faq_pharmacy
-    examples: |
-      - Is there a pharmacy at the hospital?
-      - Can I get my prescriptions filled at the hospital's pharmacy?
-      - What are the pharmacy operating hours?
-
-  # - intent: faq_patient_support
-  #   examples: |
-  #     - What support services are available for patients and their families?
-  #     - Tell me about patient support and counseling options.
-  #
-  # - intent: faq_hospital_location
-  #   examples: |
-  #     - Where is the hospital located?
-  #     - Can you give me directions to the hospital?
-  #     - What's the hospital's address and contact information?
-
-  - intent: request_medical_appointments
-    examples: |
-      - I need to request a copy of my medical appointments.
-      - can i have my medical appointments.
-      - Could you please provide me the medical appointments.
-      - I need to obtain a copy of my medical appointments.
-      - Could you please assist me in getting a copy of my medical appointments from my recent visits?
-      - I would like to request access to my complete medical history for personal review.
-      - Can you help me with the process of obtaining my medical appointments?
-      - I am looking to collect my medical appointments for my own reference. How can I go about this?
-
-  - intent: request_to_cancel_appointment
-    examples: |
-      - I need to cancel my scheduled appointment.
-      - I would like to cancel my upcoming appointment.
-      - Could you please help me cancel my consultation appointment?
-      - I need to cancel my appointment, so please cancel my current appointment.
-      - Please cancel my follow-up appointment.
-      - I'm unable to make it to my scheduled visit, so I would like to cancel the appointment.
-      - I need to cancel my upcoming appointment due to unforeseen circumstances.
-      - Can you please assist me in canceling my appointment?
-      - I would like to cancel my appointment as I won't be able to make it.
-      - Please cancel my appointment scheduled as I have a conflicting engagement.
-      - I need to cancel my scheduled due to a sudden change in my schedule.
-      - can I cancel my appointment?
-      - i wish to cancel my account.
-
+      - bandara
   - regex: age
     examples: |
-      - \d{1}
-      - \d{2}
-      - \d{3}
+      - \b\d{1,2}\b
+  - regex: otp
+    examples: |
+      - \b\d{6}\b
   - regex: phone
     examples: |
       - [(]\d{3}[)]\s\d{3}[-]\d{4}
@@ -873,6 +843,7 @@ nlu:
       - [+]\d{2}\s\d{9}
       - \d{10-12}
       - \d{3}[-]\d{3}[-]\d{4}
+      - \d{3}[-]\d{7}
   - lookup: day
     examples: |
       - Monday
